@@ -13,7 +13,7 @@ public class CrimeAgainstPerson extends CriminalCase{
     private String assaultkeywords[]={"attacked","beat up","hit","hurt","insulted","kicked","punched","raped"};
     public CrimeAgainstPerson( String rem, String typ, String jur , String crim, String sen, String tOO){
             super(rem, typ, jur, crim, sen);
-            this.typeOfOffence = tOO;
+            this.typeOfOffence = this.setTypeOfOffence();
         
     }
     public String getTypeOfOffence() {
@@ -22,7 +22,7 @@ public class CrimeAgainstPerson extends CriminalCase{
     public void setCrimeTypeAndSentence(String keyword){
         String sentence;
         if(SearchMechanism(keyword,murderkeywords,0)==true){
-        if(mensRea.equalsIgnoreCase("motive")&&mensRea.equalsIgnoreCase("intent")&&mensRea.equalsIgnoreCase("knowledge")){
+        if(mensRea.equalsIgnoreCase("motive,intent,knowledge")){
             crimeType=crimeTypes[0];
             sentence="The maximum sentence is life in jail";
             super.setSentence(sentence);
@@ -69,7 +69,21 @@ public class CrimeAgainstPerson extends CriminalCase{
     }
     public void setMensRea(String keyword){
         if(SearchMechanism(keyword,mensReaTypes,0)==true){
-            
+            if(keyword.equalsIgnoreCase(mensReaTypes[6])||keyword.equalsIgnoreCase(mensReaTypes[7])){
+                mensRea="motive,intent,knowledge";
+            }
+            else if(keyword.equalsIgnoreCase(mensReaTypes[3])||keyword.equalsIgnoreCase(mensReaTypes[4])){
+                mensRea="recklessness";
+            }
+            else if(keyword.equalsIgnoreCase(mensReaTypes[5])){
+                mensRea="willful blindness";
+            }
+            else if(keyword.equalsIgnoreCase(mensReaTypes[8])){
+                mensRea="criminal negligence";
+            }
+            else{
+                mensRea="none";
+            }
         }
     }    
     public String printInfo(){
