@@ -68,7 +68,9 @@ public class CrimeAgainstPerson extends CriminalCase{
         }
     }
     public void setMensRea(String keyword){
-        if(keywor)
+        if(SearchMechanism(keyword,mensReaTypes,0)==true){
+            
+        }
     }    
     public String printInfo(){
         return "";
