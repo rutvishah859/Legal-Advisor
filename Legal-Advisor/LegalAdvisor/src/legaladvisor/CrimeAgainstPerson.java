@@ -13,7 +13,7 @@ public class CrimeAgainstPerson extends CriminalCase{
     private String assaultkeywords[]={"attacked","beat up","hit","hurt","insulted","kicked","punched","raped"};
     public CrimeAgainstPerson( String rem, String typ, String jur , String crim, String sen, String tOO){
             super(rem, typ, jur, crim, sen);
-            this.typeOfOffence = this.setTypeOfOffence();
+            typeOfOffence=tOO;
         
     }
     public String getTypeOfOffence() {
