@@ -23,16 +23,19 @@ public class CrimeAgainstPerson extends CriminalCase{
         String sentence;
         if(SearchMechanism(keyword,murderkeywords,0)==true){
         if(mensRea.equalsIgnoreCase("motive,intent,knowledge")){
+            this.setTypeOfOffence("indictable");
             crimeType=crimeTypes[0];
             sentence="The maximum sentence is life in jail";
             super.setSentence(sentence);
         }
         else if(mensRea.equalsIgnoreCase("motive")||mensRea.equalsIgnoreCase("intent")||mensRea.equalsIgnoreCase("knowledge")){
+            this.setTypeOfOffence("indictable");
             crimeType=crimeTypes[1];
             sentence="The maximum sentence is life in jail with possibility for parole after 10 years";
             super.setSentence(sentence);
         }
         else if(mensRea.equalsIgnoreCase("criminal negligence")||mensRea.equalsIgnoreCase("recklessness")||mensRea.equalsIgnoreCase("willful blindness")){
+            this.setTypeOfOffence("indictable");
             crimeType=crimeTypes[2];
             sentence="The minimum sentence is 4-7 years in jail";
             super.setSentence(sentence);
@@ -42,17 +45,19 @@ public class CrimeAgainstPerson extends CriminalCase{
         }
         }
         if(SearchMechanism(keyword,assaultkeywords,0)==true){
+            this.setTypeOfOffence("indictable");
             if(keyword.equalsIgnoreCase(assaultkeywords[4])){
                 crimeType=crimeTypes[6];
                 sentence="The maximum sentence is 10 years in jail";
                 super.setSentence(sentence);
+                
             }
             else if(keyword.equalsIgnoreCase(assaultkeywords[7])){
                 crimeType=crimeTypes[5];
                 sentence="The maximum sentence is life in jail";
                 super.setSentence(sentence);
             }
-            else if(weapon==true){
+            else if(isWeapon()==true){
                 crimeType=crimeTypes[4];
                 sentence="The maximum sentence is 14 years in jail";
                 super.setSentence(sentence);
@@ -96,6 +101,18 @@ public class CrimeAgainstPerson extends CriminalCase{
         else{
             return SearchMechanism(keyword,a,n+1);
         }
+    }
+    public void setTypeOfOffence(String typeOfOffence) {
+        this.typeOfOffence = typeOfOffence;
+    }
+    public String getCrimeType() {
+        return crimeType;
+    }
+    public boolean isWeapon() {
+        return weapon;
+    }
+    public void setWeapon(boolean weapon) {
+        this.weapon = weapon;
     }
     
 }
