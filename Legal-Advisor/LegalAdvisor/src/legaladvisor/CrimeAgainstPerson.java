@@ -21,7 +21,7 @@ public class CrimeAgainstPerson extends CriminalCase{
     }
     public void setCrimeTypeAndSentence(String keyword){
         String sentence;
-        if(SearchMechanism(keyword,murderkeywords,0)==true){
+        if(super.SearchMechanism(keyword,murderkeywords,0)==true){
         if(mensRea.equalsIgnoreCase("motive,intent,knowledge")){
             this.setTypeOfOffence("indictable");
             crimeType=crimeTypes[0];
@@ -44,7 +44,7 @@ public class CrimeAgainstPerson extends CriminalCase{
             crimeType="Not murder";
         }
         }
-        if(SearchMechanism(keyword,assaultkeywords,0)==true){
+        if(super.SearchMechanism(keyword,assaultkeywords,0)==true){
             this.setTypeOfOffence("indictable");
             if(keyword.equalsIgnoreCase(assaultkeywords[4])){
                 crimeType=crimeTypes[6];
@@ -73,7 +73,7 @@ public class CrimeAgainstPerson extends CriminalCase{
         }
     }
     public void setMensRea(String keyword){
-        if(SearchMechanism(keyword,mensReaTypes,0)==true){
+        if(super.SearchMechanism(keyword,mensReaTypes,0)==true){
             if(keyword.equalsIgnoreCase(mensReaTypes[6])||keyword.equalsIgnoreCase(mensReaTypes[7])){
                 mensRea="motive,intent,knowledge";
             }
@@ -94,14 +94,14 @@ public class CrimeAgainstPerson extends CriminalCase{
     public String printInfo(){
         return "";
     }
-    public boolean SearchMechanism(String keyword, String a[],int n){
+    /*public boolean SearchMechanism(String keyword, String a[],int n){
         if(a[n].equalsIgnoreCase(keyword)){
             return true;
         }
         else{
             return SearchMechanism(keyword,a,n+1);
         }
-    }
+    }*/
     public void setTypeOfOffence(String typeOfOffence) {
         this.typeOfOffence = typeOfOffence;
     }

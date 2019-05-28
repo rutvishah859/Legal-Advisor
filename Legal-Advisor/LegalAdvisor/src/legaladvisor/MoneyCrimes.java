@@ -14,6 +14,7 @@ public class MoneyCrimes extends CriminalCase {
     private boolean violence;
     private String typeOfProperty; 
     private String crimeType; 
+    private String keyWords []=  {"fraud", "credit", "card", "mortgage", "trading", "tax", "theft", "stole"};
     
     public MoneyCrimes (String rem, String typ, String jur, String crim, String sen, double amtSt, boolean viol, String typeProp){
         super(rem,typ,jur,crim,sen);
@@ -23,6 +24,7 @@ public class MoneyCrimes extends CriminalCase {
     }
     
     public void setCrimeAndSentence (){
+        String sentence; 
         
     }
 
