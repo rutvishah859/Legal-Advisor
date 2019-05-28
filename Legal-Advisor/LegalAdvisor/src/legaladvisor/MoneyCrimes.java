@@ -9,6 +9,34 @@ package legaladvisor;
  *
  * @author 325075141
  */
-public class MoneyCrimes {
+public class MoneyCrimes extends CriminalCase {
+    private double amtStolen; 
+    private boolean violence;
+    private String typeOfProperty; 
+    private String crimeType; 
     
+    public MoneyCrimes (String rem, String typ, String jur, String crim, String sen, double amtSt, boolean viol, String typeProp){
+        super(rem,typ,jur,crim,sen);
+        this.amtStolen = amtSt; 
+        this.violence = viol; 
+        this.typeOfProperty = typeProp; 
+    }
+    
+    public void setCrimeAndSentence (){
+        
+    }
+
+    public double getAmtStolen() {
+        return amtStolen;
+    }
+
+
+    public boolean getViolence() {
+        return violence;
+    }
+
+    public String getTypeOfProperty() {
+        return typeOfProperty;
+    }
+     
 }
