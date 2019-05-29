@@ -59,9 +59,6 @@ public class CrimeAgainstPerson extends CriminalCase{
                 super.setSentence("The maximum sentence is 10 years in jail");
             }
         }
-        else{
-            crimeType="Not a crime against a person";
-        }
     }
     public void setMensRea(String keyword){
         if(super.SearchMechanism(keyword,mensReaTypes,0)==true){

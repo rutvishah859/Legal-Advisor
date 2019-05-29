@@ -24,7 +24,6 @@ public abstract class CriminalCase extends Case {
     }
     public boolean SearchMechanism(String keyword, String a[],int n){
         if(a[n].equalsIgnoreCase(keyword)){
-            System.out.println(n);
             return true;
         }
         else if(n<a.length-1){
@@ -33,6 +32,7 @@ public abstract class CriminalCase extends Case {
         else{
             return false;
         }
+        
     }
     
     public String printInfo(){
