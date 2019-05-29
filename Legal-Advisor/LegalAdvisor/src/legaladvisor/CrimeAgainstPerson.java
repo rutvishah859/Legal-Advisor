@@ -105,5 +105,8 @@ public class CrimeAgainstPerson extends CriminalCase{
     public void setWeapon(boolean weapon) {
         this.weapon = weapon;
     }
+    public String getMensRea(){
+        return mensRea;
+    }
     
 }
