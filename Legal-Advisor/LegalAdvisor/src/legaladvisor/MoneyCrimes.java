@@ -1,14 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package legaladvisor;
-
-/**
- *
- * @author 325075141
- */
 public class MoneyCrimes extends CriminalCase {
     private double amtStolen; 
     private boolean violence;
@@ -31,6 +21,12 @@ public class MoneyCrimes extends CriminalCase {
         String sentence; 
         if (super.SearchMechanism(keyword, fraud, 0)){
             this.crimeType = crimeTypes [0]; 
+            if(amtStolen<5000){
+            super.setSentence("Maximum Sentence is 6 months in jail ora 5000$ fine.");
+            }
+            else{
+            super.setSentence("Minimum Sentence is 2 years in jail and the Maximum is 14 years in jail.");
+            }
         }
         else if (super.SearchMechanism(keyword, electronicCrime, 0)){
             this.crimeType = crimeTypes [1]; 
