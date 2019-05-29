@@ -14,7 +14,6 @@ public class MoneyCrimes extends CriminalCase {
     private boolean violence;
     private String typeOfProperty; 
     private String crimeType; 
-    //private String keyWords []=  {"fraud", "credit", "card", "mortgage", "trading", "tax", "theft", "stole"};
     private String crimeTypes [] = {"fraud", "electronic crime", "money laundering", "theft"}; 
     private String fraud [] = {"transfered funds", "investment", "bank"};  
     private String electronicCrime [] = {"computer", "app", "phone", "online banking"};
