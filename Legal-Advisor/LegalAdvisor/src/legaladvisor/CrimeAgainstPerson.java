@@ -13,8 +13,7 @@ public class CrimeAgainstPerson extends CriminalCase{
     private String assaultkeywords[]={"attacked","beat up","hit","hurt","insulted","kicked","punched","raped"};
     public CrimeAgainstPerson( String rem, String typ, String jur , String crim, String sen, String tOO){
             super(rem, typ, jur, crim, sen);
-            typeOfOffence=tOO;
-        
+            typeOfOffence=tOO;    
     }
     public String getTypeOfOffence() {
         return typeOfOffence;
@@ -94,14 +93,6 @@ public class CrimeAgainstPerson extends CriminalCase{
     public String printInfo(){
         return "";
     }
-    /*public boolean SearchMechanism(String keyword, String a[],int n){
-        if(a[n].equalsIgnoreCase(keyword)){
-            return true;
-        }
-        else{
-            return SearchMechanism(keyword,a,n+1);
-        }
-    }*/
     public void setTypeOfOffence(String typeOfOffence) {
         this.typeOfOffence = typeOfOffence;
     }
