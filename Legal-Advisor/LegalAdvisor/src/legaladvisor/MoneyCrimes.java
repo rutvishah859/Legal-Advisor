@@ -19,7 +19,7 @@ public class MoneyCrimes extends CriminalCase {
     private String fraud [] = {"transfered funds", "investment", "bank"};  
     private String electronicCrime [] = {"computer", "app", "phone", "online banking"};
     private String moneyLaundering [] = {"fake money"}; 
-    private String theft [] = {"stole"}; 
+    private String theft [] = {"stole", "took", "does not own"}; 
             
     public MoneyCrimes (String rem, String typ, String jur, String crim, String sen, double amtSt, boolean viol, String typeProp){
         super(rem,typ,jur,crim,sen);
