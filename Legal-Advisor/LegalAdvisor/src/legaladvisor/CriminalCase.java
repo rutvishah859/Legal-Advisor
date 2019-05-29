@@ -22,16 +22,12 @@ public abstract class CriminalCase extends Case {
     public void setSentence(String sentence) {
         this.sentence = sentence;
     }
-    public boolean SearchMechanism(String keyword, String a[],int n){
-        if(a[n].equalsIgnoreCase(keyword)){
-            return true;
-        }
-        else{
-            return SearchMechanism(keyword,a,n+1);
-        }
-    }
     
     public String printInfo(){
         return "Jurisdiction: " + this.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + this.crime + "";
+    }
+
+    boolean SearchMechanism(String keyword, String[] murderkeywords, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
