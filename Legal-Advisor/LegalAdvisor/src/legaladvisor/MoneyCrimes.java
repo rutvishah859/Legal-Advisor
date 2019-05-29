@@ -19,7 +19,6 @@ public class MoneyCrimes extends CriminalCase {
     
     public void setCrimeAndSentence (String keyword){
         if (super.SearchMechanism(keyword, fraud, 0)){
-<<<<<<< HEAD
             this.crimeType = crimeTypes [0]; 
             if(amtStolen<5000){
             super.setSentence("Maximum Sentence is 6 months in jail ora 5000$ fine.");
@@ -27,9 +26,6 @@ public class MoneyCrimes extends CriminalCase {
             else{
             super.setSentence("Minimum Sentence is 2 years in jail and the Maximum is 14 years in jail.");
             }
-=======
-            this.crimeType = crimeTypes [0];
->>>>>>> 808ed39f6d142659737b94a6666437fa31e77462
         }
         else if (super.SearchMechanism(keyword, electronicCrime, 0)){
             this.crimeType = crimeTypes [1]; 
