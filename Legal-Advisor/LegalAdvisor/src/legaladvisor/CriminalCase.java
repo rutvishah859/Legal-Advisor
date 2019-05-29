@@ -24,10 +24,14 @@ public abstract class CriminalCase extends Case {
     }
     public boolean SearchMechanism(String keyword, String a[],int n){
         if(a[n].equalsIgnoreCase(keyword)){
+            System.out.println(n);
             return true;
         }
-        else{
+        else if(n<a.length-1){
             return SearchMechanism(keyword,a,n+1);
+        }
+        else{
+            return false;
         }
     }
     
