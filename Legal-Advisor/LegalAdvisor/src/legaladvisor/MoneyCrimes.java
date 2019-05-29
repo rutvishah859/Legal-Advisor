@@ -28,9 +28,8 @@ public class MoneyCrimes extends CriminalCase {
     }
     
     public void setCrimeAndSentence (String keyword){
-        String sentence; 
         if (super.SearchMechanism(keyword, fraud, 0)){
-            this.crimeType = crimeTypes [0]; 
+            this.crimeType = crimeTypes [0];
         }
         else if (super.SearchMechanism(keyword, electronicCrime, 0)){
             this.crimeType = crimeTypes [1]; 
