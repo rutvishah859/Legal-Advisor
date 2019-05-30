@@ -11,24 +11,38 @@ public class caseChecker extends Case{
     private String Case; 
     private Case cal; 
     private String keyWord;
+    private String [] wordBank; //a bank of key words found in the text file
     private File caseFile; 
     
     public caseChecker(String rem, String typ, String jur,File complaint) throws IOException {
         super(rem, typ, jur);
         caseFile = complaint; 
-        try { 
-            BufferedReader br =  new BufferedReader (new FileReader (caseFile));
-            String st; 
-             while ((st = br.readLine()) != null) 
-                System.out.println(st); 
-             
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(caseChecker.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     String printInfo() {
+        String st = null; 
+        String s = ""; 
+        try { 
+            BufferedReader br =  new BufferedReader (new FileReader (this.caseFile));
+            try {
+                while ((st = br.readLine()) != null){
+                    s += st + " ";
+                }
+                return s; 
+            } catch (IOException ex) {
+                Logger.getLogger(caseChecker.class.getName()).log(Level.SEVERE, null, ex);
+            }
+             
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(caseChecker.class.getName()).log(Level.SEVERE, null, ex);
+        } 
         return null; 
-    }
+    } 
     
+    //methods that cecks if any of the types cases apply to the this complaint
+    //each case type class will call this method to check if any of their clases apply here
+    public boolean findKeyWords (/*String [] words*/ String word){
+        //String [] complaintText = this.printInfo().split(\\s);
+         return false; 
+    }
 }
