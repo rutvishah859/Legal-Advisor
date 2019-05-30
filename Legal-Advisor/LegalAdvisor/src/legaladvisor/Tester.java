@@ -4,7 +4,7 @@ public class Tester {
         CrimeAgainstPerson c1= new CrimeAgainstPerson("None","Criminal","Ontario","Crime Against The Person","null","indictable");
         c1.setMensRea("accident");
         System.out.println(c1.getMensRea());
-       c1.setCrimeTypeAndSentence("killed");
+        c1.setCrimeTypeAndSentence("killed");
         System.out.println(c1.getCrimeType());
     }
 }
