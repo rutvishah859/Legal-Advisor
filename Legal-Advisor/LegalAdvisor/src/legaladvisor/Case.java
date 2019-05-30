@@ -37,5 +37,17 @@ package legaladvisor;
     public String getJurisdiction(){
         return this.jurisdiction;
     }
-    abstract String printInfo();        
+    abstract String printInfo();   
+    public boolean SearchMechanism(String keyword, String a[],int n){
+        if(a[n].equalsIgnoreCase(keyword)){
+            return true;
+        }
+        else if(n<a.length-1){
+            return SearchMechanism(keyword,a,n+1);
+        }
+        else{
+            return false;
+        }
+        
+    }
 }
