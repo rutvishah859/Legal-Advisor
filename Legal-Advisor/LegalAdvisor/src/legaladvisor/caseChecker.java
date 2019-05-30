@@ -13,11 +13,15 @@ public class caseChecker extends Case{
     private String keyWord;
     private File caseFile; 
     
-    public caseChecker(String rem, String typ, String jur,File complaint) {
+    public caseChecker(String rem, String typ, String jur,File complaint) throws IOException {
         super(rem, typ, jur);
-        caseFile = new File ("H:\\GitHub\\Legal-Advisor\\Legal-Advisor\\LegalAdvisor\\src\\legaladvisor");
+        caseFile = complaint; 
         try { 
             BufferedReader br =  new BufferedReader (new FileReader (caseFile));
+            String st; 
+             while ((st = br.readLine()) != null) 
+                System.out.println(st); 
+             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(caseChecker.class.getName()).log(Level.SEVERE, null, ex);
         }
