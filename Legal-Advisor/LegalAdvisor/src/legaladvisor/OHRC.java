@@ -13,7 +13,8 @@ public class OHRC extends HumanRights{
     private String grounds; 
     private String area; 
     private String typeOfDis; 
-    
+    public String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","citizenship","culture","disabled","mental disability","physical disability","pregnancy","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
+    private String areaKeywords[]={"rent","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
     public OHRC(String rem, String typ, String jur, String gr, String ar, String typeDis) {
         super(rem, typ, jur);
         this.grounds = gr; 
@@ -25,8 +26,10 @@ public class OHRC extends HumanRights{
         return grounds;
     }
 
-    public void setGrounds(String grounds) {
-        this.grounds = grounds;
+    public void setGrounds(String keyword) {
+        if(super.SearchMechanism(keyword, groundKeywords, 0)==true){
+            
+        }
     }
 
     public String getArea() {
