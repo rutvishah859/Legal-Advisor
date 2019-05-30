@@ -54,7 +54,7 @@ package legaladvisor;
     public void setIndexforSearchMechanism(int indexforSearchMechanism) {
         this.indexforSearchMechanism = indexforSearchMechanism;
     }
-    public int getIndexforSearchMechanism() {
+    public int getISM() {
         return indexforSearchMechanism;
     }
     
