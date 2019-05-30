@@ -16,19 +16,25 @@ public class caseChecker extends Case{
     public caseChecker(String rem, String typ, String jur,File complaint) throws IOException {
         super(rem, typ, jur);
         caseFile = complaint; 
-        try { 
-            BufferedReader br =  new BufferedReader (new FileReader (caseFile));
-            String st; 
-             while ((st = br.readLine()) != null) 
-                System.out.println(st); 
-             
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(caseChecker.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     String printInfo() {
+        String st = null; 
+        String s = ""; 
+        try { 
+            BufferedReader br =  new BufferedReader (new FileReader (caseFile));
+            try {
+                while ((st = br.readLine()) != null){
+                    s += st + " ";
+                }
+                return s; 
+            } catch (IOException ex) {
+                Logger.getLogger(caseChecker.class.getName()).log(Level.SEVERE, null, ex);
+            }
+             
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(caseChecker.class.getName()).log(Level.SEVERE, null, ex);
+        } 
         return null; 
-    }
-    
+    }   
 }
