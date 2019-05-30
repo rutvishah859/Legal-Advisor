@@ -4,9 +4,9 @@ public class MoneyCrimes extends CriminalCase {
     private boolean violence;
     private String typeOfProperty; 
     private String crimeType; 
-    private String crimeTypes [] = {"fraud", "electronic crime", "money laundering", "theft"}; 
-    private String fraud [] = {"transfered funds", "investment", "bank"};  
-    private String electronicCrime [] = {"computer", "app", "phone", "online banking"};
+    private String crimeTypes [] = {"fraud", "robbery", "money laundering", "theft"}; 
+    private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online banking"};  
+    private String robbery [] = {"forced","stole","broke in","threatened","forcefully stole"};
     private String moneyLaundering [] = {"fake money"}; 
     private String theft [] = {"stole", "took", "does not own"}; 
             
@@ -21,20 +21,23 @@ public class MoneyCrimes extends CriminalCase {
         if (super.SearchMechanism(keyword, fraud, 0)){
             this.crimeType = crimeTypes [0]; 
             if(amtStolen<5000){
-            super.setSentence("Maximum Sentence is 6 months in jail ora 5000$ fine.");
+            super.setSentence("Maximum Sentence is 6 months in jail or a 5000$ fine.");
             }
             else{
             super.setSentence("Minimum Sentence is 2 years in jail and the Maximum is 14 years in jail.");
             }
         }
-        else if (super.SearchMechanism(keyword, electronicCrime, 0)){
+        else if (super.SearchMechanism(keyword, robbery, 0)){
             this.crimeType = crimeTypes [1]; 
+            super.setSentence("Minimum sentence is 5 years in jail.");
         }
         else if(super.SearchMechanism(keyword, moneyLaundering, 0)){
             this.crimeType = crimeTypes [2]; 
+            super.setSentence("Minimum sentence is 6 months in jail or a 5000$ fine and the Maximum Sentence is 10 years.");
         }
         else if (super.SearchMechanism(keyword, theft, 0)){
             this.crimeType = crimeTypes [3]; 
+            super.setSentence("Maximum sentence is 10 years in jail.");
         }
         else {
             crimeType = "not a crime against person"; 
