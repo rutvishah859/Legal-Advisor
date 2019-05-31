@@ -59,6 +59,7 @@ public class MoneyCrimes extends CriminalCase {
         }
         
     }
+    }
     public double getAmtStolen(){
         return amtStolen;
     }
