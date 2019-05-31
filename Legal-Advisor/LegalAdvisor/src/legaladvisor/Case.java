@@ -1,19 +1,28 @@
 package legaladvisor; 
 
     public abstract class Case {
-    
+
     private String remedies;
     private String type;
     private String jurisdiction;
     private boolean trialNeeded;
     private int indexforSearchMechanism;
-    //MoneyCrime key words
-    private String crimeTypes [] = {"fraud", "robbery", "money laundering", "theft"};
+    //MoneyCrime keywords
+    private String crimeTypes1 [] = {"fraud", "robbery", "money laundering", "theft"};
     private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online banking"};    
     private String electronicCrime [] = {"computer", "app", "phone", "online banking"};
     private String moneyLaundering [] = {"fake money"}; 
     private String theft [] = {"stole", "took", "does not own"}; 
     private String robbery [] = {"forced","stole","broke in","threatened","forcefully stole"}; 
+    //CrimeAgainstPerson keywords 
+    private String mensReaTypes[]={"accident","did not intend","did not mean to","reckless","risky","ignored","planned","intended","did not know","out of nowhere"};
+    private String crimeTypes2[]={"First Degree Murder","Second Degree Murder","Manslaughter","Physical Assault","Aggravated Assault","Sexual Assault","Verbal Assault"};
+    private String murderkeywords []={"assissinated","executed","finished off","kill","killed"};
+    private String assaultkeywords[]={"attacked","beat up","hit","hurt","insulted","kicked","punched","raped"};
+    //OHRC keywords
+    private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
+    private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
+    
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
         this.type = typ;
@@ -68,8 +77,8 @@ package legaladvisor;
     /**
      * @return the crimeTypes
      */
-    public String[] getCrimeTypes() {
-        return crimeTypes;
+    public String[] getCrimeTypes1() {
+        return crimeTypes1;
     }
 
     /**
@@ -107,5 +116,45 @@ package legaladvisor;
         return robbery;
     }
     
-    
+    /**
+     * @return the mensReaTypes
+     */
+    public String[] getMensReaTypes() {
+        return mensReaTypes;
+    }
+
+    /**
+     * @return the crimeTypes2
+     */
+    public String[] getCrimeTypes2() {
+        return crimeTypes2;
+    }
+
+    /**
+     * @return the murderkeywords
+     */
+    public String[] getMurderkeywords() {
+        return murderkeywords;
+    }
+
+    /**
+     * @return the assaultkeywords
+     */
+    public String[] getAssaultkeywords() {
+        return assaultkeywords;
+    }
+
+    /**
+     * @return the groundKeywords
+     */
+    public String[] getGroundKeywords() {
+        return groundKeywords;
+    }
+
+    /**
+     * @return the areaKeywords
+     */
+    public String[] getAreaKeywords() {
+        return areaKeywords;
+    }
 }
