@@ -3,9 +3,7 @@ public class MoneyCrimes extends CriminalCase {
     private double amtStolen; 
     private boolean violence;
     private String typeOfProperty; 
-    private String crimeType; 
-    //private String keyWords []=  {"fraud", "credit", "card", "mortgage", "trading", "tax", "theft", "stole"};
-    
+    private String crimeType;     
             
     public MoneyCrimes (String rem, String typ, String jur, String crim, String sen, double amtSt, boolean viol, String typeProp){
         super(rem,typ,jur,crim,sen);

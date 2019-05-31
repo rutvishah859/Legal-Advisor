@@ -2,8 +2,8 @@ package legaladvisor;
 public class OHRC extends HumanRights{
     private String grounds; 
     private String area; 
-    private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
-    private String areaKeywords[]={"rent","house","promotion","work","employment","hired","fired","member","group","union","club","team","hospital","restaurant","movie theater","school","service","place","contract"};
+    private String typeOfDis; 
+    
     public OHRC(String rem, String typ, String jur, String gr, String ar) {
         super(rem, typ, jur);
         this.grounds = gr; 
