@@ -3,8 +3,12 @@ public class OHRC extends HumanRights{
     private String grounds; 
     private String area; 
     private String typeOfDis; 
+<<<<<<< HEAD
+    
+=======
     private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
     private String areaKeywords[]={"rent","house","promotion","work","employment","hired","fired","member","group","union","club","team","hospital","restaurant","movie theater","school","service","place","contract"};
+>>>>>>> bb515100f9bf4848c32d47ed2b6d06ec56b5f9c2
     public OHRC(String rem, String typ, String jur, String gr, String ar, String typeDis) {
         super(rem, typ, jur);
         this.grounds = gr; 
@@ -17,7 +21,7 @@ public class OHRC extends HumanRights{
     }
 
     public void setGrounds(String keyword) {
-        if(super.SearchMechanism(keyword, groundKeywords, 0)==true){
+        if(super.SearchMechanism(keyword, getGroundKeywords(), 0)==true){
             if(this.getISM()>=0&&this.getISM()<3){
                 this.grounds="Race";
             }
@@ -57,7 +61,7 @@ public class OHRC extends HumanRights{
         return area;
     }
     public void setArea(String keyword) {
-        if(super.SearchMechanism(keyword, areaKeywords, 0)==true){
+        if(super.SearchMechanism(keyword, getAreaKeywords(), 0)==true){
             if(this.getISM()==0||this.getISM()==1){
                 this.area="Occupancy of accomodation";
             }
