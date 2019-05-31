@@ -4,7 +4,7 @@ public class OHRC extends HumanRights{
     private String area; 
     private String typeOfDis; 
     public String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
-    private String areaKeywords[]={"rent","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
+    private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
     public OHRC(String rem, String typ, String jur, String gr, String ar, String typeDis) {
         super(rem, typ, jur);
         this.grounds = gr; 
@@ -19,47 +19,62 @@ public class OHRC extends HumanRights{
     public void setGrounds(String keyword) {
         if(super.SearchMechanism(keyword, groundKeywords, 0)==true){
             if(this.getISM()>=0&&this.getISM()<3){
-                grounds="Race";
+                this.grounds="Race";
             }
             else if(this.getISM()>=3&&this.getISM()<8){
-                grounds="Creed";
+                this.grounds="Creed";
             }
             else if(this.getISM()>=8&&this.getISM()<15){
-                grounds="Sex";
+                this.grounds="Sex";
             }
             else if(this.getISM()==15){
-                grounds="Citizenship";
+                this.grounds="Citizenship";
             }
             else if(this.getISM()==16){
-                grounds="Ethnic origin";
+                this.grounds="Ethnic origin";
             }
             else if(this.getISM()>=17&&this.getISM()<20){
-                grounds="Handicap";
+                this.grounds="Handicap";
             }
             else if(this.getISM()>=20&&this.getISM()<26){
-                grounds="Sexual Orientation";
+                this.grounds="Sexual Orientation";
             }
             else if(this.getISM()==26||this.getISM()==27){
-                grounds="Marital Status";
+                this.grounds="Marital Status";
             }
             else if(this.getISM()==28||this.getISM()==29){
-                grounds="Family Status";
+                this.grounds="Family Status";
             }
             else if(this.getISM()==30||this.getISM()==31){
-                grounds="Age";
+                this.grounds="Age";
             }
             else{
-                grounds="Receipt of public assistance";
+                this.grounds="Receipt of public assistance";
             }
         }
     }
-
     public String getArea() {
         return area;
     }
-
-    public void setArea(String area) {
-        this.area = area;
+    public void setArea(String keyword) {
+        if(super.SearchMechanism(keyword, areaKeywords, 0)==true){
+            if(this.getISM()==0||this.getISM()==1){
+                this.area="Occupancy of accomodation";
+            }
+            else if(this.getISM()>=2&&this.getISM()<6){
+                this.area="Employment";
+            }
+            else if(this.getISM()>=6&&this.getISM()<9){
+                this.area="Membership in vocational associations and trade unions";
+            }
+            else if(this.getISM()>=9&&this.getISM()<15){
+                this.area="Goods, services, and facilities";
+            }
+            else if(this.getISM()==15){
+                this.area="Contracts";
+            }
+        }
+        
     }
 
     public String getTypeOfDis() {
