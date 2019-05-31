@@ -6,7 +6,7 @@ package legaladvisor;
     private String type;
     private String jurisdiction;
     private boolean trialNeeded;
-    
+    private int indexforSearchMechanism;
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
         this.type = typ;
@@ -37,5 +37,25 @@ package legaladvisor;
     public String getJurisdiction(){
         return this.jurisdiction;
     }
-    abstract String printInfo();        
+    abstract String printInfo();   
+    public boolean SearchMechanism(String keyword, String a[],int n){
+        if(a[n].equalsIgnoreCase(keyword)){
+            this.setIndexforSearchMechanism(n);
+            return true;
+        }
+        else if(n<a.length-1){
+            return SearchMechanism(keyword,a,n+1);
+        }
+        else{
+            return false;
+        }
+        
+    }
+    public void setIndexforSearchMechanism(int indexforSearchMechanism) {
+        this.indexforSearchMechanism = indexforSearchMechanism;
+    }
+    public int getISM() {
+        return indexforSearchMechanism;
+    }
+    
 }

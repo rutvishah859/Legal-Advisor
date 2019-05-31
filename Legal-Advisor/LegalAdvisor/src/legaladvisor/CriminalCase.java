@@ -22,7 +22,10 @@ public abstract class CriminalCase extends Case {
     public void setSentence(String sentence) {
         this.sentence = sentence;
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 4034e5632badbdf4c0e592af43b9cc3dd81661c9
     public String printInfo(){
         return "Jurisdiction: " + this.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + this.crime + "";
     }
