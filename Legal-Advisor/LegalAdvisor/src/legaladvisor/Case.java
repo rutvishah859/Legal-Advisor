@@ -7,6 +7,13 @@ package legaladvisor;
     private String jurisdiction;
     private boolean trialNeeded;
     private int indexforSearchMechanism;
+    //MoneyCrime key words
+    private String crimeTypes [] = {"fraud", "robbery", "money laundering", "theft"};
+    private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online banking"};    
+    private String electronicCrime [] = {"computer", "app", "phone", "online banking"};
+    private String moneyLaundering [] = {"fake money"}; 
+    private String theft [] = {"stole", "took", "does not own"}; 
+    private String robbery [] = {"forced","stole","broke in","threatened","forcefully stole"}; 
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
         this.type = typ;
@@ -56,5 +63,48 @@ package legaladvisor;
     public int getISM() {
         return indexforSearchMechanism;
     }
+
+    /**
+     * @return the crimeTypes
+     */
+    public String[] getCrimeTypes() {
+        return crimeTypes;
+    }
+
+    /**
+     * @return the fraud
+     */
+    public String[] getFraud() {
+        return fraud;
+    }
+
+    /**
+     * @return the electronicCrime
+     */
+    public String[] getElectronicCrime() {
+        return electronicCrime;
+    }
+
+    /**
+     * @return the moneyLaundering
+     */
+    public String[] getMoneyLaundering() {
+        return moneyLaundering;
+    }
+
+    /**
+     * @return the theft
+     */
+    public String[] getTheft() {
+        return theft;
+    }
+
+    /**
+     * @return the robbery
+     */
+    public String[] getRobbery() {
+        return robbery;
+    }
+    
     
 }
