@@ -7,10 +7,7 @@ public class CrimeAgainstPerson extends CriminalCase{
     private String mensRea;
     private String crimeType;
     private boolean weapon;
-    private String mensReaTypes[]={"accident","did not intend","did not mean to","reckless","risky","ignored","planned","intended","did not know","out of nowhere"};
-    private String crimeTypes[]={"First Degree Murder","Second Degree Murder","Manslaughter","Physical Assault","Aggravated Assault","Sexual Assault","Verbal Assault"};
-    private String murderkeywords []={"assissinated","executed","finished off","kill","killed"};
-    private String assaultkeywords[]={"attacked","beat up","hit","hurt","insulted","kicked","punched","raped"};
+
     public CrimeAgainstPerson( String rem, String typ, String jur , String crim, String sen, String tOO){
             super(rem, typ, jur, crim, sen);
             typeOfOffence=tOO;    
@@ -19,59 +16,59 @@ public class CrimeAgainstPerson extends CriminalCase{
         return typeOfOffence;
     }
     public void setCrimeTypeAndSentence(String keyword){
-        if(super.SearchMechanism(keyword,murderkeywords,0)==true){
+        if(super.SearchMechanism(keyword, super.getMurderkeywords(),0)==true){
             if(mensRea.equalsIgnoreCase("motive,intent,knowledge")){
                 this.setTypeOfOffence("indictable");
-                crimeType=crimeTypes[0];
+                crimeType= super.getCrimeTypes2()[0];
                 super.setSentence("The maximum sentence is life in jail");
             }
             else if(mensRea.equalsIgnoreCase("motive")||mensRea.equalsIgnoreCase("intent")||mensRea.equalsIgnoreCase("knowledge")){
                 this.setTypeOfOffence("indictable");
-                crimeType=crimeTypes[1];
+                crimeType= super.getCrimeTypes2()[1];
                 super.setSentence("The maximum sentence is life in jail with possibility for parole after 10 years");
             }
             else if(mensRea.equalsIgnoreCase("criminal negligence")||mensRea.equalsIgnoreCase("recklessness")||mensRea.equalsIgnoreCase("willful blindness")){
                 this.setTypeOfOffence("indictable");
-                crimeType=crimeTypes[2];
+                crimeType= super.getCrimeTypes2()[2];
                 super.setSentence("The minimum sentence is 4-7 years in jail");
             }
             else{
                 crimeType="Not murder";
             }
         }
-        if(super.SearchMechanism(keyword,assaultkeywords,0)==true){
+        if(super.SearchMechanism(keyword,super.getAssaultkeywords(),0)==true){
             this.setTypeOfOffence("indictable");
-            if(keyword.equalsIgnoreCase(assaultkeywords[4])){
-                crimeType=crimeTypes[6];
+            if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[4])){
+                crimeType= super.getCrimeTypes2()[6];
                 super.setSentence("The maximum sentence is 10 years in jail");
                 
             }
-            else if(keyword.equalsIgnoreCase(assaultkeywords[7])){
-                crimeType=crimeTypes[5];
+            else if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[7])){
+                crimeType= super.getCrimeTypes2()[5];
                 super.setSentence("The maximum sentence is life in jail");
             }
             else if(isWeapon()==true){
-                crimeType=crimeTypes[4];
+                crimeType= super.getCrimeTypes2()[4];
                 super.setSentence("The maximum sentence is 14 years in jail");
             }
             else{
-                crimeType=crimeTypes[3];
+                crimeType= super.getCrimeTypes2()[3];
                 super.setSentence("The maximum sentence is 10 years in jail");
             }
         }
     }
     public void setMensRea(String keyword){
-        if(super.SearchMechanism(keyword,mensReaTypes,0)==true){
-            if(keyword.equalsIgnoreCase(mensReaTypes[6])||keyword.equalsIgnoreCase(mensReaTypes[7])){
+        if(super.SearchMechanism(keyword,super.getMensReaTypes(),0)==true){
+            if(keyword.equalsIgnoreCase(super.getMensReaTypes()[6])||keyword.equalsIgnoreCase(super.getMensReaTypes()[7])){
                 mensRea="motive,intent,knowledge";
             }
-            else if(keyword.equalsIgnoreCase(mensReaTypes[3])||keyword.equalsIgnoreCase(mensReaTypes[4])){
+            else if(keyword.equalsIgnoreCase(super.getMensReaTypes()[3])||keyword.equalsIgnoreCase(super.getMensReaTypes()[4])){
                 mensRea="recklessness";
             }
-            else if(keyword.equalsIgnoreCase(mensReaTypes[5])){
+            else if(keyword.equalsIgnoreCase(super.getMensReaTypes()[5])){
                 mensRea="willful blindness";
             }
-            else if(keyword.equalsIgnoreCase(mensReaTypes[8])){
+            else if(keyword.equalsIgnoreCase(super.getMensReaTypes()[8])){
                 mensRea="criminal negligence";
             }
             else{
