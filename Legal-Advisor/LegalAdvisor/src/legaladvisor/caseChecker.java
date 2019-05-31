@@ -41,8 +41,13 @@ public class caseChecker extends Case{
     
     //methods that cecks if any of the types cases apply to the this complaint
     //each case type class will call this method to check if any of their clases apply here
-    public boolean findKeyWords (/*String [] words*/ String word){
-        //String [] complaintText = this.printInfo().split(\\s);
-         return false; 
+    public boolean findKeyWords (/*String [] words*/ caseChecker caseFile, String word){
+        String [] comText = caseFile.printInfo().split("\\s"));
+        for(String w : comText){  
+            if (w.equals(word)){
+                return true; 
+            }
+        }   
+        return false; 
     }
 }

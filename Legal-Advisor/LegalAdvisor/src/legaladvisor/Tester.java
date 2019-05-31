@@ -12,10 +12,7 @@ public class Tester {
         File c = new File ("H:\\GitHub\\Legal-Advisor\\Legal-Advisor\\LegalAdvisor\\src\\legaladvisor\\caseFile.txt");
         caseChecker cc = new caseChecker ("abc", "abc", "abc", c);
         System.out.println(cc.printInfo()); 
-        String word = "hello"; 
-        String [] comText = cc.printInfo().split("\\s"));
-        for(String w : comText){  
-            System.out.println(w);  
-        }   
+        String word = "is"; 
+        System.out.println(cc.findKeyWords(cc ,word));
     }
 }
