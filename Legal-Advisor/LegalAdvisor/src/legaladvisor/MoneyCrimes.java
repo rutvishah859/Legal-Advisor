@@ -1,27 +1,17 @@
 package legaladvisor;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4034e5632badbdf4c0e592af43b9cc3dd81661c9
 public class MoneyCrimes extends CriminalCase {
     private double amtStolen; 
     private boolean violence;
     private String typeOfProperty; 
     private String crimeType; 
-<<<<<<< HEAD
     //private String keyWords []=  {"fraud", "credit", "card", "mortgage", "trading", "tax", "theft", "stole"};
-    private String crimeTypes [] = {"fraud", "electronic crime", "money laundering", "theft"}; 
-    private String fraud [] = {"transfered funds", "investment", "bank"};  
+    private String crimeTypes [] = {"fraud", "robbery", "money laundering", "theft"};
+    private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online banking"};    
     private String electronicCrime [] = {"computer", "app", "phone", "online banking"};
     private String moneyLaundering [] = {"fake money"}; 
-    private String theft [] = {"stole"}; 
-=======
-    private String crimeTypes [] = {"fraud", "robbery", "money laundering", "theft"}; 
-    private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online banking"};  
-    private String robbery [] = {"forced","stole","broke in","threatened","forcefully stole"};
-    private String moneyLaundering [] = {"fake money"}; 
     private String theft [] = {"stole", "took", "does not own"}; 
->>>>>>> 4034e5632badbdf4c0e592af43b9cc3dd81661c9
+    private String robbery [] = {"forced","stole","broke in","threatened","forcefully stole"}; 
+    
             
     public MoneyCrimes (String rem, String typ, String jur, String crim, String sen, double amtSt, boolean viol, String typeProp){
         super(rem,typ,jur,crim,sen);
@@ -31,8 +21,6 @@ public class MoneyCrimes extends CriminalCase {
     }
     
     public void setCrimeAndSentence (String keyword){
-<<<<<<< HEAD
-        String sentence; 
         if (super.SearchMechanism(keyword, fraud, 0)){
             this.crimeType = crimeTypes [0]; 
         }
@@ -44,7 +32,6 @@ public class MoneyCrimes extends CriminalCase {
         }
         else if (super.SearchMechanism(keyword, theft, 0)){
             this.crimeType = crimeTypes [3]; 
-=======
         if (super.SearchMechanism(keyword, fraud, 0)){
             this.crimeType = crimeTypes [0]; 
             if(amtStolen<5000){
@@ -65,19 +52,17 @@ public class MoneyCrimes extends CriminalCase {
         else if (super.SearchMechanism(keyword, theft, 0)){
             this.crimeType = crimeTypes [3]; 
             super.setSentence("Maximum sentence is 10 years in jail.");
->>>>>>> 4034e5632badbdf4c0e592af43b9cc3dd81661c9
+
         }
         else {
             crimeType = "not a crime against person"; 
         }
         
     }
-
-    public double getAmtStolen() {
+    }
+    public double getAmtStolen(){
         return amtStolen;
     }
-
-
     public boolean getViolence() {
         return violence;
     }
