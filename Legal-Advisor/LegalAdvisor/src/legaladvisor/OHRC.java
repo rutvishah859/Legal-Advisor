@@ -3,8 +3,8 @@ public class OHRC extends HumanRights{
     private String grounds; 
     private String area; 
     private String typeOfDis; 
-    public String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
-    private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
+    private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
+    private String areaKeywords[]={"rent","house","promotion","work","employment","hired","fired","member","group","union","club","team","hospital","restaurant","movie theater","school","service","place","contract"};
     public OHRC(String rem, String typ, String jur, String gr, String ar, String typeDis) {
         super(rem, typ, jur);
         this.grounds = gr; 
@@ -61,31 +61,44 @@ public class OHRC extends HumanRights{
             if(this.getISM()==0||this.getISM()==1){
                 this.area="Occupancy of accomodation";
             }
-            else if(this.getISM()>=2&&this.getISM()<6){
+            else if(this.getISM()>=2&&this.getISM()<7){
                 this.area="Employment";
             }
-            else if(this.getISM()>=6&&this.getISM()<9){
+            else if(this.getISM()>=7&&this.getISM()<12){
                 this.area="Membership in vocational associations and trade unions";
             }
-            else if(this.getISM()>=9&&this.getISM()<15){
-                this.area="Goods, services, and facilities";
+            else if(this.getISM()>=12&&this.getISM()<18){
+                this.area="Goods, services, facilities";
             }
-            else if(this.getISM()==15){
+            else if(this.getISM()==18){
                 this.area="Contracts";
             }
         }
         
     }
-
-    public String getTypeOfDis() {
-        return typeOfDis;
+    public void setRemedies(String keyword){
+        if(this.getArea().equalsIgnoreCase("occupancy of accomodation")){
+            super.setRemedies("The respondent will have to stop the discrimination and offer a letter of apologies. Monetary compensation will also be provided.");
+        }
+        else if(this.getArea().equalsIgnoreCase("employment")){
+            if(keyword.equalsIgnoreCase("promotion")){
+              super.setRemedies("The respondent will have to give you the promotion and pay monetary compensation for any losses that you experienced. The staff will also have to go through HR training.");  
+            }
+            else if(keyword.equalsIgnoreCase("hired")||keyword.equalsIgnoreCase("fired")){
+                super.setRemedies("The respondent will have to hire you and monetary compensation for any losses that you experienced.The staff will also have to go through HR training.");  
+            }
+        }
+        else if(this.getArea().equalsIgnoreCase("goods, services, facilities")){
+            super.setRemedies("The respondent will have to issue you a letter of apology and stop the discriminatory behaviour.");
+        }
+        else if(this.getArea().equalsIgnoreCase("membership in vocational associations and trade unions")){
+            super.setRemedies("The respondent will have to stop the discriminatory behaviour, issue you a letter of apology and the staff will have to go through HR Training.");
+        }
+        else if(this.getArea().equalsIgnoreCase("contracts")){
+            super.setRemedies("The respondent will have to provide you with monetary compensation.");
+        }
     }
-
-    public void setTypeOfDis(String typeOfDis) {
-        this.typeOfDis = typeOfDis;
-    }
-    
-    String printInfo() {
+    public String printInfo() {
         return null; 
     }
     

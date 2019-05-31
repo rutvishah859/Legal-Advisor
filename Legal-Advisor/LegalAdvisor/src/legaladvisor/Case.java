@@ -48,8 +48,7 @@ package legaladvisor;
         }
         else{
             return false;
-        }
-        
+        } 
     }
     public void setIndexforSearchMechanism(int indexforSearchMechanism) {
         this.indexforSearchMechanism = indexforSearchMechanism;
