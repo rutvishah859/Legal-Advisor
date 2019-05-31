@@ -38,13 +38,20 @@ public class caseChecker extends Case{
     //methods that cecks if any of the types cases apply to the this complaint
     //each case type class will call this method to check if any of their clases apply here
     public boolean findKeyWords (/*String [] words*/ caseChecker caseFile, String word){
-        String [] comText = caseFile.printInfo().split("\\s"));
-        //this.wordBank = caseFile.printInfo().split("\\s"));
-        for(String w : comText){  
+        this.setWordBank(caseFile.printInfo().split("\\s")));
+        for(String w : this.getWordBank()){  
             if (w.equals(word)){
                 return true; 
             }
         }   
         return false; 
+    }
+
+    public String[] getWordBank() {
+        return wordBank;
+    }
+
+    public void setWordBank(String[] wordBank) {
+        this.wordBank = wordBank;
     }
 }
