@@ -126,11 +126,9 @@ package legaladvisor;
         return areaKeywords;
     }
 
-
     public String[] getTraffickingTerm() {
         return traffickingTerm;
     }
-
 
     public String[] getDrugType() {
         return drugType;
