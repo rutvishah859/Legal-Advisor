@@ -15,6 +15,7 @@ public class OHRC extends HumanRights{
     }
 
     public void setGrounds(String keyword) {
+        if(this.getJurisdiction().equalsIgnoreCase("Ontario")){
         if(super.SearchMechanism(keyword, getGroundKeywords(), 0)==true){
             if(this.getISM()>=0&&this.getISM()<3){
                 this.grounds="Race";
@@ -50,6 +51,7 @@ public class OHRC extends HumanRights{
                 this.grounds="Receipt of public assistance";
             }
         }
+    }
     }
     public String getArea() {
         return area;

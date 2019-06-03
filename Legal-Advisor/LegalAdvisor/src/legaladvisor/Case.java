@@ -132,4 +132,7 @@ package legaladvisor;
     public String[] getDrugType() {
         return drugType;
     }
+    public String[] getIssues(){
+        return issues;
+    }
 }
