@@ -8,7 +8,7 @@ public class Tester {
         System.out.println(c1.getMensRea());
         c1.setCrimeTypeAndSentence("killed");
         System.out.println(c1.getCrimeType());
-        OHRC o1=new OHRC("","","","","","");
+        OHRC o1=new OHRC("","","","","");
         o1.setGrounds("white");
         o1.setArea("hospital");
         System.out.println(o1.getArea());
