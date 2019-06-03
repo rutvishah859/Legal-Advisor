@@ -73,86 +73,50 @@ package legaladvisor;
         return indexforSearchMechanism;
     }
 
-    /**
-     * @return the crimeTypes
-     */
     public String[] getCrimeTypes1() {
         return crimeTypes1;
     }
 
-    /**
-     * @return the fraud
-     */
     public String[] getFraud() {
         return fraud;
     }
 
-    /**
-     * @return the electronicCrime
-     */
     public String[] getElectronicCrime() {
         return electronicCrime;
     }
 
-    /**
-     * @return the moneyLaundering
-     */
     public String[] getMoneyLaundering() {
         return moneyLaundering;
     }
 
-    /**
-     * @return the theft
-     */
     public String[] getTheft() {
         return theft;
     }
 
-    /**
-     * @return the robbery
-     */
     public String[] getRobbery() {
         return robbery;
     }
     
-    /**
-     * @return the mensReaTypes
-     */
     public String[] getMensReaTypes() {
         return mensReaTypes;
     }
 
-    /**
-     * @return the crimeTypes2
-     */
     public String[] getCrimeTypes2() {
         return crimeTypes2;
     }
 
-    /**
-     * @return the murderkeywords
-     */
     public String[] getMurderkeywords() {
         return murderkeywords;
     }
 
-    /**
-     * @return the assaultkeywords
-     */
     public String[] getAssaultkeywords() {
         return assaultkeywords;
     }
 
-    /**
-     * @return the groundKeywords
-     */
     public String[] getGroundKeywords() {
         return groundKeywords;
     }
 
-    /**
-     * @return the areaKeywords
-     */
     public String[] getAreaKeywords() {
         return areaKeywords;
     }
