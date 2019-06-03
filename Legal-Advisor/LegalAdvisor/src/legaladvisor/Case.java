@@ -24,6 +24,7 @@ package legaladvisor;
     private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
     //Charter keywords
     private String issues[]={"muslim","jewish","christian","buddhist","hindu","speech","expression","associate","group","non-violent protest","vote","election","parliament meeting","5","travel","into Canada","within Canada","out of Canada","safety","life","privacy","arrest","search","seizure","arrest","detention"};
+    
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
         this.type = typ;
