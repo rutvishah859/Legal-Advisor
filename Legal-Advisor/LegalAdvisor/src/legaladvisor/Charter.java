@@ -11,8 +11,12 @@ public class Charter extends HumanRights {
         return right;
     }
 
-    public void setRight(String right) {
-        this.right = right;
+    public void setRight(String keyword) {
+        if(super.SearchMechanism(keyword,getIssues(), 0)==true){
+            if(this.getISM()>=0&&this.getISM()<5){
+                this.right="Section 2a)";
+            }
+        }
     }
     
     String printInfo() {
