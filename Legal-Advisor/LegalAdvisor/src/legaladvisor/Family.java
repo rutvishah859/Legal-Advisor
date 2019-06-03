@@ -10,6 +10,31 @@ public class Family extends Civil {
         super(rem, typ, jur, tC);
         
     }
+
+    public boolean isMarriage() {
+        return marriage;
+    }
+
+    public void setMarriage(boolean marriage) {
+        this.marriage = marriage;
+    }
+    
+    public boolean isDivorce() {
+        return divorce;
+    }
+
+    public void setDivorce(boolean divorce) {
+        this.divorce = divorce;
+    }
+
+    public boolean isChild() {
+        return child;
+    }
+
+    public void setChild(boolean child) {
+        this.child = child;
+    }
+    
     
     
 }
