@@ -13,7 +13,7 @@ public abstract class Civil extends Case{
     public void setTypeCase(String tC){
         this.typeCase= tC;
     }
-    public String toString(){
+    public String printInfo(){
         return "Jurisdiction: " + this.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + this.typeCase + "";
     }
 

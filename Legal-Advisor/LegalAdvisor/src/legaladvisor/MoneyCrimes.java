@@ -3,7 +3,7 @@ public class MoneyCrimes extends CriminalCase {
     private double amtStolen; 
     private boolean violence;
     private String typeOfProperty; 
-<<<<<<< HEAD
+
     private String crimeType; 
     //private String keyWords []=  {"fraud", "credit", "card", "mortgage", "trading", "tax", "theft", "stole"};
     private String crimeTypes [] = {"fraud", "robbery", "money laundering", "theft"};
@@ -13,9 +13,8 @@ public class MoneyCrimes extends CriminalCase {
     private String theft [] = {"stole", "took", "does not own"}; 
     private String robbery [] = {"forced","stole","broke in","threatened","forcefully stole"}; 
     
-=======
+
     private String crimeType;     
->>>>>>> 474c68996e14322b9eae1ca448b9da2be465da52
             
     public MoneyCrimes (String rem, String typ, String jur, String crim, String sen, double amtSt, boolean viol, String typeProp){
         super(rem,typ,jur,crim,sen);
@@ -25,13 +24,13 @@ public class MoneyCrimes extends CriminalCase {
     }
     
     public void setCrimeAndSentence (String keyword){
-<<<<<<< HEAD
+
         if (super.SearchMechanism(keyword, fraud, 0)){
             this.crimeType = crimeTypes [0]; 
-=======
+
         if (super.SearchMechanism(keyword, super.getFraud(), 0)){
             this.crimeType = super.getCrimeTypes1() [0]; 
->>>>>>> 474c68996e14322b9eae1ca448b9da2be465da52
+
         }
         else if (super.SearchMechanism(keyword, super.getElectronicCrime(), 0)){
             this.crimeType = super.getCrimeTypes1() [1]; 
@@ -39,17 +38,17 @@ public class MoneyCrimes extends CriminalCase {
         else if(super.SearchMechanism(keyword, super.getMoneyLaundering(), 0)){
             this.crimeType = super.getCrimeTypes1() [2]; 
         }
-<<<<<<< HEAD
+
         else if (super.SearchMechanism(keyword, theft, 0)){
             this.crimeType = crimeTypes [3]; 
         if (super.SearchMechanism(keyword, fraud, 0)){
             this.crimeType = crimeTypes [0]; 
-=======
-        else if (super.SearchMechanism(keyword, super.getTheft(), 0)){
+
+        else if(super.SearchMechanism(keyword, super.getTheft(), 0)){
             this.crimeType = super.getCrimeTypes1() [3]; 
         if (super.SearchMechanism(keyword, super.getFraud(), 0)){
             this.crimeType = super.getCrimeTypes1() [0]; 
->>>>>>> 474c68996e14322b9eae1ca448b9da2be465da52
+
             if(amtStolen<5000){
             super.setSentence("Maximum Sentence is 6 months in jail or a 5000$ fine.");
             }
