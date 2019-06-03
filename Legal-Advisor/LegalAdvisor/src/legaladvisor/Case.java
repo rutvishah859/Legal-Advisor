@@ -24,6 +24,9 @@ package legaladvisor;
     private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
     //Charter keywords
     private String issues[]={"muslim","jewish","christian","buddhist","hindu","speech","expression","associate","group","non-violent protest","vote","election","parliament meeting","5","travel","into Canada","within Canada","out of Canada","safety","life","privacy","arrest","search","seizure","arrest","detention"};
+    //DrugCrime keywords 
+    private String[] traffickingTerm = {"administer", "deliver", "give", "obtain","sell", "send", "transfer", "transport"};
+    private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
     
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
@@ -121,5 +124,15 @@ package legaladvisor;
 
     public String[] getAreaKeywords() {
         return areaKeywords;
+    }
+
+
+    public String[] getTraffickingTerm() {
+        return traffickingTerm;
+    }
+
+
+    public String[] getDrugType() {
+        return drugType;
     }
 }
