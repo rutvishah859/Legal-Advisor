@@ -23,11 +23,10 @@ package legaladvisor;
     private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
     private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
     //Charter keywords
-    private String issues[]={"muslim","jewish","christian","buddhist","hindu","speech","expression","associate","group","non-violent protest","vote","election","parliament meeting","5","travel","into Canada","within Canada","out of Canada","safety","life","privacy","arrest","search","seizure","arrest","detention"};
+    private String issues[]={"muslim","jewish","christian","buddhist","hindu","speech","expression","associate","group","non-violent protest","vote","election","parliament meeting","5","travel","into Canada","within Canada","out of Canada","safety","life","privacy","arrest","search","seizure","arrest","detention","reasons for arrest","reasons for detention","lawyer","attorney","release","offence","trial","time","innocent till proven guilty","bail","more harsh sentence","cruel","unusual","punishment","witness","self-incriminated","interpreter","unequal"};
     //DrugCrime keywords 
     private String[] traffickingTerm = {"administer", "deliver", "give", "obtain","sell", "send", "transfer", "transport"};
     private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
-    
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
         this.type = typ;
