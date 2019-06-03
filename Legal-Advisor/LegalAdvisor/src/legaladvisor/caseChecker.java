@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class caseChecker extends Case{
-    private String Case; 
+    private String CaseType; 
     private Case cal; 
     private String keyWord;
     private String [] wordBank; //a bank of key words found in the text file
@@ -37,14 +37,17 @@ public class caseChecker extends Case{
     
     //methods that cecks if any of the types cases apply to the this complaint
     //each case type class will call this method to check if any of their clases apply here
-    public boolean findKeyWords (/*String [] words*/ caseChecker caseFile, String word){
+    public boolean findKeyWords (/*String [] words*/ caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s")));
         for(String w : this.getWordBank()){  
-            if (w.equals(word)){
-                return true; 
+            for (int i = 0; i < super.getFraud().length; i++){ //checks if its a frad case
+               if (w.equals(super.getFraud()[i])){    
+                    return true; 
+                } 
             }
-        }   
-        return false; 
+            
+        }
+        return false;
     }
 
     public String[] getWordBank() {
@@ -53,5 +56,9 @@ public class caseChecker extends Case{
 
     public void setWordBank(String[] wordBank) {
         this.wordBank = wordBank;
+    }
+
+    public void setCaseType(String CaseType) {
+        this.CaseType = CaseType;
     }
 }
