@@ -9,13 +9,13 @@ package legaladvisor;
     private int indexforSearchMechanism;
     //MoneyCrime keywords
     private String crimeTypes1 [] = {"fraud", "robbery", "money laundering", "theft"};
-    private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online banking"};    
-    private String electronicCrime [] = {"computer", "app", "phone", "online banking"};
-    private String moneyLaundering [] = {"fake money"}; 
-    private String theft [] = {"stole", "took", "does not own"}; 
-    private String robbery [] = {"forced","stole","broke in","threatened","forcefully stole"}; 
+    private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online", "banking"};    
+    private String electronicCrime [] = {"computer", "app", "phone", "online",  "banking"};
+    private String moneyLaundering [] = {"fake", "money"}; 
+    private String theft [] = {"stole", "took",  "own"}; 
+    private String robbery [] = {"forced","stole","broke","threatened","forcefully stole"}; 
     //CrimeAgainstPerson keywords 
-    private String mensReaTypes[]={"accident","did not intend","did not mean to","reckless","risky","ignored","planned","intended","did not know","out of nowhere"};
+    private String mensReaTypes[]={"accident","unintended","did not mean to","reckless","risky","ignored","planned","intended","did not know","out of nowhere"};
     private String crimeTypes2[]={"First Degree Murder","Second Degree Murder","Manslaughter","Physical Assault","Aggravated Assault","Sexual Assault","Verbal Assault"};
     private String murderkeywords []={"assissinated","executed","finished off","kill","killed"};
     private String assaultkeywords[]={"attacked","beat up","hit","hurt","insulted","kicked","punched","raped"};
@@ -27,6 +27,7 @@ package legaladvisor;
     //DrugCrime keywords 
     private String[] traffickingTerm = {"administer", "deliver", "give", "obtain","sell", "send", "transfer", "transport"};
     private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
+   
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
         this.type = typ;
@@ -73,6 +74,7 @@ package legaladvisor;
     public void setIndexforSearchMechanism(int indexforSearchMechanism) {
         this.indexforSearchMechanism = indexforSearchMechanism;
     }
+    
     public int getISM() {
         return indexforSearchMechanism;
     }

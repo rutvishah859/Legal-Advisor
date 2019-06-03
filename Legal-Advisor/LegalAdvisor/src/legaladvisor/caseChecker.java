@@ -37,13 +37,12 @@ public class caseChecker extends Case{
     
     //methods that cecks if any of the types cases apply to the this complaint
     //each case type class will call this method to check if any of their clases apply here
-    public boolean findKeyWords (/*String [] words*/ caseChecker caseFile, String [] words){
+    public boolean findKeyWords (/*String [] words*/ caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s")));
         for(String w : this.getWordBank()){  
-            //checks if it is thay certian type of case
-            for (int i = 0; i < words.length; i++){
-               if (w.equals(words[i])){ 
-                return true; 
+            for (int i = 0; i < super.getFraud().length; i++){ //checks if its a frad case
+               if (w.equals(super.getFraud()[i])){    
+                    return true; 
                 } 
             }
             
@@ -57,5 +56,9 @@ public class caseChecker extends Case{
 
     public void setWordBank(String[] wordBank) {
         this.wordBank = wordBank;
+    }
+
+    public void setCaseType(String CaseType) {
+        this.CaseType = CaseType;
     }
 }
