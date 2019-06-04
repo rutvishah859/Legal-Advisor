@@ -138,4 +138,7 @@ package legaladvisor;
     public String[] getIssues(){
         return issues;
     }
+    public String[] getJusrisdictions(){
+        return jurisdictions;
+    }
 }
