@@ -9,7 +9,7 @@ package legaladvisor;
     private int indexforSearchMechanism;
     //MoneyCrime keywords
     private String crimeTypes1 [] = {"fraud", "robbery", "money laundering", "theft"};
-    private String fraud [] = {"transfered funds", "investment", "bank","computer", "app", "phone", "online", "banking"};    
+    private String fraud [] = {"transfered", "funds", "investment", "bank","computer", "app", "phone", "online", "banking"};    
     private String electronicCrime [] = {"computer", "app", "phone", "online",  "banking"};
     private String moneyLaundering [] = {"fake", "money"}; 
     private String theft [] = {"stole", "took",  "own"}; 
@@ -17,13 +17,13 @@ package legaladvisor;
     //CrimeAgainstPerson keywords 
     private String mensReaTypes[]={"accident","unintended","did not mean to","reckless","risky","ignored","planned","intended","did not know","out of nowhere"};
     private String crimeTypes2[]={"First Degree Murder","Second Degree Murder","Manslaughter","Physical Assault","Aggravated Assault","Sexual Assault","Verbal Assault"};
-    private String murderkeywords []={"assissinated","executed","finished off","kill","killed"};
-    private String assaultkeywords[]={"attacked","beat up","hit","hurt","insulted","kicked","punched","raped"};
+    private String murderkeywords []={"assissinated","executed","finished","kill","killed"};
+    private String assaultkeywords[]={"attacked","beat","hit","hurt","insulted","kicked","punched","raped"};
     //OHRC keywords
-    private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married","not married","kids","no kids","too young","too old","wellfare"};
+    private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married", "married","kids","kids","young", "old","wellfare"};
     private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};
     //Charter keywords                                                   //4                //6                                  //9             //10   //11                 //13                      //16                                                    //20                      //23              //25                                                                                              //32                                                                              //38                             //41                          //43         //44                     
-    private String issues[]={"muslim","jewish","christian","buddhist","hindu","speech","expression","associate","group","non-violent protest","vote","election","5","parliament meeting","1","once","travel","into Canada","within Canada","out of Canada","safety","life","privacy","search","seizure","arrest","detention","reasons for arrest","reasons for detention","lawyer","attorney","release","offence","trial","time","innocent till proven guilty","bail","more harsh sentence","cruel","unusual","punishment","witness","self-incriminated","interpreter","unequal"};
+    private String issues[]={"muslim","jewish","christian","buddhist","hindu","speech","expression","associate","group","non-violent protest","vote","election","5","parliament meeting","1","once","travel","Canada","safety","life","privacy","search","seizure","arrest","detention","arrest","reasons for detention","lawyer","attorney","release","offence","trial","time","guilty","bail","sentence","cruel","unusual","punishment","witness","self-incriminated","interpreter","unequal"};
     //DrugCrime keywords 
     private String[] traffickingTerm = {"administer", "deliver", "give", "obtain","sell", "send", "transfer", "transport"};
     private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
