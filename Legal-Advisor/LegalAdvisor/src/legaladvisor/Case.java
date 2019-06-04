@@ -27,7 +27,8 @@ package legaladvisor;
     //DrugCrime keywords 
     private String[] traffickingTerm = {"administer", "deliver", "give", "obtain","sell", "send", "transfer", "transport"};
     private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
-   
+    ///Jurisdiction keywords
+    private String jurisdictions[]={"Ontario","Canada"};
     public Case(String rem, String typ, String jur){
         this.remedies = rem;
         this.type = typ;
