@@ -5,12 +5,33 @@ public class Family extends Civil {
     private boolean marriage;
     private boolean divorce;
     private boolean child;
+    private int numChild;
+    private String custodyType[] = {"full", "joint", "shared", "split"};
+    private boolean childDecision;
+    private double financialSupport;
+    private String famKeyword[] = {"aggreement","child", "custody", "disagree", "divorce", "permanent", "share","decision making" };
+    private String custType;
     
     public Family(String rem, String typ, String jur, String tC, boolean mar, boolean div, boolean child) {
         super(rem, typ, jur, tC);
-        
+        this.marriage = mar;
+        this.divorce = div;
+        this.child = child;
     }
-
+    public void setCustody(String keyword){
+        String advice;
+        if(super.SearchMechanism(keyword, famKeyword, 0)){
+            
+        }
+    }
+    
+    public void custType(String keyword){
+        if(keyword.equalsIgnoreCase(famKeyword[5])){
+            custType = custodyType[0];
+        }else if(keyword.equalsIgnoreCase(famKeyword[0]) || keyword.equalsIgnoreCase(famKeyword[6])){
+            custType = custodyType[1];
+        }
+    }
     public boolean isMarriage() {
         return marriage;
     }
