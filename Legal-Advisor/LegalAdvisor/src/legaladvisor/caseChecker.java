@@ -41,9 +41,42 @@ public class caseChecker extends Case{
         this.setWordBank(caseFile.printInfo().split("\\s")));
         String caseType="";
         for(String w : this.getWordBank()){  
-            if ((super.SearchMechanism(w, super.getFraud(), 0))){
+            if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Money Crimes");
                 MoneyCrimes fraud= new MoneyCrimes ("","","", "", "", 0.0, true, "");
+                fraud.setCrimeAndSentence(w);
+            }
+            else if (super.SearchMechanism(w, super.getElectronicCrime(), 0)){
+                super.setType ("Money Crimes"); 
+                MoneyCrimes electronicCrime = new MoneyCrimes ("","","", "", "", 0.0, true, "");
+                electronicCrime.setCrimeAndSentence(w);
+            }
+            else if (super.SearchMechanism(w, super.getMoneyLaundering(), 0)){
+                super.setType("Money Crimes");
+                MoneyCrimes moneyLaundering = new MoneyCrimes ("","","", "", "", 0.0, true, "");
+                moneyLaundering.setCrimeAndSentence(w);
+            }
+            else if (super.SearchMechanism(w, super.getTheft(), 0)){
+                super.setType("Money Crimes");
+                MoneyCrimes theft = new MoneyCrimes ("","","", "", "", 0.0, true, ""); 
+                theft.setCrimeAndSentence(w);
+            }
+            else if (super.SearchMechanism(w, super.getRobbery(), 0)){
+                super.setType ("MoneY Crimes"); 
+                MoneyCrimes robbery = new MoneyCrimes ("","","", "", "", 0.0, true, ""); 
+                robbery.setCrimeAndSentence(w);
+            }
+            if (super.SearchMechanism(w, super.getMurderkeywords(), 0)){
+                super.setType("Crime Against Person");
+                CrimeAgainstPerson murder = new CrimeAgainstPerson ("", "", "", "", "", "");
+            }
+            else if (super.SearchMechanism(w, super.getAssaultkeywords(), 0)){
+                super.setType("Crime Against Person");
+                CrimeAgainstPerson assult = new CrimeAgainstPerson ("", "", "", "", "", "");
+            }
+            if (super.SearchMechanism(w, super.getGroundKeywords(), 0)){
+                super.setType("OHRC");
+                OHRC ground = new OHRC ("", "", "", "", "");
             }
             
         }
