@@ -8,9 +8,11 @@ public class Family extends Civil {
     private int numChild;
     private String custodyType[] = {"full", "joint", "shared", "split"};
     private boolean childDecision;
-    private double financialSupport;
     private String famKeyword[] = {"aggreement","child", "custody", "disagree", "divorce", "permanent", "share","decision making" };
     private String custType;
+    private boolean mentalHealth;
+    private boolean physicalHealth;
+    
     
     public Family(String rem, String typ, String jur, String tC, boolean mar, boolean div, boolean child) {
         super(rem, typ, jur, tC);
@@ -21,7 +23,7 @@ public class Family extends Civil {
     public void setCustody(String keyword){
         String advice;
         if(super.SearchMechanism(keyword, famKeyword, 0)){
-            
+           
         }
     }
     
@@ -30,6 +32,8 @@ public class Family extends Civil {
             custType = custodyType[0];
         }else if(keyword.equalsIgnoreCase(famKeyword[0]) || keyword.equalsIgnoreCase(famKeyword[6])){
             custType = custodyType[1];
+        }else if(this.numChild > 2){
+            custType = custodyType[3];
         }
     }
     public boolean isMarriage() {
