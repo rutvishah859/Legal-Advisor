@@ -37,10 +37,19 @@ public class caseChecker extends Case{
     
     //methods that cecks if any of the types cases apply to the this complaint
     //each case type class will call this method to check if any of their clases apply here
-    public boolean findKeyWords (/*String [] words*/ caseChecker caseFile){
+    public void findKeyWords (/*String [] words*/ caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s")));
         String caseType="";
+        String jurisdiction="";
         for(String w : this.getWordBank()){  
+            if(super.SearchMechanism(w, super.getJusrisdictions(), 0)){
+                if(this.getISM()==0){
+                    jurisdiction="Ontario";
+                }
+                else{
+                    jurisdiction="Canada";
+                }
+            }
             if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Money Crimes");
                 MoneyCrimes fraud= new MoneyCrimes ("","","", "", "", 0.0, true, "");
@@ -58,12 +67,12 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getTheft(), 0)){
                 super.setType("Money Crimes");
-                MoneyCrimes theft = new MoneyCrimes ("","","", "", "", 0.0, true, ""); 
+                MoneyCrimes theft = new MoneyCrimes ("","","", "", "", 0.0, false, ""); 
                 theft.setCrimeAndSentence(w);
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("MoneY Crimes"); 
-                MoneyCrimes robbery = new MoneyCrimes ("","","", "", "", 0.0, true, ""); 
+                MoneyCrimes robbery = new MoneyCrimes ("","","", "", "", 0.0, false, ""); 
                 robbery.setCrimeAndSentence(w);
             }
             if (super.SearchMechanism(w, super.getMurderkeywords(), 0)){
@@ -74,14 +83,28 @@ public class caseChecker extends Case{
                 super.setType("Crime Against Person");
                 CrimeAgainstPerson assult = new CrimeAgainstPerson ("", "", "", "", "", "");
             }
-            if (super.SearchMechanism(w, super.getGroundKeywords(), 0)){
-                super.setType("OHRC");
-                OHRC ground = new OHRC ("", "", "", "", "");
+            if(jurisdiction.equalsIgnoreCase("Ontario")){ //will only be an OHRC case if the jurisdiction is Ontario
+                if (super.SearchMechanism(w, super.getGroundKeywords(), 0)){
+                    super.setType("OHRC");
+                    OHRC ground = new OHRC ("", "", "", "", "");
+                }
+            }
+            else if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
+                if (super.SearchMechanism(w, super.getIssues(), 0)){
+                    super.setType("Charter");
+                    Charter charter = new Charter ("", "", "", "");
+                }
+            }
+            if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
+                super.setType("Drug Crime");
+                DrugCrime trafficking = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
+            }
+            else if (super.SearchMechanism(w, super.getDrugType(), 0)){
+                super.setType ("Drug Crimes"); 
+                DrugCrime drug = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
             }
             
         }
-            
-        return false;
     }
 
     public String[] getWordBank() {
