@@ -39,14 +39,15 @@ public class caseChecker extends Case{
     //each case type class will call this method to check if any of their clases apply here
     public boolean findKeyWords (/*String [] words*/ caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s")));
+        String caseType="";
         for(String w : this.getWordBank()){  
-            for (int i = 0; i < super.getFraud().length; i++){ //checks if its a frad case
-               if (w.equals(super.getFraud()[i])){    
-                    return true; 
-                } 
+            if ((super.SearchMechanism(w, super.getFraud(), 0))){
+                super.setType ("Money Crimes");
+                MoneyCrimes fraud= new MoneyCrimes ("","","", "", "", 0.0, true, "");
             }
             
         }
+            
         return false;
     }
 
