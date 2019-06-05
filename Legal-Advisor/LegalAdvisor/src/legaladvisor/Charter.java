@@ -2,8 +2,8 @@ package legaladvisor;
 
 public class Charter extends HumanRights {
     private String right;    
-    public Charter(String rem, String typ, String jur, String r) {
-        super(rem, typ, jur);
+    public Charter(String rem, String jur, String r) {
+        super(rem, jur);
         this.right = r; 
     }
 

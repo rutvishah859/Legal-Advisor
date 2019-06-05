@@ -4,8 +4,8 @@ public class OHRC extends HumanRights{
     private String area; 
     private String typeOfDis; 
     
-    public OHRC(String rem, String typ, String jur, String gr, String ar) {
-        super(rem, typ, jur);
+    public OHRC(String rem, String jur, String gr, String ar) {
+        super(rem, jur);
         this.grounds = gr; 
         this.area = ar; 
     } 

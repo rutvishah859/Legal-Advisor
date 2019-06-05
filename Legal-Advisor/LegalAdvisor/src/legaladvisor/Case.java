@@ -1,9 +1,10 @@
 package legaladvisor; 
+import java.util.*; 
 
     public abstract class Case {
 
     private String remedies;
-    private String type;
+    private ArrayList <String> type = new ArrayList <String> ();
     private String jurisdiction;
     private boolean trialNeeded;
     private int indexforSearchMechanism;
@@ -30,9 +31,8 @@ package legaladvisor;
     ///Jurisdiction keywords
     private String jurisdictions[]={"Ontario","Canada"};
     
-    public Case(String rem, String typ, String jur){
+    public Case(String rem, String jur){
         this.remedies = rem;
-        this.type = typ;
         this.jurisdiction = jur;
     }
     //This sets the remedies for the crime for the victim
@@ -40,7 +40,15 @@ package legaladvisor;
         this.remedies = rem;
     }
     public void setType(String typ){
-        this.type = typ;
+        boolean check = false;
+        for(int i = 0; i < type.size(); i++){
+            if (type.get(i).equals(typ)){
+                check = true;
+            }
+        }
+        if(!check){
+            this.type.add(typ);
+        }
     }
     public void setTrialNeeded(boolean tn){
         this.trialNeeded = tn;
@@ -51,7 +59,7 @@ package legaladvisor;
     public String getRemedies(){
         return this.remedies;
     }
-    public String getType(){
+    public ArrayList <String> getType(){
         return this.type;
     }
     public boolean getTrialNeeded(){

@@ -8,8 +8,8 @@ public class CrimeAgainstPerson extends CriminalCase{
     private String crimeType;
     private boolean weapon;
 
-    public CrimeAgainstPerson( String rem, String typ, String jur , String crim, String sen, String tOO){
-            super(rem, typ, jur, crim, sen);
+    public CrimeAgainstPerson( String rem, String jur , String crim, String sen, String tOO){
+            super(rem, jur, crim, sen);
             typeOfOffence=tOO;    
     }
     public String getTypeOfOffence() {

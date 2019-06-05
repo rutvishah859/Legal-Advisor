@@ -5,8 +5,8 @@ public abstract class CriminalCase extends Case {
     private String crime;
     private String sentence;
     
-    public CriminalCase(String rem, String typ, String jur, String crim, String sen) {
-        super(rem, typ, jur);
+    public CriminalCase(String rem, String jur, String crim, String sen) {
+        super(rem, jur);
         this.crime = crim;
         this.sentence = sen;
     }
