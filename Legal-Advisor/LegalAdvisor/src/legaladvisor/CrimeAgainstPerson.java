@@ -38,12 +38,12 @@ public class CrimeAgainstPerson extends CriminalCase{
         }
         if(super.SearchMechanism(keyword,super.getAssaultkeywords(),0)==true){
             this.setTypeOfOffence("indictable");
-            if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[4])){
+            if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[5])){
                 crimeType= super.getCrimeTypes2()[6];
                 super.setSentence("The maximum sentence is 10 years in jail");
                 
             }
-            else if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[7])){
+            else if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[8])){
                 crimeType= super.getCrimeTypes2()[5];
                 super.setSentence("The maximum sentence is life in jail");
             }
