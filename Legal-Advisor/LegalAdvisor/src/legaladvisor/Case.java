@@ -19,7 +19,7 @@ import java.util.*;
     private String mensReaTypes[]={"accident","unintended","did not mean to","reckless","risky","ignored","planned","intended","did not know","out of nowhere"};
     private String crimeTypes2[]={"First Degree Murder","Second Degree Murder","Manslaughter","Physical Assault","Aggravated Assault","Sexual Assault","Verbal Assault"};
     private String murderkeywords []={"assissinated","executed","finished","kill","killed"};
-    private String assaultkeywords[]={"attacked","beat","hit","hurt","insulted","kicked","punched","raped"};
+    private String assaultkeywords[]={"assaulted","attacked","beat","hit","hurt","insulted","kicked","punched","raped"};
     //OHRC keywords
     private String groundKeywords[]={"black","white","asian","muslim","jewish","christian","buddhist","hindu","female","male","man","woman","girl","boy","pregnancy","citizenship","culture","disabled","mental disability","physical disability","gay","homosexual","lesbian","bisexual","transgender","heterosexual","married", "married","kids","kids","young", "old","wellfare"};
     private String areaKeywords[]={"rent","house","work","employment","hired","fired","member","group","union","hospital","restaurant","movie theater","school","service","place","contract"};

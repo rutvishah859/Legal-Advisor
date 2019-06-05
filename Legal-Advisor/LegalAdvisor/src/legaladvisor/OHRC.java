@@ -32,22 +32,22 @@ public class OHRC extends HumanRights{
             else if(this.getISM()==16){
                 this.grounds="Ethnic origin";
             }
-            else if(this.getISM()>=17&&this.getISM()<20){
+            else if(this.getISM()>=17&&this.getISM()<21){
                 this.grounds="Handicap";
             }
-            else if(this.getISM()>=20&&this.getISM()<26){
+            else if(this.getISM()>=21&&this.getISM()<27){
                 this.grounds="Sexual Orientation";
             }
-            else if(this.getISM()==26||this.getISM()==27){
+            else if(this.getISM()==27){
                 this.grounds="Marital Status";
             }
-            else if(this.getISM()==28||this.getISM()==29){
+            else if(this.getISM()>=28||this.getISM()<32){
                 this.grounds="Family Status";
             }
-            else if(this.getISM()==30||this.getISM()==31){
+            else if(this.getISM()==32||this.getISM()==33){
                 this.grounds="Age";
             }
-            else{
+            else if(this.getISM()==34){
                 this.grounds="Receipt of public assistance";
             }
         }
