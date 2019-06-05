@@ -9,7 +9,7 @@ package legaladvisor;
     private int indexforSearchMechanism;
     //MoneyCrime keywords
     private String crimeTypes1 [] = {"fraud", "robbery", "money laundering", "theft"};
-    private String fraud [] = {"transfered", "funds", "investment", "bank","computer", "app", "phone", "online", "banking"};    
+    private String fraud [] = {"transferred", "funds", "investment", "bank","computer", "app", "phone", "online", "banking"};    
     private String electronicCrime [] = {"computer", "app", "phone", "online",  "banking"};
     private String moneyLaundering [] = {"fake", "money"}; 
     private String theft [] = {"stole", "took",  "own"}; 
