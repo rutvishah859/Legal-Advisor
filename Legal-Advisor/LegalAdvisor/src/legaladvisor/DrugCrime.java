@@ -9,59 +9,58 @@ public class DrugCrime extends CriminalCase{
     private String typeOfOffense;
     private String scheduleType[] = {"schedule I", "schedule II", "schedule III"};
     private String scheType;
-    private String[] traffickingTerm = {"administer", "deliver", "give", "obtain","sell", "send", "transfer", "transport"};
-    private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
     
     public DrugCrime(String rem, String typ, String jur, String crim, String sen, boolean pos, boolean traf, double qty, String tOD) {
         super(rem, typ, jur, crim, sen);
         this.trafficking=traf;
         this.possession=pos;
-        
     }
     public void setCrimeTypeAndSentence(String keyword){
         String sentence;
       
-        if(super.SearchMechanism(keyword, drugType, 0) && this.getTrafficking()==true){
+        if(super.SearchMechanism(keyword, super.getDrugType(), 0) && this.getTrafficking()){
             this.typeOfOffense = "indictable";
-            if(keyword.equalsIgnoreCase(drugType[2]) || keyword.equals(drugType[5]) || keyword.equalsIgnoreCase(drugType[0])
-                    || keyword.equalsIgnoreCase(drugType[8])){   //cocaine,heroine,amphetamines 
+            if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) || keyword.equalsIgnoreCase(super.getDrugType()[0])
+            || keyword.equalsIgnoreCase(super.getDrugType()[8])){   //cocaine,heroine,amphetamines 
                 this.setScheduleType(keyword);
                 if(this.quantity > 30){
-                    sentence = "The maximum jail sentence is life imprisonment.";
+                    sentence = "The max jail sentence is life imprisonment.";
                 }else if(this.quantity >3 ){
-                    sentence = "The jail sentence is between 6 to 8 years";
+                    sentence = "The max jail sentence is between 6 to 8 years";
                 }else{
-                    sentence = "The jail sentence is between 6 months to 2 years";
+                    sentence = "The max jail sentence is between 6 months to 2 years";
                 }
-            }else if(keyword.equalsIgnoreCase(drugType[5])){ //and LSD
+            }else if(keyword.equalsIgnoreCase(super.getDrugType()[5])){ //and LSD
                 this.setScheduleType(keyword);
                 sentence = "The maximum jail sentence is 10 years";
-            }else if(keyword.equalsIgnoreCase(drugType[4]) || keyword.equalsIgnoreCase(drugType[7])){ //hashish and marijuana
+            }else if(keyword.equalsIgnoreCase(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[7])){ //hashish and marijuana
                 this.setScheduleType(keyword);
                 if(this.quantity > 30){
                     sentence = "The maximum jail sentence is life imprionment";
                 }else if(this.quantity < 3){
                     sentence = "The maximum jail sentence is 5 years";
                 }
-            }else if(keyword.equalsIgnoreCase(drugType[2])){
+            }else if(keyword.equalsIgnoreCase(super.getDrugType()[2])){
                 sentence = "The maximum jail sentence is 18 months.";
             }
         }else{
             if(this.quantity > 30){
                 this.typeOfOffense = "indictable";
+                if(this.scheType.equalsIgnoreCase("schedule I")){
+                    sentence = "The max jail sentence is 7 years";
+                }else if(this.scheType.equalsIgnoreCase("schedule II")){
+                    sentence = "The max jail sentence is five years less a day";
+                }else{
+                    sentence = "The max jail sentence is 3 years";
+                }
             }else{
                 this.typeOfOffense="summary";
-            }
-            if(this.typeOfOffense.equalsIgnoreCase("summary")){
-                if(keyword.equalsIgnoreCase(drugType[1]) || keyword.equals(drugType[4]) || keyword.equalsIgnoreCase(drugType[0])|| keyword.equalsIgnoreCase(drugType[2]) 
-               || keyword.equalsIgnoreCase(drugType[5]) || (keyword.equalsIgnoreCase(drugType[6]) && (this.getQuantity(quantity)<0.3)) ){
+                if(keyword.equalsIgnoreCase(super.getDrugType()[1]) || keyword.equals(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[0])|| keyword.equalsIgnoreCase(super.getDrugType()[2]) 
+               || keyword.equalsIgnoreCase(super.getDrugType()[5]) || (keyword.equalsIgnoreCase(super.getDrugType()[6])) ){
                     sentence = "For the first offense, the maximum fine is $1,000 and jail sentence is up to 6 months."
                             + "For the second offense, the maximum fine is $2,000 and jail sentence is up to one year.";
-            }else{
-                
+                }
             }
-            
-        }
         //the possession of Amphetamine/LSD will have maximum sentence of 3 years
         //the possession of cocain or heroine will have maximum sentence of 7 years on an indictable persecution
         //Possession of marijuana and hashish will have maximum sentence of 5 years on an indictable persecution
@@ -74,18 +73,17 @@ public class DrugCrime extends CriminalCase{
         return trafficking;
     }
     public void setTrafficking(String keyword, int n){
-        if(super.SearchMechanism(keyword, traffickingTerm, 0)==true){
+        if(super.SearchMechanism(keyword, super.getTraffickingTerm(), 0)){
            this.trafficking = true;
         }else{
             this.trafficking = false;
         }
-        
     }
     public void setScheduleType(String keyword){
-        if(keyword.equalsIgnoreCase(drugType[2]) || keyword.equals(drugType[5]) || keyword.equalsIgnoreCase(drugType[0])
-                    || keyword.equalsIgnoreCase(drugType[8])){   //cocaine,heroine,amphetamines 
+        if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) || keyword.equalsIgnoreCase(super.getDrugType()[0])
+                    || keyword.equalsIgnoreCase(super.getDrugType()[8])){   //cocaine,heroine,amphetamines 
             this.scheType = "schedule I";
-        }else if(keyword.equalsIgnoreCase(drugType[5]) ||keyword.equalsIgnoreCase(drugType[4]) || keyword.equalsIgnoreCase(drugType[7])){
+        }else if(keyword.equalsIgnoreCase(super.getDrugType()[5]) ||keyword.equalsIgnoreCase(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[7])){
             this.scheType = "schedule II";
         }        
     }
@@ -98,10 +96,8 @@ public class DrugCrime extends CriminalCase{
     public String getTypeOfOffense(){
         return this.typeOfOffense;
     }
-    public void setTypeOfOffense(String keyword){
-        if(keyword.equalsIgnoreCase(drugType[4])){
-            this.typeOfOffense="indictable";
-        }
+    public void setTypeOfOffense(String of){
+       this.typeOfOffense= of;
     }
     
     
