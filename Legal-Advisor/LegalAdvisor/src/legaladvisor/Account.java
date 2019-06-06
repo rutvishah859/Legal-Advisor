@@ -9,6 +9,6 @@ public class Account {
         f=new File(fileName);
     }
     public void setCaseChecker() throws IOException{
-        c=new caseChecker("","","",f);
+        c=new caseChecker("","",f);
     }
 }

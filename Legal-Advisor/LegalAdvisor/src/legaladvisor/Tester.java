@@ -9,6 +9,7 @@ public class Tester {
         System.out.println("Please enter a file name with your complaint. Please include the double slashes.");
         filename=input.nextLine();
         Person p1=new Person("Max", filename, "1-888-467-4999");
+        
         CrimeAgainstPerson c1= new CrimeAgainstPerson("None","Ontario","Crime Against The Person","null","indictable");
        
         c1.setMensRea("accident");
