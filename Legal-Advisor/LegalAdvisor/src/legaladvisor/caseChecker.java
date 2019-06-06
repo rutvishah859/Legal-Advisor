@@ -67,12 +67,12 @@ public class caseChecker extends Case{
             else if (super.SearchMechanism(w, super.getTheft(), 0)){
                 super.setType("Money Crimes");
                 MoneyCrimes theft = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
-                theft.setCrimeAndSentence(w);
+                theft.setCrimeAndSentence(w); 
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("MoneY Crimes"); 
                 MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
-                robbery.setCrimeAndSentence(w);
+                robbery.setCrimeAndSentence(w); 
             }
             if (super.SearchMechanism(w, super.getMurderkeywords(), 0)){
                 super.setType("Crime Against Person");

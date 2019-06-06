@@ -15,7 +15,7 @@ public class MoneyCrimes extends CriminalCase {
     
     public void setCrimeAndSentence (String keyword){
         if (super.SearchMechanism(keyword, super.getFraud(), 0)){
-            this.crimeType.add(super.getCrimeTypes1() [0]); 
+            this.crimeType.add(super.getCrimeTypes1() [0]);
         }
         else if (super.SearchMechanism(keyword, super.getElectronicCrime(), 0)){
             this.crimeType.add(super.getCrimeTypes1() [1]); 
