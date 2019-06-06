@@ -96,11 +96,13 @@ public class caseChecker extends Case{
                     super.setType("OHRC");
                     OHRC ohrcComplaint = new OHRC ("", "Ontario", "", "");
                     ohrcComplaint.setArea(w);
-                    ohrcComplaint.
+                    ohrcComplaint.setGrounds(w);
+                    ohrcComplaint.setCharterOHRC("OHRC");
+                    return ohrcComplaint;
                 }
                 }
             }
-            else if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
+            if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
                 if (super.SearchMechanism(w, super.getIssues(), 0)){
                     super.setType("Charter");
                     Charter charter = new Charter ("", "", "");
@@ -116,7 +118,7 @@ public class caseChecker extends Case{
             }
             
         }
-    }
+    
 
     public String[] getWordBank() {
         return wordBank;
@@ -129,4 +131,5 @@ public class caseChecker extends Case{
     public void setCaseType(String CaseType) {
         this.CaseType = CaseType;
     }
+
 }
