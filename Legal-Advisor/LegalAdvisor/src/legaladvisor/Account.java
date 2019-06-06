@@ -1,7 +1,8 @@
 package legaladvisor;
 import java.io.*;
+import java.util.ArrayList;
 public class Account {
-    private Case c1;
+    private ArrayList <Case> Cases;
     private Lawyer l1;
     private File f;
     private caseChecker c;
@@ -12,6 +13,7 @@ public class Account {
         c=new caseChecker("","",f);
     }
     public void setCase(){
-        c.findKeyWords(c);
+        Case c1;
+        c1=c.findKeyWords(c);
     }
 }
