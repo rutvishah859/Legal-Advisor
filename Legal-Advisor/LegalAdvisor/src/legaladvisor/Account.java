@@ -11,4 +11,7 @@ public class Account {
     public void setCaseChecker() throws IOException{
         c=new caseChecker("","",f);
     }
+    public void setCase(){
+        c.findKeyWords(c);
+    }
 }
