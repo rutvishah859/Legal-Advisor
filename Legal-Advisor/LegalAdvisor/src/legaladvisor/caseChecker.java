@@ -115,11 +115,9 @@ public class caseChecker extends Case{
                 super.setType ("Drug Crimes"); 
                 DrugCrime drug = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
             }
-            return null;
             
         }
     
-
     public String[] getWordBank() {
         return wordBank;
     }
