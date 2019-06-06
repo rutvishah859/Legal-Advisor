@@ -11,7 +11,7 @@ public class DrugCrime extends CriminalCase{
     private String scheType;
     
     public DrugCrime(String rem, String typ, String jur, String crim, String sen, boolean pos, boolean traf, double qty, String tOD) {
-        super(rem, typ, jur, crim, sen);
+        super(rem, jur, crim, sen);
         this.trafficking=traf;
         this.possession=pos;
     }
