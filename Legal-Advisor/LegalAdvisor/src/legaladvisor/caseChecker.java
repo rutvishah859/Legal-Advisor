@@ -39,7 +39,6 @@ public class caseChecker extends Case{
     //each case type class will call this method to check if any of their clases apply here
     public void findKeyWords (/*String [] words*/ caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s"));
-        String caseType="";
         String jurisdiction="";
         for(String w : this.getWordBank()){  
             if(super.SearchMechanism(w, super.getJusrisdictions(), 0)){
