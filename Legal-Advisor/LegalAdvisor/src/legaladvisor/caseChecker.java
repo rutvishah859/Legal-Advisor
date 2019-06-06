@@ -75,6 +75,7 @@ public class caseChecker extends Case{
                 MoneyCrimes theft = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
                 theft.setCrimeAndSentence(w);
                 theft.setCrime("Money Crime");
+                theft.setCrimeAndSentence(w); 
                 return theft;
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
@@ -82,6 +83,7 @@ public class caseChecker extends Case{
                 MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
                 robbery.setCrimeAndSentence(w);
                 robbery.setCrime("Money Crimes");
+
                 return robbery;
             }
             if (super.SearchMechanism(w, super.getMurderkeywords(), 0)){
