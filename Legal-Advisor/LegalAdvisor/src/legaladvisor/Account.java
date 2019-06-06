@@ -16,4 +16,7 @@ public class Account {
         Case c1;
         c1=c.findKeyWords(c);
     }
+    public ArrayList <Case> getCase(){
+        return Cases;
+    }
 }
