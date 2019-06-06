@@ -10,8 +10,8 @@ public class caseChecker extends Case{
     private String [] wordBank; //a bank of key words found in the text file
     private File caseFile; 
     
-    public caseChecker(String rem, String typ, String jur,File complaint) throws IOException {
-        super(rem, typ, jur);
+    public caseChecker(String rem, String jur, File complaint) throws IOException {
+        super(rem, jur);
         caseFile = complaint; 
     }
 
@@ -52,47 +52,47 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Money Crimes");
-                MoneyCrimes fraud= new MoneyCrimes ("","","", "", "", 0.0, true, "");
+                MoneyCrimes fraud= new MoneyCrimes ("","","", "", 0.0, true, "");
                 fraud.setCrimeAndSentence(w);
             }
             else if (super.SearchMechanism(w, super.getElectronicCrime(), 0)){
                 super.setType ("Money Crimes"); 
-                MoneyCrimes electronicCrime = new MoneyCrimes ("","","", "", "", 0.0, true, "");
+                MoneyCrimes electronicCrime = new MoneyCrimes ("","", "", "", 0.0, true, "");
                 electronicCrime.setCrimeAndSentence(w);
             }
             else if (super.SearchMechanism(w, super.getMoneyLaundering(), 0)){
                 super.setType("Money Crimes");
-                MoneyCrimes moneyLaundering = new MoneyCrimes ("","","", "", "", 0.0, true, "");
-                moneyLaundering.setCrimeAndSentence(w);
+                MoneyCrimes moneyLaundering = new MoneyCrimes ("","", "", "", 0.0, true, "");
+                moneyLaundering.setCrimeAndSentence(w); 
             }
             else if (super.SearchMechanism(w, super.getTheft(), 0)){
                 super.setType("Money Crimes");
-                MoneyCrimes theft = new MoneyCrimes ("","","", "", "", 0.0, false, ""); 
+                MoneyCrimes theft = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
                 theft.setCrimeAndSentence(w);
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("MoneY Crimes"); 
-                MoneyCrimes robbery = new MoneyCrimes ("","","", "", "", 0.0, false, ""); 
+                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
                 robbery.setCrimeAndSentence(w);
             }
             if (super.SearchMechanism(w, super.getMurderkeywords(), 0)){
                 super.setType("Crime Against Person");
-                CrimeAgainstPerson murder = new CrimeAgainstPerson ("", "", "", "", "", "");
+                CrimeAgainstPerson murder = new CrimeAgainstPerson ("", "", "", "", "");
             }
             else if (super.SearchMechanism(w, super.getAssaultkeywords(), 0)){
                 super.setType("Crime Against Person");
-                CrimeAgainstPerson assult = new CrimeAgainstPerson ("", "", "", "", "", "");
+                CrimeAgainstPerson assult = new CrimeAgainstPerson ("", "", "", "", "");
             }
-            if(jurisdiction.equalsIgnoreCase("Ontario")){ //will only be an OHRC case if the jurisdiction is Ontario
+            if(jurisdiction.equalsIgnoreCase(super.getJusrisdictions()[1])){ //will only be an OHRC case if the jurisdiction is Ontario
                 if (super.SearchMechanism(w, super.getGroundKeywords(), 0)){
                     super.setType("OHRC");
-                    OHRC ground = new OHRC ("", "", "", "", "");
+                    OHRC ground = new OHRC ("", "", "", "");
                 }
             }
             else if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
                 if (super.SearchMechanism(w, super.getIssues(), 0)){
                     super.setType("Charter");
-                    Charter charter = new Charter ("", "", "", "");
+                    Charter charter = new Charter ("", "", "");
                 }
             }
             if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
