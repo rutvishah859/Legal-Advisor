@@ -18,10 +18,10 @@ public class MoneyCrimes extends CriminalCase {
         if (super.SearchMechanism(keyword, super.getFraud(), 0)){
             this.crimeType.add (super.getCrimeTypes1() [0]); 
             if(amtStolen<5000){
-            super.setSentence("Maximum Sentence is 6 months in jail or a 5000$ fine.");
+                super.setSentence("Maximum Sentence is 6 months in jail or a 5000$ fine.");
             }
             else{
-            super.setSentence("Minimum Sentence is 2 years in jail and the Maximum is 14 years in jail.");
+                super.setSentence("Minimum Sentence is 2 years in jail and the Maximum is 14 years in jail.");
             }
         }
         else if (super.SearchMechanism(keyword, super.getRobbery(), 0)){

@@ -82,7 +82,7 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
+                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, true, ""); 
                 robbery.setCrimeAndSentence(w);
                 robbery.setCrime("Money Crimes");
 
