@@ -114,7 +114,6 @@ public class caseChecker extends Case{
                 }
             
             if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
-<<<<<<< HEAD
                 if (super.SearchMechanism(word, super.getIssues(), 0)){
                     super.setType("Charter");
                     Charter charter = new Charter ("", "", "");
@@ -122,7 +121,6 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(word, super.getTraffickingTerm(), 0)){
                 super.setType("Drug Crime");
-=======
                 if (super.SearchMechanism(w, super.getIssues(), 0)){
                     super.setType("Human Rights Case");
                     Charter charter = new Charter ("", "Canada", "");
@@ -133,21 +131,17 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
                 super.setType("Criminal Case");
->>>>>>> 6c19e560d651741b3c271d1beb8bbe05b5139fbc
                 DrugCrime trafficking = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
                 trafficking.setCrime("Drug Crime");
                 trafficking.setTrafficking(w, 0);
                 trafficking.setCrimeTypeAndSentence(w);
                 return trafficking;
             }
-<<<<<<< HEAD
             else if (super.SearchMechanism(word, super.getDrugType(), 0)){
                 super.setType ("Drug Crimes"); 
                 DrugCrime drug = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
             }
-        return null;
             
-=======
             else if (super.SearchMechanism(w, super.getDrugType(), 0)){
                 super.setType ("Criminal Case"); 
                 DrugCrime possession = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
@@ -155,7 +149,6 @@ public class caseChecker extends Case{
                 possession.setCrimeTypeAndSentence(w);
                 return possession;
             }
->>>>>>> 6c19e560d651741b3c271d1beb8bbe05b5139fbc
         }
         return null;
     }
