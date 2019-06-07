@@ -37,7 +37,7 @@ public class caseChecker extends Case{
     
     //methods that cecks if any of the types cases apply to the this complaint
     //each case type class will call this method to check if any of their clases apply here
-    public Case findKeyWords (/*String [] words*/ caseChecker caseFile){
+    public Case findKeyWords (caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s"));
         String jurisdiction="";
         String word = ""; 
