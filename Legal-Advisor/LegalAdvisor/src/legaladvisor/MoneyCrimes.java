@@ -3,14 +3,12 @@ import java.util.*;
 public class MoneyCrimes extends CriminalCase {
     private double amtStolen; 
     private boolean violence;
-    private String typeOfProperty; 
     private ArrayList <String> crimeType;     
             
-    public MoneyCrimes (String rem, String jur, String crim, String sen, double amtSt, boolean viol, String typeProp){
+    public MoneyCrimes (String rem, String jur, String crim, String sen, double amtSt, boolean viol){
         super(rem,jur,crim,sen);
         this.amtStolen = amtSt; 
         this.violence = viol; 
-        this.typeOfProperty = typeProp; 
         this.crimeType = new ArrayList<>();
     }
     
