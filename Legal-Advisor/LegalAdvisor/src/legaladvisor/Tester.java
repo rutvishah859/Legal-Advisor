@@ -27,6 +27,6 @@ public class Tester {
         cc.findKeyWords(cc);
         System.out.println(cc.getType());
         
-        MoneyCrimes mc = new MoneyCrimes ("", "", "", "", 0.0, false, "");
+        //MoneyCrimes mc = new MoneyCrimes ("", "", "", "", 0.0, false, "");
     }
 }
