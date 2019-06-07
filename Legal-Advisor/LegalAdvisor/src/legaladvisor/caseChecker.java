@@ -52,58 +52,69 @@ public class caseChecker extends Case{
                 }
             }
             if (super.SearchMechanism(w, super.getFraud(), 0)){
-                super.setType ("Money Crimes");
+                super.setType ("Criminal Case");
                 MoneyCrimes fraud= new MoneyCrimes ("","","", "", 0.0, true, "");
                 fraud.setCrimeAndSentence(w);
+                fraud.setCrime("Money Crime");
                 return fraud;
             }
             else if (super.SearchMechanism(w, super.getElectronicCrime(), 0)){
-                super.setType ("Money Crimes"); 
+                super.setType ("Criminal Case"); 
                 MoneyCrimes electronicCrime = new MoneyCrimes ("","", "", "", 0.0, true, "");
                 electronicCrime.setCrimeAndSentence(w);
+                electronicCrime.setCrime("Money Crime");
                 return electronicCrime;
             }
             else if (super.SearchMechanism(w, super.getMoneyLaundering(), 0)){
-                super.setType("Money Crimes");
+                super.setType("Criminal Case");
                 MoneyCrimes moneyLaundering = new MoneyCrimes ("","", "", "", 0.0, true, "");
                 moneyLaundering.setCrimeAndSentence(w);
+                moneyLaundering.setCrime("Money Crime");
                 return moneyLaundering;
             }
             else if (super.SearchMechanism(w, super.getTheft(), 0)){
-                super.setType("Money Crimes");
+                super.setType("Criminal Case");
                 MoneyCrimes theft = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
+                theft.setCrimeAndSentence(w);
+                theft.setCrime("Money Crime");
                 theft.setCrimeAndSentence(w); 
                 return theft;
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
-                super.setType ("MoneY Crimes"); 
+                super.setType ("Criminal Case"); 
                 MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
+                robbery.setCrimeAndSentence(w);
+                robbery.setCrime("Money Crimes");
+
                 return robbery;
             }
             if (super.SearchMechanism(w, super.getMurderkeywords(), 0)){
-                super.setType("Crime Against Person");
+                super.setType("Criminal Case");
                 CrimeAgainstPerson murder = new CrimeAgainstPerson ("", "", "", "", "");
                 murder.setMensRea(w);
                 murder.setCrimeTypeAndSentence(w);
+                murder.setCrime("Crimes against the Person");
                 return murder;
             }
             else if (super.SearchMechanism(w, super.getAssaultkeywords(), 0)){
-                super.setType("Crime Against Person");
+                super.setType("Criminal Case");
                 CrimeAgainstPerson assault = new CrimeAgainstPerson ("", "", "", "", "");
+                assault.setCrime("Crimes against the Person");
                 return assault;
             }
             if(jurisdiction.equalsIgnoreCase(super.getJusrisdictions()[1])){ //will only be an OHRC case if the jurisdiction is Ontario
                 if (super.SearchMechanism(w, super.getGroundKeywords(), 0)||super.SearchMechanism(w, super.getAreaKeywords(), 0)){ 
-                    super.setType("OHRC");
-                    OHRC ohrcComplaint = new OHRC ("", "Ontario", "", "");
-                    ohrcComplaint.setArea(w);
-                    ohrcComplaint.setGrounds(w);
-                    ohrcComplaint.setCharterOHRC("OHRC");
-                    return ohrcComplaint;
+                super.setType("Human Rights Case");
+                OHRC ohrcComplaint = new OHRC ("", "Ontario", "", "");
+                ohrcComplaint.setArea(w);
+                ohrcComplaint.setGrounds(w);
+                ohrcComplaint.setCharterOHRC("OHRC Case");
+                return ohrcComplaint;
                 }
                 }
-            }
+            
             if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
+<<<<<<< HEAD
                 if (super.SearchMechanism(word, super.getIssues(), 0)){
                     super.setType("Charter");
                     Charter charter = new Charter ("", "", "");
@@ -111,15 +122,43 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(word, super.getTraffickingTerm(), 0)){
                 super.setType("Drug Crime");
-                DrugCrime trafficking = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
+=======
+                if (super.SearchMechanism(w, super.getIssues(), 0)){
+                    super.setType("Human Rights Case");
+                    Charter charter = new Charter ("", "Canada", "");
+                    charter.setRight(w);
+                    charter.setCharterOHRC("Charter Case");
+                    return charter;
+                }
             }
+            if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
+                super.setType("Criminal Case");
+>>>>>>> 6c19e560d651741b3c271d1beb8bbe05b5139fbc
+                DrugCrime trafficking = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
+                trafficking.setCrime("Drug Crime");
+                trafficking.setTrafficking(w, 0);
+                trafficking.setCrimeTypeAndSentence(w);
+                return trafficking;
+            }
+<<<<<<< HEAD
             else if (super.SearchMechanism(word, super.getDrugType(), 0)){
                 super.setType ("Drug Crimes"); 
                 DrugCrime drug = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
             }
         return null;
             
+=======
+            else if (super.SearchMechanism(w, super.getDrugType(), 0)){
+                super.setType ("Criminal Case"); 
+                DrugCrime possession = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
+                possession.setCrime("Drug Crime");
+                possession.setCrimeTypeAndSentence(w);
+                return possession;
+            }
+>>>>>>> 6c19e560d651741b3c271d1beb8bbe05b5139fbc
         }
+        return null;
+    }
     
     public String[] getWordBank() {
         return wordBank;
