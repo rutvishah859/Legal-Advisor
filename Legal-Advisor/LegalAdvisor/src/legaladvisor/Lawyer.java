@@ -1,4 +1,5 @@
 package legaladvisor;
+import java.util.ArrayList;
 public class Lawyer {
     private String availability[];
     private String specialization[];
@@ -10,8 +11,20 @@ public class Lawyer {
         name=n;
         phoneNum=pn;
     }
-    public void appointCase(String userAvailability){
-        for(int i=0;)
+    public String appointCase(ArrayList <String> userAvailability){
+        boolean haslawyer=false;
+        for(int i=0; i<availability.length;i++){
+            for(int j=0;j<userAvailability.size();j++){
+                if(availability[i].equalsIgnoreCase(userAvailability.get(j))){
+                    haslawyer=true;
+                    return availability[i]+"is the day when you will have your appointment with your lawyer.";
+                    
+                }
+            }
+            if(haslawyer=true){
+                    availability[i]="Busy that day";
+            }
+        }
     }
     public String[] getAvailability() {
         return availability;

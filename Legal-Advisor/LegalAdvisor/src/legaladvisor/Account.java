@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.ArrayList;
 public class Account {
     private ArrayList <Case> Cases;
+    private ArrayList <String> availableDays;
     private Lawyer l1;
     private File f;
     private caseChecker c;
@@ -18,5 +19,11 @@ public class Account {
     }
     public ArrayList <Case> getCase(){
         return Cases;
+    }
+    public void setAvailability(String day){
+        availableDays.add(day);
+    }
+    public ArrayList <String> getAvailability(){
+        return availableDays;
     }
 }
