@@ -53,7 +53,7 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Criminal Case");
-                MoneyCrimes fraud= new MoneyCrimes ("","","", "", 0.0, false);
+                MoneyCrimes fraud= new MoneyCrimes ("","","", "", 0.0, true);
                 fraud.setCrimeAndSentence(w);
                 fraud.setCrime("Money Crime");
                 return fraud;
@@ -82,7 +82,7 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, true); 
+                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false); 
                 robbery.setCrimeAndSentence(w);
                 robbery.setCrime("Money Crimes");
 

@@ -7,6 +7,7 @@ public class Account {
     private Lawyer l1;
     private File f;
     private caseChecker c;
+    private String dayOfAppointment;
     public Account(String fileName){
         f=new File(fileName);
     }
@@ -25,5 +26,18 @@ public class Account {
     }
     public ArrayList <String> getAvailability(){
         return availableDays;
+    }
+    public void setLawyer(Lawyer law1){
+        if(law1.appointCase(availableDays)){
+            l1=law1;
+        }
+    }
+    public void setDayOfAppointment(){
+        dayOfAppointment=l1.getDayofAppointment();
+        for(int i=0;i<availableDays.size();i++){
+            if(dayOfAppointment.equalsIgnoreCase(availableDays.get(i))){
+                availableDays.set(i,"Appointment that day");
+            }
+        }
     }
 }
