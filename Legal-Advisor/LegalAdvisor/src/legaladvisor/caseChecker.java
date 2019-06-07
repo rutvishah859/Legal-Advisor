@@ -37,10 +37,12 @@ public class caseChecker extends Case{
     
     //methods that cecks if any of the types cases apply to the this complaint
     //each case type class will call this method to check if any of their clases apply here
-    public Case findKeyWords (/*String [] words*/ caseChecker caseFile){
+    public Case findKeyWords (caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s"));
         String jurisdiction="";
-        for(String w : this.getWordBank()){  
+        String word = ""; 
+        for(String w : this.getWordBank()){ 
+            word = w; 
             if(super.SearchMechanism(w, super.getJusrisdictions(), 0)){
                 if(this.getISM()==0){
                     jurisdiction="Ontario";
@@ -112,6 +114,13 @@ public class caseChecker extends Case{
                 }
             
             if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
+                if (super.SearchMechanism(word, super.getIssues(), 0)){
+                    super.setType("Charter");
+                    Charter charter = new Charter ("", "", "");
+                }
+            }
+            if (super.SearchMechanism(word, super.getTraffickingTerm(), 0)){
+                super.setType("Drug Crime");
                 if (super.SearchMechanism(w, super.getIssues(), 0)){
                     super.setType("Human Rights Case");
                     Charter charter = new Charter ("", "Canada", "");
@@ -128,6 +137,11 @@ public class caseChecker extends Case{
                 trafficking.setCrimeTypeAndSentence(w);
                 return trafficking;
             }
+            else if (super.SearchMechanism(word, super.getDrugType(), 0)){
+                super.setType ("Drug Crimes"); 
+                DrugCrime drug = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
+            }
+            
             else if (super.SearchMechanism(w, super.getDrugType(), 0)){
                 super.setType ("Criminal Case"); 
                 DrugCrime possession = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
@@ -139,7 +153,6 @@ public class caseChecker extends Case{
         return null;
     }
     
-
     public String[] getWordBank() {
         return wordBank;
     }

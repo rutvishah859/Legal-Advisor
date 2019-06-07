@@ -21,7 +21,7 @@ public abstract class CriminalCase extends Case {
     }
     public void setSentence(String sentence) {
         this.sentence = sentence;
-    }    
+    }
     public String printInfo(){
         return "Jurisdiction: " + this.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + this.crime + "";
     }
