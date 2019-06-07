@@ -46,9 +46,5 @@ public class MoneyCrimes extends CriminalCase {
     public boolean getViolence() {
         return violence;
     }
-
-    public String getTypeOfProperty() {
-        return typeOfProperty;
-    }
      
 }
