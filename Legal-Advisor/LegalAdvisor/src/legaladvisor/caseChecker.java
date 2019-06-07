@@ -53,28 +53,28 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Criminal Case");
-                MoneyCrimes fraud= new MoneyCrimes ("","","", "", 0.0, true, "");
+                MoneyCrimes fraud= new MoneyCrimes ("","","", "", 0.0, true);
                 fraud.setCrimeAndSentence(w);
                 fraud.setCrime("Money Crime");
                 return fraud;
             }
             else if (super.SearchMechanism(w, super.getElectronicCrime(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes electronicCrime = new MoneyCrimes ("","", "", "", 0.0, true, "");
+                MoneyCrimes electronicCrime = new MoneyCrimes ("","", "", "", 0.0, false);
                 electronicCrime.setCrimeAndSentence(w);
                 electronicCrime.setCrime("Money Crime");
                 return electronicCrime;
             }
             else if (super.SearchMechanism(w, super.getMoneyLaundering(), 0)){
                 super.setType("Criminal Case");
-                MoneyCrimes moneyLaundering = new MoneyCrimes ("","", "", "", 0.0, true, "");
+                MoneyCrimes moneyLaundering = new MoneyCrimes ("","", "", "", 0.0, false);
                 moneyLaundering.setCrimeAndSentence(w);
                 moneyLaundering.setCrime("Money Crime");
                 return moneyLaundering;
             }
             else if (super.SearchMechanism(w, super.getTheft(), 0)){
                 super.setType("Criminal Case");
-                MoneyCrimes theft = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
+                MoneyCrimes theft = new MoneyCrimes ("","", "", "", 0.0, false); 
                 theft.setCrimeAndSentence(w);
                 theft.setCrime("Money Crime");
                 theft.setCrimeAndSentence(w); 
@@ -82,7 +82,7 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false, ""); 
+                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false); 
                 robbery.setCrimeAndSentence(w);
                 robbery.setCrime("Money Crimes");
 
