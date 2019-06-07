@@ -28,6 +28,5 @@ public class Tester {
         System.out.println(cc.getType());
         
         MoneyCrimes mc = new MoneyCrimes ("", "", "", "", 0.0, false, "");
-        mc.setCrimeAndSentence("online");
     }
 }
