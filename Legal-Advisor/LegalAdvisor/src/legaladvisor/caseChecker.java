@@ -40,7 +40,9 @@ public class caseChecker extends Case{
     public Case findKeyWords (/*String [] words*/ caseChecker caseFile){
         this.setWordBank(caseFile.printInfo().split("\\s"));
         String jurisdiction="";
-        for(String w : this.getWordBank()){  
+        String word = ""; 
+        for(String w : this.getWordBank()){ 
+            word = w; 
             if(super.SearchMechanism(w, super.getJusrisdictions(), 0)){
                 if(this.getISM()==0){
                     jurisdiction="Ontario";
@@ -102,16 +104,16 @@ public class caseChecker extends Case{
                 }
             }
             if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
-                if (super.SearchMechanism(w, super.getIssues(), 0)){
+                if (super.SearchMechanism(word, super.getIssues(), 0)){
                     super.setType("Charter");
                     Charter charter = new Charter ("", "", "");
                 }
             }
-            if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
+            if (super.SearchMechanism(word, super.getTraffickingTerm(), 0)){
                 super.setType("Drug Crime");
                 DrugCrime trafficking = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
             }
-            else if (super.SearchMechanism(w, super.getDrugType(), 0)){
+            else if (super.SearchMechanism(word, super.getDrugType(), 0)){
                 super.setType ("Drug Crimes"); 
                 DrugCrime drug = new DrugCrime ("", "", jurisdiction, "", "", false, false, 0.0, "");
             }
