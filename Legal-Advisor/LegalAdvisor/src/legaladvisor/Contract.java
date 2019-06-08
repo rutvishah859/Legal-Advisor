@@ -23,14 +23,15 @@ public class Contract extends Civil {
     private String consideration;   //The actual value or amount exchanged between the two parties
     private boolean consider;
     private boolean offer;
-    private String unlawfulPurpose[] = {"betting", "gambling", "gaming"}; //the contract must have lawful objective or purpose
+    
+    private String unlawfulPurpose[] = {"betting", "drugs", "firearm","gambling", "gaming", "kill","prostitution", "prositute"}; //the contract must have lawful objective or purpose
     private boolean lawfulPurpose;
     //                                            0                 1                        2                      3
   //  private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
     private boolean breachOfContract;
-    private String contractType[] = {"express", "implied", "valid","void"};
+    private String contractType[] = {"express", "valid","void"};
     private String typeContract;
     public Contract(String rem, String jur, String tC,String pur, boolean pC, boolean hC, int partAge) {
         super(rem, jur, tC);
@@ -44,18 +45,25 @@ public class Contract extends Civil {
     public void setContract(String keyword){    //type of contract
         String contract;
         if(super.SearchMechanism(keyword, contractWord, 0)){
-            if((this.capacity == false) || (this.lawfulPurpose == false)){
-                typeContract = ("This is a void contract means the contract is no longer valid.");
+            if((this.capacity == false) || (this.lawfulPurpose == false)){  //if the person does not have ability to understand the terms of contract or it has unlawful purpose
+                typeContract = "This is a void contract means the contract is no longer valid.";  //then contract is void
             }else if(((this.partiesConsent == true) && (this.consider == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)) ||
                     (keyword.equalsIgnoreCase(contractWord[3])) || keyword.equalsIgnoreCase(contractWord[10]) || keyword.equalsIgnoreCase(contractWord[17])){
-                typeContract = ("This is an expressed contracts because both parties are understand the terms of contract with legal purpose");
+            //if the parties agree and accept the offer and the contract purpose is lawful and has ability to understand the terms of contract
+            //or the keyword equals to "car", "house", "purchase" then this is an expressed contracts
+                typeContract = "This is an expressed contract because both parties are understand the terms of contract with legal purpose";
+            }else if(this.lawfulPurpose == false){  //if the contract purpose is unlawful
+                typeContract = "This is illegal contract because it violates the Criminal Code of Canada ";
             }
         }
     }
     public void setRemedies(String keyword){
-        if(this.failingToPerform == true){
-            if(this.breachOfContract == true){
-                if(keyword.equalsIgnoreCase(contractWord[3]) || keyword.equalsIgnoreCase(contractWord[15])){
+        if(this.failingToPerform == true){  //if one of the parties is failed to perform the terms of agreement in contract
+            if(this.breachOfContract == true){  //the breach of contract is true
+                if(keyword.equalsIgnoreCase(contractWord[4]) || keyword.equalsIgnoreCase(contractWord[16]) || keyword.equalsIgnoreCase(contractWord[1])){
+                //if the keyword equals to "failing" or "pay" then remedy is money damages
+                //The compensatory damages is requested by the nonbreaching party who feels unjustly. THe judge will base on that to determine the amount of money
+                //that breaching party will pay to cover for the loss.
                     super.setRemedies("If one party is failling to perform, the judge will put this as compensatory damages to cover the loss of nonbreaching party.");
                     this.remedy = this.remedies[0];
                 }else{
