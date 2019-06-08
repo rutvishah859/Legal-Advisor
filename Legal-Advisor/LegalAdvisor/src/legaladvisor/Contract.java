@@ -31,6 +31,8 @@ public class Contract extends Civil {
     private boolean breachOfContract;
     private String contractType[] = {"express", "valid","void"};
     private String typeContract;
+    private boolean hasContract;
+    
     public Contract(String rem, String jur, String tC,String pur, boolean pC, int partAge, boolean dis) {
         super(rem, jur, tC);
         this.purpose = pur;
@@ -130,6 +132,9 @@ public class Contract extends Civil {
         return this.lawfulPurpose;
     }
     
+    public String printInfo(){
+        return null;
+    }
     
     
 }
