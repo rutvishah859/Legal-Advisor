@@ -18,15 +18,15 @@ public class Contract extends Civil {
     private int participantAge; // anyone who under 18 or 19 years old does not have the capacity to enter into valid contract
     private boolean hasContract;    //must have contract in order to make a case
     private boolean brokenContract; // if the parties break the contract
-    //                                  0       1      2        3            4          5          6         7         8        9       10       11       12        13        14      15       16
-    private String contractWord []= {"agree","break","car","compensate","condition","contract","disagree","failing","goods", "house","illness","make", "mental","negotiate","offer", "pay","request"};
+    //                                  0       1      2     3        4          5             6         7         8        9        10       11       12        13        14      15       16      17
+    private String contractWord []= {"agree","break","buy","car","compensate","condition","contract","disagree","failing","goods", "house","illness","make", "mental","negotiate","offer", "pay","purchase","request"};
     private String consideration;   //The actual value or amount exchanged between the two parties
     private boolean consider;
     private boolean offer;
     private String unlawfulPurpose[] = {"betting", "gambling", "gaming"}; //the contract must have lawful objective or purpose
     private boolean lawfulPurpose;
     //                                            0                 1                        2                      3
-    private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
+  //  private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
     private boolean breachOfContract;
@@ -44,10 +44,10 @@ public class Contract extends Civil {
     public void setContract(String keyword){    //type of contract
         String contract;
         if(super.SearchMechanism(keyword, contractWord, 0)){
-            if((this.capacity == false) || (this.lawfulPurpose == false) || this.dischargingContract.equals(dischargingContract[2])){
+            if((this.capacity == false) || (this.lawfulPurpose == false)){
                 typeContract = ("This is a void contract means the contract is no longer valid.");
             }else if(((this.partiesConsent == true) && (this.consider == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)) ||
-                    (keyword.equalsIgnoreCase(contractWord[2])) || keyword.equalsIgnoreCase(contractWord[9])){
+                    (keyword.equalsIgnoreCase(contractWord[3])) || keyword.equalsIgnoreCase(contractWord[10]) || keyword.equalsIgnoreCase(contractWord[17])){
                 typeContract = ("This is an expressed contracts because both parties are understand the terms of contract with legal purpose");
             }
         }
@@ -68,9 +68,10 @@ public class Contract extends Civil {
         }
     }
     
-    public void setBreachOfContract(String keyword){
-        if(keyword.equalsIgnoreCase(contractWord[1]) || keyword.equalsIgnoreCase(contractWord[6])){
-            this.failingToPerform = true;
+    public void setFailingToPerform(String keyword){
+        if(keyword.equalsIgnoreCase(contractWord[1]) || keyword.equalsIgnoreCase(contractWord[8])){
+            //if keyword equals to "break" or "failing"
+            this.failingToPerform = true;   //then the party is failed to perform the agreement terms
         }
     }
     
@@ -109,6 +110,20 @@ public class Contract extends Civil {
     public boolean getCapacity(){
         return this.capacity;
     }
+    
+    public void setLawfulPurpose(String keyword){
+        if(super.SearchMechanism(keyword, unlawfulPurpose, 0)){     //if keyword equals to any words that related to gambling or other
+                                                                    //unlawful purpose
+            this.lawfulPurpose = false;     //it will be unlawful to make a contract
+        }else{
+            this.lawfulPurpose = true;      //else it will be lawful to make a contract
+        }
+    }
+    
+    public boolean getLawfulPurpose(){
+        return this.lawfulPurpose;
+    }
+    
     
     
 }
