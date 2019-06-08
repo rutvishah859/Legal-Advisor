@@ -22,8 +22,8 @@ public class Family extends Civil {
     private String abuseType;
     //                                        0           1         2
     private String abuseViolenceType[] = {"emotional","physical","sexual"};
-    public Family(String rem, String typ, String jur, String tC, boolean mar, boolean div, boolean child) {
-        super(rem, typ, jur, tC);
+    public Family(String rem, String jur, String tC, boolean mar, boolean div, boolean child) {
+        super(rem, jur, tC);
         this.marriage = mar;
         this.divorce = div;
         this.child = child;

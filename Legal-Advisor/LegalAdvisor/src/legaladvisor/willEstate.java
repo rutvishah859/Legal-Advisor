@@ -6,8 +6,8 @@ public class willEstate extends Civil {
     private boolean deceased;
     private boolean hasWill;
     
-    public willEstate(String rem, String typ, String jur, String tC, boolean asset, boolean dec, boolean hW) {
-        super(rem, typ, jur, tC);
+    public willEstate(String rem, String jur, String tC, boolean asset, boolean dec, boolean hW) {
+        super(rem, jur, tC);
         this.assets = asset;
         this.deceased = dec;
         this.hasWill = hW;

@@ -21,8 +21,8 @@ public class Contract extends Civil {
     private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
-    public Contract(String rem, String typ, String jur, String tC,String pur, boolean pC, boolean hC) {
-        super(rem, typ, jur, tC);
+    public Contract(String rem, String jur, String tC,String pur, boolean pC, boolean hC) {
+        super(rem, jur, tC);
         this.purpose = pur;
         this.partiesConsent = pC;
         this.hasContract = hC;

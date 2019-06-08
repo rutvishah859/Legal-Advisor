@@ -3,7 +3,7 @@ package legaladvisor;
 public abstract class Civil extends Case{
 
     String typeCase;
-    public Civil(String rem, String typ, String jur, String tC) {
+    public Civil(String rem, String jur, String tC) {
         super(rem, jur);
        this.typeCase= tC;
     }
