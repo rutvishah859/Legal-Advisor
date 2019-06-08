@@ -21,12 +21,14 @@ public class Contract extends Civil {
     private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
-    public Contract(String rem, String jur, String tC,String pur, boolean pC, boolean hC) {
+    public Contract(String rem, String jur, String tC,String pur, boolean pC, boolean hC, int partAge) {
         super(rem, jur, tC);
         this.purpose = pur;
         this.partiesConsent = pC;
         this.hasContract = hC;
     }
+    
+    
     
     public String getPurpose() {
         return purpose;
@@ -51,5 +53,18 @@ public class Contract extends Civil {
     public void setHasContract(boolean hasContract) {
         this.hasContract = hasContract;
     }
+    
+    public void setCapacity(boolean d, int a){
+        if((d == true) || (a < 19)){
+           this.capacity = true;
+        }else{
+           this.capacity = false;
+        }
+    }
+    
+    public boolean getCapacity(){
+        return this.capacity;
+    }
+    
     
 }
