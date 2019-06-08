@@ -16,7 +16,7 @@ public class Contract extends Civil {
     private int participantAge; // anyone who under 18 or 19 years old does not have the capacity to enter into valid contract
     private boolean hasContract;    //must have contract in order to make a case
     private boolean brokenContract; // if the parties break the contract
-    private String contractWord []= {"agree","break","condition","contract","disagree","goods","illness","make", "mental","negotiate","offer", "request"};
+    private String contractWord []= {"agree","break","car","condition","contract","disagree","goods", "house","illness","make", "mental","negotiate","offer", "request"};
     private String consideration;   //The actual value or amount exchanged between the two parties
     private boolean consider;
     private boolean offer;
@@ -28,6 +28,7 @@ public class Contract extends Civil {
     //if breach occurs, it allows the party to cancel or end the contract
     private boolean breachOfContract;
     private String contractType[] = {"express", "implied", "valid","void"};
+    private String typeContract;
     public Contract(String rem, String jur, String tC,String pur, boolean pC, boolean hC, int partAge) {
         super(rem, jur, tC);
         this.purpose = pur;
@@ -38,17 +39,21 @@ public class Contract extends Civil {
     }
     
     public void setContract(String keyword){    //type of contract
+        String contract;
         if(super.SearchMechanism(keyword, contractWord, 0)){
             if((this.capacity == false) || (this.lawfulPurpose == false) || this.dischargingContract.equals(dischargingContract[2])){
-                super.setRemedies("This is a void contract means the contract is no longer valid.");
-            }else if((this.partiesConsent == true) && (this.consider == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)){
-                super.setRemedies("This is an expressed contracts because both parties are understand the terms of contract with legal purpose");
+                typeContract = ("This is a void contract means the contract is no longer valid.");
+            }else if(((this.partiesConsent == true) && (this.consider == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)) ||
+                    (keyword.equalsIgnoreCase(contractWord[2])) || keyword.equalsIgnoreCase(contractWord[7])){
+                typeContract = ("This is an expressed contracts because both parties are understand the terms of contract with legal purpose");
             }
         }
     }
-    public void setRemedies(){
+    public void setRemedies(String keyword){
         if(this.breachOfContract == true){
-            
+            if(keyword.equalsIgnoreCase(contractWord[1])){
+                
+            }
         }
     }
     
