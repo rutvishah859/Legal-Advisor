@@ -16,14 +16,12 @@ public class Contract extends Civil {
     private boolean failingToPerform;
     private boolean disability; // anyone with disability or impaired judgment can't make a valid contract
     private int participantAge; // anyone who under 18 or 19 years old does not have the capacity to enter into valid contract
-    private boolean hasContract;    //must have contract in order to make a case
     private boolean brokenContract; // if the parties break the contract
     //                                  0       1      2     3        4          5             6         7         8        9        10       11       12        13        14      15       16      17
     private String contractWord []= {"agree","break","buy","car","compensate","condition","contract","disagree","failing","goods", "house","illness","make", "mental","negotiate","offer", "pay","purchase","request"};
-    private String consideration;   //The actual value or amount exchanged between the two parties
-    private boolean consider;
-    private boolean offer;
-    
+    private boolean offer;  //offer is made or not. An offer contains all of the important and revelant terms of contract
+    private boolean consider;   //if the parties agree the offer, both parties will exchange valuable things between them.
+
     private String unlawfulPurpose[] = {"betting", "drugs", "firearm","gambling", "gaming", "kill","prostitution", "prositute"}; //the contract must have lawful objective or purpose
     private boolean lawfulPurpose;
     //                                            0                 1                        2                      3
@@ -33,12 +31,12 @@ public class Contract extends Civil {
     private boolean breachOfContract;
     private String contractType[] = {"express", "valid","void"};
     private String typeContract;
-    public Contract(String rem, String jur, String tC,String pur, boolean pC, boolean hC, int partAge) {
+    public Contract(String rem, String jur, String tC,String pur, boolean pC, int partAge, boolean dis) {
         super(rem, jur, tC);
         this.purpose = pur;
         this.partiesConsent = pC;
-        this.hasContract = hC;
         this.participantAge = partAge;
+        this.disability = dis;
         
     }
     
