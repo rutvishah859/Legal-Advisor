@@ -15,20 +15,43 @@ public class Contract extends Civil {
     private int participantAge; // anyone who under 18 or 19 years old does not have the capacity to enter into valid contract
     private boolean hasContract;    //must have contract in order to make a case
     private boolean brokenContract; // if the parties break the contract
-    private String contractWord []= {"contract","make" , "goods"};
+    private String contractWord []= {"agree","break","condition","contract","disagree","goods","illness","make", "mental","negotiate","offer", "request"};
     private String consideration;   //The actual value or amount exchanged between the two parties
+    private boolean consider;
+    private boolean offer;
     private String unlawfulPurpose[] = {"betting", "gambling", "gaming"}; //the contract must have lawful objective or purpose
+    private boolean lawfulPurpose;
     private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
+    private boolean breachOfContract;
+    private String contractType[] = {"express", "implied", "valid","void"};
     public Contract(String rem, String jur, String tC,String pur, boolean pC, boolean hC, int partAge) {
         super(rem, jur, tC);
         this.purpose = pur;
         this.partiesConsent = pC;
         this.hasContract = hC;
+        
     }
     
+    public void setContract(String keyword){    //type of contract
+        if(super.SearchMechanism(keyword, contractWord, 0)){
+            if((this.capacity == false) || (this.lawfulPurpose == false) || this.dischargingContract.equals(dischargingContract[2])){
+                super.setRemedies("This is a void contract means the contract is no longer valid.");
+            }else if((this.partiesConsent == true) && (this.consider == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)){
+                super.setRemedies("This is an expressed contracts because both parties are understand the terms of contract with legal purpose");
+            }
+        }
+    }
+    public void setRemedies(){
+        if(this.breachOfContract == true){
+            
+        }
+    }
     
+    public void setBreachOfContract(){
+        
+    }
     
     public String getPurpose() {
         return purpose;
