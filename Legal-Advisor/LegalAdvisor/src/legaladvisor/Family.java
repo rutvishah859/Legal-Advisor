@@ -3,7 +3,6 @@ package legaladvisor;
 public class Family extends Civil {
     
     private boolean marriage;
-    private boolean divorce;
     private boolean child;
     private int numChild;
     //                                0        1        2         3
@@ -22,10 +21,9 @@ public class Family extends Civil {
     private String abuseType;
     //                                        0           1         2
     private String abuseViolenceType[] = {"emotional","physical","sexual"};
-    public Family(String rem, String jur, String tC, boolean mar, boolean div, boolean child) {
+    public Family(String rem, String jur, String tC, boolean mar, boolean child) {
         super(rem, jur, tC);
         this.marriage = mar;
-        this.divorce = div;
         this.child = child;
     }
     public void setCustody(String keyword){
@@ -35,7 +33,6 @@ public class Family extends Civil {
                 if((keyword.equalsIgnoreCase(famKeyword[10]) || keyword.equalsIgnoreCase(famKeyword[5]))){
                     sentence = "If both parents disagree to live together, this will be full custody means only one parent has the right to make all decision about the child";
                     custType = custodyType[0];  //full custody
-                    this.divorce = true;
                 }else if(keyword.equalsIgnoreCase(famKeyword[0]) || keyword.equalsIgnoreCase(famKeyword[6])){
                      sentence = "This is a joint custody means both parents have to share equal responsibility for child's wellfare."
                     +  "The major decisions will be decided by both parents.";
@@ -65,7 +62,6 @@ public class Family extends Civil {
     }
    public void setFamilyViolenceType(String keyword){
        String sentence;
-       if(super.SearchMechanism(keyword, famKeyword, 0)){
              if(keyword.equalsIgnoreCase(famKeyword[0])){
                 if(super.SearchMechanism(keyword, emotionalAbuse, 0)){
                 abuseType = abuseViolenceType[0];
@@ -78,19 +74,11 @@ public class Family extends Civil {
                 sentence = "This is a Family Violence case and you have suffered sexual abuse";
                 }
             }
-       }
+       
    }
 
     public void setMarriage(boolean marriage) {
         this.marriage = marriage;
-    }
-    
-    public boolean isDivorce() {
-        return divorce;
-    }
-
-    public void setDivorce(boolean divorce) {
-        this.divorce = divorce;
     }
 
     public boolean isChild() {
@@ -114,8 +102,8 @@ public class Family extends Civil {
     }
     
     public void setParentDecision(String keyword){
-        if(keyword.equalsIgnoreCase("no")){
-            this.parentDecision = false;
+        if(keyword.equalsIgnoreCase(famKeyword[5])){    //if keyword equals to "disagree"
+            this.parentDecision = false;    //then parent choose to resolve this in court
         }else{
             this.parentDecision = true;
         }
