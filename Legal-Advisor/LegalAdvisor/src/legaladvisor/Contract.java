@@ -20,7 +20,7 @@ public class Contract extends Civil {
     //                                  0       1      2     3        4          5             6         7         8        9        10       11       12        13        14      15       16      17
     
     private boolean offer;  //offer is made or not. An offer contains all of the important and revelant terms of contract
-    private boolean consider;   //if the parties agree the offer, both parties will exchange valuable things between them.
+    private boolean consideration;   //if the parties agree the offer, both parties will exchange valuable things between them.
 
     private boolean lawfulPurpose;
     //                                            0                 1                        2                      3
@@ -32,13 +32,14 @@ public class Contract extends Civil {
     private String typeContract;
     private boolean hasContract;
     
-    public Contract(String rem, String jur, String tC,String pur, boolean pC, int partAge, boolean dis) {
+    public Contract(String rem, String jur, String tC,String pur, boolean pC, int partAge, boolean dis, boolean offe, boolean consi) {
         super(rem, jur, tC);
         this.purpose = pur;
         this.partiesConsent = pC;
         this.participantAge = partAge;
         this.disability = dis;
-        
+        this.offer = offe;
+        this.consideration = consi;
     }
     
     public void setContract(String keyword){    //type of contract
@@ -46,7 +47,7 @@ public class Contract extends Civil {
         if(super.SearchMechanism(keyword, super.getContractWord(), 0)){
             if((this.capacity == false) || (this.lawfulPurpose == false)){  //if the person does not have ability to understand the terms of contract or it has unlawful purpose
                 typeContract = "This is a void contract means the contract is no longer valid.";  //then contract is void
-            }else if(((this.partiesConsent == true) && (this.consider == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)) ||
+            }else if(((this.partiesConsent == true) && (this.consideration == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)) ||
                     (keyword.equalsIgnoreCase(getContractWord()[3])) || keyword.equalsIgnoreCase(getContractWord()[10]) || keyword.equalsIgnoreCase(getContractWord()[17])){
             //if the parties agree and accept the offer and the contract purpose is lawful and has ability to understand the terms of contract
             //or the keyword equals to "car", "house", "purchase" then this is an expressed contracts
