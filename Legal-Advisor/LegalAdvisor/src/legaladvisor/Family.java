@@ -48,7 +48,7 @@ public class Family extends Civil {
         }
     }
     
-    public boolean isMarriage() {
+    public boolean getMarriage() {
         return marriage;
     }
    public void setFamilyViolenceType(String keyword){
@@ -72,7 +72,7 @@ public class Family extends Civil {
         this.marriage = marriage;
     }
 
-    public boolean isChild() {
+    public boolean getChild() {
         return child;
     }
 

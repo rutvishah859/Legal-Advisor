@@ -32,7 +32,10 @@ import java.util.*;
     private String jurisdictions[]={"Ontario","Canada"};
     //Family keywords
     private String famKeyword[] = {"abuse","aggreement","child", "custody", "decision","disagree", "divorce", "emotional","marry","mistreatment","permanent", "physical","share", "sexual"};
-    
+    //Contract keywords
+    private String contractWord []= {"agree","break","buy","car","compensate","condition","contract","disagree","failing","goods", "house","illness","make", "mental","negotiate","offer", "pay","purchase","request"};
+    private String unlawfulPurpose[] = {"betting", "drugs", "firearm","gambling", "gaming", "kill","prostitution", "prositute"}; //the contract must have lawful objective or purpose
+
     public Case(String rem, String jur){
         this.remedies = rem;
         this.jurisdiction = jur;
@@ -153,17 +156,27 @@ import java.util.*;
         return jurisdictions;
     }
 
-    /**
-     * @return the famKeyword
-     */
     public String[] getFamKeyword() {
         return famKeyword;
     }
 
-    /**
-     * @param famKeyword the famKeyword to set
-     */
     public void setFamKeyword(String[] famKeyword) {
         this.famKeyword = famKeyword;
+    }
+
+    public String[] getContractWord() {
+        return contractWord;
+    }
+
+    public void setContractWord(String[] contractWord) {
+        this.contractWord = contractWord;
+    }
+
+    public String[] getUnlawfulPurpose() {
+        return unlawfulPurpose;
+    }
+
+    public void setUnlawfulPurpose(String[] unlawfulPurpose) {
+        this.unlawfulPurpose = unlawfulPurpose;
     }
 }

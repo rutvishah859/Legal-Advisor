@@ -18,11 +18,10 @@ public class Contract extends Civil {
     private int participantAge; // anyone who under 18 or 19 years old does not have the capacity to enter into valid contract
     private boolean brokenContract; // if the parties break the contract
     //                                  0       1      2     3        4          5             6         7         8        9        10       11       12        13        14      15       16      17
-    private String contractWord []= {"agree","break","buy","car","compensate","condition","contract","disagree","failing","goods", "house","illness","make", "mental","negotiate","offer", "pay","purchase","request"};
+    
     private boolean offer;  //offer is made or not. An offer contains all of the important and revelant terms of contract
     private boolean consider;   //if the parties agree the offer, both parties will exchange valuable things between them.
 
-    private String unlawfulPurpose[] = {"betting", "drugs", "firearm","gambling", "gaming", "kill","prostitution", "prositute"}; //the contract must have lawful objective or purpose
     private boolean lawfulPurpose;
     //                                            0                 1                        2                      3
   //  private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
@@ -44,11 +43,11 @@ public class Contract extends Civil {
     
     public void setContract(String keyword){    //type of contract
         String contract;
-        if(super.SearchMechanism(keyword, contractWord, 0)){
+        if(super.SearchMechanism(keyword, super.getContractWord(), 0)){
             if((this.capacity == false) || (this.lawfulPurpose == false)){  //if the person does not have ability to understand the terms of contract or it has unlawful purpose
                 typeContract = "This is a void contract means the contract is no longer valid.";  //then contract is void
             }else if(((this.partiesConsent == true) && (this.consider == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)) ||
-                    (keyword.equalsIgnoreCase(contractWord[3])) || keyword.equalsIgnoreCase(contractWord[10]) || keyword.equalsIgnoreCase(contractWord[17])){
+                    (keyword.equalsIgnoreCase(getContractWord()[3])) || keyword.equalsIgnoreCase(getContractWord()[10]) || keyword.equalsIgnoreCase(getContractWord()[17])){
             //if the parties agree and accept the offer and the contract purpose is lawful and has ability to understand the terms of contract
             //or the keyword equals to "car", "house", "purchase" then this is an expressed contracts
                 typeContract = "This is an expressed contract because both parties are understand the terms of contract with legal purpose";
@@ -60,7 +59,7 @@ public class Contract extends Civil {
     public void setRemedies(String keyword){
         if(this.failingToPerform == true){  //if one of the parties is failed to perform the terms of agreement in contract
             if(this.breachOfContract == true){  //the breach of contract is true
-                if(keyword.equalsIgnoreCase(contractWord[4]) || keyword.equalsIgnoreCase(contractWord[16]) || keyword.equalsIgnoreCase(contractWord[1])){
+                if(keyword.equalsIgnoreCase(getContractWord()[4]) || keyword.equalsIgnoreCase(getContractWord()[16]) || keyword.equalsIgnoreCase(getContractWord()[1])){
                 //if the keyword equals to "failing" or "pay" then remedy is money damages
                 //The compensatory damages is requested by the nonbreaching party who feels unjustly. THe judge will base on that to determine the amount of money
                 //that breaching party will pay to cover for the loss.
@@ -77,7 +76,7 @@ public class Contract extends Civil {
     }
     
     public void setFailingToPerform(String keyword){
-        if(keyword.equalsIgnoreCase(contractWord[1]) || keyword.equalsIgnoreCase(contractWord[8])){
+        if(keyword.equalsIgnoreCase(getContractWord()[1]) || keyword.equalsIgnoreCase(getContractWord()[8])){
             //if keyword equals to "break" or "failing"
             this.failingToPerform = true;   //then the party is failed to perform the agreement terms
         }
@@ -120,7 +119,7 @@ public class Contract extends Civil {
     }
     
     public void setLawfulPurpose(String keyword){
-        if(super.SearchMechanism(keyword, unlawfulPurpose, 0)){     //if keyword equals to any words that related to gambling or other
+        if(super.SearchMechanism(keyword, super.getUnlawfulPurpose(), 0)){     //if keyword equals to any words that related to gambling or other
                                                                     //unlawful purpose
             this.lawfulPurpose = false;     //it will be unlawful to make a contract
         }else{
