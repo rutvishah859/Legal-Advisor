@@ -91,20 +91,12 @@ public class Contract extends Civil {
         this.purpose = purpose;
     }
 
-    public boolean isPartiesConsent() {
+    public boolean getPartiesConsent() {
         return partiesConsent;
     }
 
     public void setPartiesConsent(boolean partiesConsent) {
         this.partiesConsent = partiesConsent;
-    }
-
-    public boolean isHasContract() {
-        return hasContract;
-    }
-
-    public void setHasContract(boolean hasContract) {
-        this.hasContract = hasContract;
     }
     
     public void setCapacity(boolean dis, int age){
