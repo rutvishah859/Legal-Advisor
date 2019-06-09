@@ -30,6 +30,8 @@ import java.util.*;
     private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
     ///Jurisdiction keywords
     private String jurisdictions[]={"Ontario","Canada"};
+    //Family keywords
+    private String famKeyword[] = {"abuse","aggreement","child", "custody", "decision","disagree", "divorce", "emotional","marry","mistreatment","permanent", "physical","share", "sexual"};
     
     public Case(String rem, String jur){
         this.remedies = rem;
@@ -149,5 +151,19 @@ import java.util.*;
     }
     public String[] getJusrisdictions(){
         return jurisdictions;
+    }
+
+    /**
+     * @return the famKeyword
+     */
+    public String[] getFamKeyword() {
+        return famKeyword;
+    }
+
+    /**
+     * @param famKeyword the famKeyword to set
+     */
+    public void setFamKeyword(String[] famKeyword) {
+        this.famKeyword = famKeyword;
     }
 }
