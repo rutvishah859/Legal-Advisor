@@ -5,8 +5,8 @@ public class Family extends Civil {
     private boolean marriage;
     private boolean child;
     private int numChild;
-    //                                0        1        2         3
-    private String custodyType[] = {"full", "joint", "shared", "split"};
+    //                                0        1        2
+    private String custodyType[] = {"full", "joint", "split"};
     private boolean childDecision;
     private boolean parentDecision;
     //                               0          1         2         3           4           5         6            7        8           9             10          11       12        13
@@ -28,7 +28,7 @@ public class Family extends Civil {
     }
     public void setCustody(String keyword){
         String sentence;
-        if(super.SearchMechanism(keyword, famKeyword, 0)){
+        if(super.SearchMechanism(keyword, famKeyword, 0)){  
             if((this.marriage == true) && (this.child == true)){
                 if((keyword.equalsIgnoreCase(famKeyword[10]) || keyword.equalsIgnoreCase(famKeyword[5]))){
                     sentence = "If both parents disagree to live together, this will be full custody means only one parent has the right to make all decision about the child";
@@ -41,22 +41,18 @@ public class Family extends Civil {
                     if(this.childDecision == true){
                         sentence = "The child decision might affect whether this will be a split custody. The judge might take into consideration.";
                     }else{
-                        custType = custodyType[3];  //split custody
+                        custType = custodyType[2];  //split custody
                     }
                 }
            }
-           if(keyword.equalsIgnoreCase(famKeyword[9]) || keyword.equalsIgnoreCase(famKeyword[0]) || keyword.equalsIgnoreCase(famKeyword[9]) || keyword.equalsIgnoreCase(famKeyword[7])
+           if(keyword.equalsIgnoreCase(famKeyword[9]) || keyword.equalsIgnoreCase(famKeyword[0]) || keyword.equalsIgnoreCase(famKeyword[7])
               || keyword.equalsIgnoreCase(famKeyword[11]) || keyword.equalsIgnoreCase(famKeyword[13])){
+           //if keyword equals to "mistreatment", "abuse", "emotion", "sexual", "physical"
               sentence = "This is a Family Violence case."; 
            }
         }
     }
     
-    
-    
-    public void custType(String keyword){
-        
-    }
     public boolean isMarriage() {
         return marriage;
     }
@@ -108,6 +104,6 @@ public class Family extends Civil {
             this.parentDecision = true;
         }
     }
-    
+   
     
 }
