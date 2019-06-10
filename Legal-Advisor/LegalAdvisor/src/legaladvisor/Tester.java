@@ -48,6 +48,8 @@ public class Tester {
             p1.getA1().setLawyer(l3);
             p1.getA1().getLawyer().printInfo();
         }
+        filename=input.nextLine();
+        p1.getA1().setFile(filename);
         }           
     }
 }
