@@ -80,7 +80,7 @@ public class CrimeAgainstPerson extends CriminalCase{
         }
     }    
     public String printInfo(){
-        return "";
+        return "Type of Offense: " + this.getTypeOfOffence() + "\nMens Rea" + this.getMensRea() + "\nCrime Type: " + this.getCrimeType(); 
     }
     public void setTypeOfOffence(String typeOfOffence) {
         this.typeOfOffence = typeOfOffence;

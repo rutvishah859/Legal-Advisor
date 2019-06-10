@@ -99,6 +99,11 @@ public class Family extends Civil {
             this.parentDecision = true;
         }
     }
+
+    @Override
+    String printInfo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     
 }

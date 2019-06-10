@@ -23,6 +23,6 @@ public abstract class CriminalCase extends Case {
         this.sentence = sentence;
     }
     public String printInfo(){
-        return "Jurisdiction: " + this.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + this.crime + "";
+        return "Jurisdiction: " + this.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + this.crime + "\nSentance: " + this.getSentence();
     }
 }

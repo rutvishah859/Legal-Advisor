@@ -30,6 +30,6 @@ public class Tester {
         p1.getA1().setCaseChecker();
         p1.getA1().setCase();
 
-    }
+    }           
     }
 }
