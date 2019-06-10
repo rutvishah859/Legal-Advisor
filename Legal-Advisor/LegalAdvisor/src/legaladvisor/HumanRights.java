@@ -14,6 +14,4 @@ public abstract class HumanRights extends Case {
     public void setCharterOHRC(String SCO) {
         this.CharterOHRC = SCO;
     }
-    
-    
 }

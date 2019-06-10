@@ -1,3 +1,6 @@
+/*
+The Account class which contins all te cases lawyers, and methods of set up the cases/lawyers for each individual account
+*/
 package legaladvisor;
 import java.io.*;
 import java.util.ArrayList;
