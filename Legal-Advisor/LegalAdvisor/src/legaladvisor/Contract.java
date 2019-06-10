@@ -59,7 +59,7 @@ public class Contract extends Civil {
     }
     public void setRemedies(String keyword){
         if(this.failingToPerform == true){  //if one of the parties is failed to perform the terms of agreement in contract
-            if(this.breachOfContract == true){  //the breach of contract is true
+            this.breachOfContract = true;
                 if(keyword.equalsIgnoreCase(getContractWord()[4]) || keyword.equalsIgnoreCase(getContractWord()[16]) || keyword.equalsIgnoreCase(getContractWord()[1])){
                 //if the keyword equals to "failing" or "pay" then remedy is money damages
                 //The compensatory damages is requested by the nonbreaching party who feels unjustly. THe judge will base on that to determine the amount of money
@@ -72,7 +72,7 @@ public class Contract extends Civil {
                             + "2. One party is not to fulfill the terms of a contract\n"
                             + "3. the court may order the contract to be cancelled");
                 }
-            }
+            
         }
     }
     
