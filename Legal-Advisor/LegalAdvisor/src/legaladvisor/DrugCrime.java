@@ -88,9 +88,9 @@ public class DrugCrime extends CriminalCase{
             this.scheType = "schedule II";
         }        
     }
-    public double getQuantity(double qty){
+    /*public String getQuantity(){
         return quantity;
-    }
+    }*/
     public String getTypeOfDrug(){
         return typeOfDrug;
     }
@@ -99,6 +99,10 @@ public class DrugCrime extends CriminalCase{
     }
     public void setTypeOfOffense(String of){
        this.typeOfOffense= of;
+    }
+    
+    String printInfo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
