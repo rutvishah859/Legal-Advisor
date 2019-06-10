@@ -2,14 +2,14 @@ package legaladvisor;
 import java.io.*;
 import java.util.ArrayList;
 public class Account {
-    private ArrayList <Case> Cases;
+    private ArrayList <Case> cases;
     private ArrayList <String> availableDays;
     private Lawyer l1;
     private File f;
     private caseChecker c;
     private String dayOfAppointment;
-    public Account(String fileName){
-        f=new File(fileName);
+    public Account(File fileName){
+        f=fileName;
     }
     public void setCaseChecker() throws IOException{
         c=new caseChecker("","",f);
@@ -17,9 +17,10 @@ public class Account {
     public void setCase(){
         Case c1;
         c1=c.findKeyWords(c);
+        cases.add(c1);
     }
     public ArrayList <Case> getCase(){
-        return Cases;
+        return cases;
     }
     public void setAvailability(String day){
         availableDays.add(day);
@@ -40,7 +41,20 @@ public class Account {
             }
         }
     }
-    public void sortCases(){
-        
+    public void sortCases(ArrayList <Case> cases){
+        for(int i=0;i<cases.size();i++){
+            Case firstAlphabetLetter=cases.get(i);   
+            int index=i;
+            for(int j=i+1;j<cases.size();j++){
+                if(cases.get(j).getType().get(0).charAt(0)<firstAlphabetLetter.getType().get(0).charAt(0)){
+                    firstAlphabetLetter=cases.get(j);
+                    index=j;
+                }
+            }
+            Case originalValue=cases.get(i);
+            cases.set(i, firstAlphabetLetter);
+            cases.set(index,originalValue);
+        }
     }
-}
+    }
+
