@@ -25,6 +25,9 @@ public class Account {
     public void setAvailability(String day){
         availableDays.add(day);
     }
+    public Lawyer getLawyer(){
+        return l1;
+    }
     public ArrayList <String> getAvailability(){
         return availableDays;
     }
