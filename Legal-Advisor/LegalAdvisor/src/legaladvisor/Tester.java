@@ -46,7 +46,8 @@ public class Tester {
             p1.getA1().setLawyer(l1);
             p1.getA1().setLawyer(l2);
             p1.getA1().setLawyer(l3);
+            p1.getA1().getLawyer().printInfo();
         }
-        }
+        }           
     }
 }

@@ -1,3 +1,6 @@
+/*
+The OHRC class extends the HumanRights class which inheriates the Case class, this class basically sets the variables, which is later printed in the printInfo abstract method
+*/
 package legaladvisor;
 public class OHRC extends HumanRights{
     private String grounds; 
@@ -15,7 +18,7 @@ public class OHRC extends HumanRights{
 
     public void setGrounds(String keyword) {
         if(this.getJurisdiction().equalsIgnoreCase("Ontario")){
-        if(super.SearchMechanism(keyword, getGroundKeywords(), 0)==true){
+        if(super.SearchMechanism(keyword, getGroundKeywords(), 0)){
             if(this.getISM()>=0&&this.getISM()<3){
                 this.grounds="Race";
             }
@@ -56,7 +59,7 @@ public class OHRC extends HumanRights{
         return area;
     }
     public void setArea(String keyword) {
-        if(super.SearchMechanism(keyword, getAreaKeywords(), 0)==true){
+        if(super.SearchMechanism(keyword, getAreaKeywords(), 0)){
             if(this.getISM()==0||this.getISM()==1){
                 this.area="Occupancy of accomodation";
             }
