@@ -7,7 +7,6 @@ public class DrugCrime extends CriminalCase{
     private double quantity;
     private String typeOfDrug;
     private String typeOfOffense;
-    private String scheduleType[] = {"schedule I", "schedule II", "schedule III"};
     
     private String scheType;
     
