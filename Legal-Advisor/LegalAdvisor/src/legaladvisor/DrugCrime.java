@@ -4,13 +4,14 @@ public class DrugCrime extends CriminalCase{
     
     private boolean trafficking;
     private boolean possession;
-    private double quantity;
+    private String quantity[] = {"30","3","0"};
     private String typeOfDrug;
     private String typeOfOffense;
     private String scheduleType[] = {"schedule I", "schedule II", "schedule III"};
+    
     private String scheType;
     
-    public DrugCrime(String rem, String jur, String crim, String sen, boolean pos, boolean traf, double qty, String tOD) {
+    public DrugCrime(String rem, String jur, String crim, String sen, boolean pos, boolean traf, String tOD) {
         super(rem, jur, crim, sen);
         this.trafficking=traf;
         this.possession=pos;
@@ -23,9 +24,9 @@ public class DrugCrime extends CriminalCase{
             if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) || keyword.equalsIgnoreCase(super.getDrugType()[0])
             || keyword.equalsIgnoreCase(super.getDrugType()[8])){   //cocaine,heroine,amphetamines 
                 this.setScheduleType(keyword);
-                if(this.quantity > 30){
+                if(keyword.equalsIgnoreCase(this.quantity[0])){
                     sentence = "The max jail sentence is life imprisonment.";
-                }else if(this.quantity >3 ){
+                }else if(keyword.equalsIgnoreCase(this.quantity[1])){
                     sentence = "The max jail sentence is between 6 to 8 years";
                 }else{
                     sentence = "The max jail sentence is between 6 months to 2 years";
@@ -35,16 +36,16 @@ public class DrugCrime extends CriminalCase{
                 sentence = "The maximum jail sentence is 10 years";
             }else if(keyword.equalsIgnoreCase(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[7])){ //hashish and marijuana
                 this.setScheduleType(keyword);
-                if(this.quantity > 30){
+                if(keyword.equalsIgnoreCase(this.quantity[1])){ //if keyword equals to 30
                     sentence = "The maximum jail sentence is life imprionment";
-                }else if(this.quantity < 3){
+                }else if(keyword.equalsIgnoreCase(this.quantity[1])){  //  if keyword equals to 3
                     sentence = "The maximum jail sentence is 5 years";
                 }
             }else if(keyword.equalsIgnoreCase(super.getDrugType()[2])){
                 sentence = "The maximum jail sentence is 18 months.";
             }
         }else{
-            if(this.quantity > 30){
+            if(keyword.equalsIgnoreCase(this.quantity[0])){
                 this.typeOfOffense = "indictable";
                 if(this.scheType.equalsIgnoreCase("schedule I")){
                     sentence = "The max jail sentence is 7 years";
