@@ -21,34 +21,10 @@ public class Tester {
         phoneNumber=input.nextLine();
         System.out.println("Please enter a file name with your complaint. Please include the double slashes.");
         filename=input.nextLine();
-<<<<<<< HEAD
         Person p1=new Person(name,filename,phoneNumber);
         System.out.println(p1.getName());
         System.out.println(p1.getPhoneNum());
         Account acc= new Account(p1.getF());
-        p1.setA1(acc);
-
-=======
-        Person p1=new Person("Max", filename, "1-888-467-4999");
-        
-        CrimeAgainstPerson c1= new CrimeAgainstPerson("None","Ontario","Crime Against The Person","null","indictable");
-       
-        c1.setMensRea("accident");
-        System.out.println(c1.getMensRea());
-        c1.setCrimeTypeAndSentence("killed");
-        System.out.println(c1.getCrimeType());
-        OHRC o1=new OHRC("","","","");
-        o1.setGrounds("white");
-        o1.setArea("hospital");
-        System.out.println(o1.getArea());
-        System.out.println(o1.getGrounds());
-        File c = new File ("H:\\GitHub\\Legal-Advisor\\Legal-Advisor\\LegalAdvisor\\src\\legaladvisor\\caseFile.txt");
-        caseChecker cc = new caseChecker ("abc", "abc", c);  
-        System.out.println(cc.printInfo()); 
-        cc.findKeyWords(cc);
-        System.out.println(cc.getType());
-        //MoneyCrimes mc = new MoneyCrimes ("", "", "", "", 0.0, false, "");
-        
->>>>>>> 9aca77874bc41e1720b1c0fc28c13ce1af7382f7
+        p1.setA1(acc);           
     }
 }
