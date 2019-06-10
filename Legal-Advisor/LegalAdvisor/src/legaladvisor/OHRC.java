@@ -2,7 +2,6 @@ package legaladvisor;
 public class OHRC extends HumanRights{
     private String grounds; 
     private String area; 
-    private String typeOfDis; 
     
     public OHRC(String rem, String jur, String gr, String ar) {
         super(rem, jur);
@@ -99,7 +98,7 @@ public class OHRC extends HumanRights{
         }
     }
     public String printInfo() {
-        return null; 
+        return "Grounds: " + this.getGrounds() + "\nArea: " + this.getArea(); 
     }
     
 }
