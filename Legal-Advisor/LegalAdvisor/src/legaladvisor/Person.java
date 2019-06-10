@@ -1,12 +1,15 @@
 package legaladvisor;
+import java.io.*;
 public class Person {
 private String name;
 private String complaintFilePath;
 private String phoneNum;
+private File f;
 private Account a1;
     public Person(String n, String c, String pn){
     name=n;
-    complaintFilePath=n;
+    complaintFilePath=c;
+    f=new File(c);
     phoneNum=pn;
     }
     public String getName() {
@@ -32,6 +35,9 @@ private Account a1;
     }
     public void setA1(Account a1) {
         this.a1 = a1;
+    }
+    public File getF(){
+        return f;
     }
 
 }
