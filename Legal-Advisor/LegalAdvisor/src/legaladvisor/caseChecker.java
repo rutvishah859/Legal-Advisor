@@ -127,7 +127,7 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
                 super.setType("Criminal Case");
-                DrugCrime trafficking = new DrugCrime ("", jurisdiction, "", "", false, false, 0.0, "");
+                DrugCrime trafficking = new DrugCrime ("", jurisdiction, "", "", false, false, "");
                 trafficking.setCrime("Drug Crime");
                 trafficking.setTrafficking(w, 0);
                 trafficking.setCrimeTypeAndSentence(w);
@@ -136,7 +136,7 @@ public class caseChecker extends Case{
             
             else if (super.SearchMechanism(w, super.getDrugType(), 0)){
                 super.setType ("Criminal Case"); 
-                DrugCrime possession = new DrugCrime ("", jurisdiction, "", "", false, false, 0.0, "");
+                DrugCrime possession = new DrugCrime ("", jurisdiction, "", "", false, false, "");
                 possession.setCrime("Drug Crime");
                 possession.setCrimeTypeAndSentence(w);
                 return possession;
