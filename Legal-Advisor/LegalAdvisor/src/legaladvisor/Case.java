@@ -1,3 +1,8 @@
+/*
+The Case Abstract Class contains multiple type of cases which inhherites the Case class 
+The class contains all of the key words for all the classes, and sub classes of those classes
+*/
+
 package legaladvisor; 
 import java.util.*; 
 
@@ -73,6 +78,7 @@ import java.util.*;
     public String getJurisdiction(){
         return this.jurisdiction;
     }
+    //printInfo is an abstract method which is set by the child/grandchild classes which prints all the info about the case plus the sentance
     abstract String printInfo();   
     public boolean SearchMechanism(String keyword, String a[],int n){
         if(a[n].equalsIgnoreCase(keyword)){

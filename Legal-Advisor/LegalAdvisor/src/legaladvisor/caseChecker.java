@@ -1,3 +1,7 @@
+/*
+The CaseChecker class inheriates the Case class, who basically checks that text file searching for keywords setting up objects for those cases 
+for example if the CaseChecker found a murder keyword then it would create a CrimeAgainstPerson object 
+*/
 package legaladvisor;
 import java.io.*;
 import java.util.logging.Level;
@@ -5,8 +9,6 @@ import java.util.logging.Logger;
 
 public class caseChecker extends Case{
     private String CaseType; 
-    private Case cal; 
-    private String keyWord;
     private String [] wordBank; //a bank of key words found in the text file
     private File caseFile; 
     

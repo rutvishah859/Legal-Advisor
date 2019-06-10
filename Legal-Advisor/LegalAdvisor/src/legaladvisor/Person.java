@@ -1,3 +1,6 @@
+/*
+The Person class just contains the Accounts personal info, such as name, phome number, and the path to the case file
+*/
 package legaladvisor;
 import java.io.*;
 public class Person {
