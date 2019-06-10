@@ -21,10 +21,15 @@ public class Tester {
         phoneNumber=input.nextLine();
         System.out.println("Please enter a file name with your complaint. Please include the double slashes.");
         filename=input.nextLine();
-        Person p1=new Person(name,filename,phoneNumber);
-        System.out.println(p1.getName());
-        System.out.println(p1.getPhoneNum());
-        Account acc= new Account(p1.getF());
-        p1.setA1(acc);           
+        while(!filename.equalsIgnoreCase("none")){
+            Person p1=new Person(name,filename,phoneNumber);
+            System.out.println(p1.getName());
+            System.out.println(p1.getPhoneNum());
+            Account acc= new Account(p1.getF());
+            p1.setA1(acc);
+            p1.getA1().setCaseChecker();
+            p1.getA1().setCase();
+
+        }           
     }
 }

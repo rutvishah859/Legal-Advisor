@@ -72,7 +72,7 @@ public class Charter extends HumanRights {
     }
     
     String printInfo() {
-        return null;
+        return "Right: " + this.getRight();
         
     }
     
