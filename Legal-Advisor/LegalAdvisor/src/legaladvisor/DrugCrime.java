@@ -104,6 +104,10 @@ public class DrugCrime extends CriminalCase{
     public void setQuantity(double q){
         this.quantity = q;
     }
+
+    String printInfo() {
+        return "Type of Drug: " + this.getTypeOfDrug() + "Type of Offence: " + this.getTypeOfOffense(); 
+    }
     
     
 }

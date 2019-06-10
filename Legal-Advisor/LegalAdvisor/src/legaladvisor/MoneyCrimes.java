@@ -46,5 +46,8 @@ public class MoneyCrimes extends CriminalCase {
     public boolean getViolence() {
         return violence;
     }
-     
+    
+   public String printInfo(){
+        return "Jurisdiction: " + super.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + super.getCrime() + "\nSentance: " + super.getSentence();
+    } 
 }

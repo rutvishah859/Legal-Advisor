@@ -1,3 +1,6 @@
+/*
+The Criminal Case method extends the Case class  
+*/
 package legaladvisor;
 
 public abstract class CriminalCase extends Case {
@@ -21,8 +24,5 @@ public abstract class CriminalCase extends Case {
     }
     public void setSentence(String sentence) {
         this.sentence = sentence;
-    }
-    public String printInfo(){
-        return "Jurisdiction: " + this.getJurisdiction() + "\nType: " + this.getType()+ "\nCrime: " + this.crime + "\nSentance: " + this.getSentence();
     }
 }
