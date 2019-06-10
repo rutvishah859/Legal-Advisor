@@ -76,17 +76,12 @@ public class OHRC extends HumanRights{
         }
         
     }
-    public void setRemedies(String keyword){
+    public void setRemedies(){
         if(this.getArea().equalsIgnoreCase("occupancy of accomodation")){
             super.setRemedies("The respondent will have to stop the discrimination and offer a letter of apologies. Monetary compensation will also be provided.");
         }
         else if(this.getArea().equalsIgnoreCase("employment")){
-            if(keyword.equalsIgnoreCase("promotion")){
-              super.setRemedies("The respondent will have to give you the promotion and pay monetary compensation for any losses that you experienced. The staff will also have to go through HR training.");  
-            }
-            else if(keyword.equalsIgnoreCase("hired")||keyword.equalsIgnoreCase("fired")){
-                super.setRemedies("The respondent will have to hire you and monetary compensation for any losses that you experienced.The staff will also have to go through HR training.");  
-            }
+           super.setRemedies("The respondent will have to give you the job/promotion. The staff will also have to go through HR Training.");
         }
         else if(this.getArea().equalsIgnoreCase("goods, services, facilities")){
             super.setRemedies("The respondent will have to issue you a letter of apology and stop the discriminatory behaviour.");

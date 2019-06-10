@@ -53,28 +53,28 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Criminal Case");
-                MoneyCrimes fraud= new MoneyCrimes ("","","", "", 0.0, true);
+                MoneyCrimes fraud= new MoneyCrimes ("Trial",jurisdiction,"", "", 0.0, true);
                 fraud.setCrimeAndSentence(w);
                 fraud.setCrime("Money Crime");
                 return fraud;
             }
             else if (super.SearchMechanism(w, super.getElectronicCrime(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes electronicCrime = new MoneyCrimes ("","", "", "", 0.0, false);
+                MoneyCrimes electronicCrime = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false);
                 electronicCrime.setCrimeAndSentence(w);
                 electronicCrime.setCrime("Money Crime");
                 return electronicCrime;
             }
             else if (super.SearchMechanism(w, super.getMoneyLaundering(), 0)){
                 super.setType("Criminal Case");
-                MoneyCrimes moneyLaundering = new MoneyCrimes ("","", "", "", 0.0, false);
+                MoneyCrimes moneyLaundering = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false);
                 moneyLaundering.setCrimeAndSentence(w);
                 moneyLaundering.setCrime("Money Crime");
                 return moneyLaundering;
             }
             else if (super.SearchMechanism(w, super.getTheft(), 0)){
                 super.setType("Criminal Case");
-                MoneyCrimes theft = new MoneyCrimes ("","", "", "", 0.0, false); 
+                MoneyCrimes theft = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false); 
                 theft.setCrimeAndSentence(w);
                 theft.setCrime("Money Crime");
                 theft.setCrimeAndSentence(w); 
@@ -82,7 +82,7 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes robbery = new MoneyCrimes ("","", "", "", 0.0, false); 
+                MoneyCrimes robbery = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false); 
                 robbery.setCrimeAndSentence(w);
                 robbery.setCrime("Money Crimes");
 
@@ -90,7 +90,7 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getMurderkeywords(), 0)){
                 super.setType("Criminal Case");
-                CrimeAgainstPerson murder = new CrimeAgainstPerson ("", "", "", "", "");
+                CrimeAgainstPerson murder = new CrimeAgainstPerson ("Trial", jurisdiction, "", "", "");
                 murder.setMensRea(w);
                 murder.setCrimeTypeAndSentence(w);
                 murder.setCrime("Crimes against the Person");
@@ -98,7 +98,7 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getAssaultkeywords(), 0)){
                 super.setType("Criminal Case");
-                CrimeAgainstPerson assault = new CrimeAgainstPerson ("", "", "", "", "");
+                CrimeAgainstPerson assault = new CrimeAgainstPerson ("Trial", jurisdiction, "", "", "");
                 assault.setCrime("Crimes against the Person");
                 return assault;
             }
@@ -108,22 +108,16 @@ public class caseChecker extends Case{
                 OHRC ohrcComplaint = new OHRC ("", "Ontario", "", "");
                 ohrcComplaint.setArea(w);
                 ohrcComplaint.setGrounds(w);
+                ohrcComplaint.setRemedies();
                 ohrcComplaint.setCharterOHRC("OHRC Case");
                 return ohrcComplaint;
                 }
                 }
             
             if(jurisdiction.equalsIgnoreCase("Canada")){ //will only be a Charter case is the jurisdiction is Canada
-                if (super.SearchMechanism(word, super.getIssues(), 0)){
-                    super.setType("Charter");
-                    Charter charter = new Charter ("", "", "");
-                }
-            }
-            if (super.SearchMechanism(word, super.getTraffickingTerm(), 0)){
-                super.setType("Drug Crime");
                 if (super.SearchMechanism(w, super.getIssues(), 0)){
                     super.setType("Human Rights Case");
-                    Charter charter = new Charter ("", "Canada", "");
+                    Charter charter = new Charter ("No remedies needed", "Canada", "");
                     charter.setRight(w);
                     charter.setCharterOHRC("Charter Case");
                     return charter;
@@ -136,10 +130,6 @@ public class caseChecker extends Case{
                 trafficking.setTrafficking(w, 0);
                 trafficking.setCrimeTypeAndSentence(w);
                 return trafficking;
-            }
-            else if (super.SearchMechanism(word, super.getDrugType(), 0)){
-                super.setType ("Drug Crimes"); 
-                DrugCrime drug = new DrugCrime ("", jurisdiction, "", "", false, false, 0.0, "");
             }
             
             else if (super.SearchMechanism(w, super.getDrugType(), 0)){
