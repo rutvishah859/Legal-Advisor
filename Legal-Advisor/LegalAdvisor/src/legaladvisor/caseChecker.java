@@ -2,14 +2,14 @@ package legaladvisor;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import java.util.Scanner;
 public class caseChecker extends Case{
     private String CaseType; 
     private Case cal; 
     private String keyWord;
     private String [] wordBank; //a bank of key words found in the text file
     private File caseFile; 
-    
+    Scanner input= new Scanner(System.in); 
     public caseChecker(String rem, String jur, File complaint) throws IOException {
         super(rem, jur);
         caseFile = complaint; 
@@ -124,18 +124,26 @@ public class caseChecker extends Case{
                 }
             }
             if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
+                double quantity;
                 super.setType("Criminal Case");
-                DrugCrime trafficking = new DrugCrime ("", jurisdiction, "", "", false, false, 0.0, "");
+                DrugCrime trafficking = new DrugCrime ("Trial", jurisdiction, "", "", false, false, 0.0, "");
                 trafficking.setCrime("Drug Crime");
                 trafficking.setTrafficking(w, 0);
+                System.out.println("Please enter the quanity of drugs in grams:");
+                quantity=input.nextDouble();
+                trafficking.setQuantity(quantity);
                 trafficking.setCrimeTypeAndSentence(w);
                 return trafficking;
             }
             
             else if (super.SearchMechanism(w, super.getDrugType(), 0)){
+                double quantity;
                 super.setType ("Criminal Case"); 
-                DrugCrime possession = new DrugCrime ("", jurisdiction, "", "", false, false, 0.0, "");
+                DrugCrime possession = new DrugCrime ("Trial", jurisdiction, "", "", false, false, 0.0, "");
                 possession.setCrime("Drug Crime");
+                System.out.println("Please enter the quanity of drugs in grams:");
+                quantity=input.nextDouble();
+                possession.setQuantity(quantity);
                 possession.setCrimeTypeAndSentence(w);
                 return possession;
             }

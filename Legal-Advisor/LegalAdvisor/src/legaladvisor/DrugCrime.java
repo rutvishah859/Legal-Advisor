@@ -19,7 +19,7 @@ public class DrugCrime extends CriminalCase{
         String sentence;
       
         if(super.SearchMechanism(keyword, super.getDrugType(), 0) && this.getTrafficking()){
-            this.typeOfOffense = "indictable";
+            this.typeOfOffense = "Possession with the intent of trafficking which is indictable";
             if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) || keyword.equalsIgnoreCase(super.getDrugType()[0])
             || keyword.equalsIgnoreCase(super.getDrugType()[8])){   //cocaine,heroine,amphetamines 
                 this.setScheduleType(keyword);
@@ -45,7 +45,7 @@ public class DrugCrime extends CriminalCase{
             }
         }else{
             if(this.quantity > 30){
-                this.typeOfOffense = "indictable";
+                this.typeOfOffense = "Possession and indictable";
                 if(this.scheType.equalsIgnoreCase("schedule I")){
                     sentence = "The max jail sentence is 7 years";
                 }else if(this.scheType.equalsIgnoreCase("schedule II")){
@@ -54,7 +54,7 @@ public class DrugCrime extends CriminalCase{
                     sentence = "The max jail sentence is 3 years";
                 }
             }else{
-                this.typeOfOffense="summary";
+                this.typeOfOffense="Possession and summary";
                 if(keyword.equalsIgnoreCase(super.getDrugType()[1]) || keyword.equals(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[0])|| keyword.equalsIgnoreCase(super.getDrugType()[2]) 
                || keyword.equalsIgnoreCase(super.getDrugType()[5]) || (keyword.equalsIgnoreCase(super.getDrugType()[6])) ){
                     sentence = "For the first offense, the maximum fine is $1,000 and jail sentence is up to 6 months."
@@ -99,6 +99,8 @@ public class DrugCrime extends CriminalCase{
     public void setTypeOfOffense(String of){
        this.typeOfOffense= of;
     }
-    
+    public void setQuantity(double q){
+        this.quantity=q;
+    }
     
 }
