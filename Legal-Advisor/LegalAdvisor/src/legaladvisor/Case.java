@@ -37,6 +37,9 @@ import java.util.*;
     private String jurisdictions[]={"Ontario","Canada"};
     //Family keywords
     private String famKeyword[] = {"abuse","aggreement","child", "custody", "decision","disagree", "divorce", "emotional","marry","mistreatment","permanent", "physical","share", "sexual"};
+    private String emotionalAbuse [] = {"hurting","insults","intimadation", "fun","threats", "yelling"};
+    private String sexualAbuse[] = {"harrassment","touching","unsafe","without consent"};
+    private String physicalAbuse[] = {"burning", "choking", "cutting","hitting","locking","pinching","punching","pushing","slapping","throwing","objects"};
     //Contract keywords
     private String contractWord []= {"agree","break","buy","car","compensate","condition","contract","disagree","failing","goods", "house","illness","make", "mental","negotiate","offer", "pay","purchase","request"};
     private String unlawfulPurpose[] = {"betting", "drugs", "firearm","gambling", "gaming", "kill","prostitution", "prositute"}; //the contract must have lawful objective or purpose
@@ -166,23 +169,24 @@ import java.util.*;
         return famKeyword;
     }
 
-    public void setFamKeyword(String[] famKeyword) {
-        this.famKeyword = famKeyword;
-    }
-
     public String[] getContractWord() {
         return contractWord;
-    }
-
-    public void setContractWord(String[] contractWord) {
-        this.contractWord = contractWord;
     }
 
     public String[] getUnlawfulPurpose() {
         return unlawfulPurpose;
     }
 
-    public void setUnlawfulPurpose(String[] unlawfulPurpose) {
-        this.unlawfulPurpose = unlawfulPurpose;
+    public String[] getEmotionalAbuse() {
+        return emotionalAbuse;
     }
+
+    public String[] getSexualAbuse() {
+        return sexualAbuse;
+    }
+
+    public String[] getPhysicalAbuse() {
+        return physicalAbuse;
+    }
+
 }

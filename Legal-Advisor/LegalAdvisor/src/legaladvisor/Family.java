@@ -9,12 +9,7 @@ public class Family extends Civil {
     private String custodyType[] = {"full", "joint", "split"};
     private boolean childDecision;
     private boolean parentDecision;
-    //                                     0         1            2           3      4           5
-    private String emotionalAbuse [] = {"hurting","insults","intimadation", "fun","threats", "yelling"};
-    //                                  0             1         2             3
-    private String sexualAbuse[] = {"harrassment","touching","unsafe","without consent"};
-    //                                   0          1          2         3         4          5          6          7         8         9           10   
-    private String physicalAbuse[] = {"burning", "choking", "cutting","hitting","locking","pinching","punching","pushing","slapping","throwing","objects"};
+    
     private String abuseType;
     //                                        0           1         2
     private String abuseViolenceType[] = {"emotional","physical","sexual"};
@@ -54,13 +49,13 @@ public class Family extends Civil {
    public void setFamilyViolenceType(String keyword){
        String sentence;
              if(keyword.equalsIgnoreCase(super.getFamKeyword()[0])){
-                if(super.SearchMechanism(keyword, emotionalAbuse, 0)){
+                if(super.SearchMechanism(keyword, super.getEmotionalAbuse(), 0)){
                 abuseType = abuseViolenceType[0];
                 sentence = "This is a Family Violence case and you have suffered emotional abuse";
-                }else if(super.SearchMechanism(keyword, physicalAbuse, 0)){
+                }else if(super.SearchMechanism(keyword, super.getPhysicalAbuse(), 0)){
                 abuseType = abuseViolenceType[1];   
                 sentence = "This is a Family Violence case and you have suffered physical abuse";
-                }else if(super.SearchMechanism(keyword, sexualAbuse, 0)){
+                }else if(super.SearchMechanism(keyword, super.getSexualAbuse(), 0)){
                 abuseType = abuseViolenceType[2];
                 sentence = "This is a Family Violence case and you have suffered sexual abuse";
                 }

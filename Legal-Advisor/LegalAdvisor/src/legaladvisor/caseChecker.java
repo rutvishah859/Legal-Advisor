@@ -53,6 +53,7 @@ public class caseChecker extends Case{
                     jurisdiction="Canada";
                 }
             }
+            
             if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Criminal Case");
                 MoneyCrimes fraud= new MoneyCrimes ("Trial",jurisdiction,"", "", 0.0, true);
