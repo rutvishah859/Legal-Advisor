@@ -1,6 +1,8 @@
 /*
 The OHRC class extends the HumanRights class which inheriates the Case class, this class basically sets the variables, which is later printed in the printInfo abstract method
 */
+
+//Ontario Human Rights Commission(OHRC) contains 11 grounds to prevent discrimination and to promote advance human rights in Ontario
 package legaladvisor;
 public class OHRC extends HumanRights{
     private String grounds; 
