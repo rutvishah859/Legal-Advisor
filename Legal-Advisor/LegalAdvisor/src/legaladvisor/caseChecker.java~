@@ -45,7 +45,7 @@ public class caseChecker extends Case{
         this.setWordBank(caseFile.readFile().split("\\s"));
         String jurisdiction="";
         String word = ""; 
-        //Case c1= new Case();
+        Case c1=new Case("","");
         for(String w : this.getWordBank()){ 
             word = w; 
             if(super.SearchMechanism(w, super.getJusrisdictions(), 0)){
@@ -140,7 +140,7 @@ public class caseChecker extends Case{
                 }
                 ohrcComplaint.setRemedies();
                 ohrcComplaint.setCharterOHRC("OHRC Case");
-                //c1=ohrcComplaint;
+                c1=ohrcComplaint;
                 break;
                 }
                 }
@@ -193,20 +193,20 @@ public class caseChecker extends Case{
                 super.setType("Civil Case");
                 Family fam1= new Family("Court or negotiation, mediation or collaborative settlemnets approaches",jurisdiction,"Family Law",false, false);
                 for(int i=0;i<wordBank.length;i++){
-                  if(wordBank[i].equalsIgnoreCase("child")){
+                if(wordBank[i].equalsIgnoreCase("child")){
                     fam1.setChild(true);
-                  }
-                  else{
+                }
+                else{
                     fam1.setChild(false);
-                  }
+                }
                 }
                 for(int i=0;i<wordBank.length;i++){
-                  if(w.equalsIgnoreCase("married")){
+                if(w.equalsIgnoreCase("married")){
                     fam1.setMarriage(true);
-                  }
-                  else{
+                }
+                else{
                     fam1.setMarriage(false);
-                  }
+                }
                 }
                 int numChildren;
                 System.out.println("How many children do you have?");
@@ -225,23 +225,23 @@ public class caseChecker extends Case{
                 Contract con1= new Contract("",jurisdiction,"Contract Case","",true,agePerson,false,false,false);
                 super.setType("Civil Case");
                 for(int i=0;i<wordBank.length;i++){
-                  con1.setLawfulPurpose(wordBank[i]);
+                con1.setLawfulPurpose(wordBank[i]);
                 }
                 for(int i=0;i<wordBank.length;i++){
-                  con1.setDisability(wordBank[i]);
+                con1.setDisability(wordBank[i]);
                 }
                 con1.setCapacity(con1.getDisability(), agePerson);
                 for(int i=0;i<wordBank.length;i++){
-                  con1.setFailingToPerform(wordBank[i]);
+                con1.setFailingToPerform(wordBank[i]);
                 }
                 for(int i=0;i<wordBank.length;i++){
-                  con1.setPurpose(wordBank[i]);
+                con1.setPurpose(wordBank[i]);
                 }
                 for(int i=0;i<wordBank.length;i++){
-                  con1.setContract(wordBank[i]);
+                con1.setContract(wordBank[i]);
                 }
                 for(int i=0;i<wordBank.length;i++){
-                  con1.setRemedies(wordBank[i]);
+                con1.setRemedies(wordBank[i]);
                 }
                 c1=con1;
                 break;
@@ -262,8 +262,5 @@ public class caseChecker extends Case{
     public void setCaseType(String CaseType) {
         this.CaseType = CaseType;
     }
-    
-    public String printInfo (){
-      return ""; 
-    }
+
 }

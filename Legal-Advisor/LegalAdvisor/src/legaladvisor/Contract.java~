@@ -124,16 +124,8 @@ public class Contract extends Civil {
         return this.lawfulPurpose;
     }
     
-    public void setDisability(boolean dis){
-      this.disability = dis; 
-    }
-    
-    public boolean getDisability (){
-      return this.disability; 
-    }
-    
     public String printInfo(){
-        return "";
+        return null;
     }
     
     
