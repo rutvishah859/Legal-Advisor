@@ -1,3 +1,5 @@
+//This file will determine the crime type and sentence for any crime against person. The sentence will be determined
+//based on how they perform their crime against another person(kill, hit). These actions will see what mens rea they are
 package legaladvisor;
 
 import java.util.ArrayList;

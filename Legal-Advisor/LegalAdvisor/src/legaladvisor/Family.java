@@ -47,7 +47,9 @@ public class Family extends Civil {
     public boolean getMarriage() {
         return marriage;
     }
-   public void setFamilyViolenceType(String keyword){
+    //this method will find what types of violence the victim suffer
+    //these violence are only for adult 
+    public void setFamilyViolenceType(String keyword){
        String sentence;
              if(keyword.equalsIgnoreCase(super.getFamKeyword()[0])){
                 if(super.SearchMechanism(keyword, super.getEmotionalAbuse(), 0)){

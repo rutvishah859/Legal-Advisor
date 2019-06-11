@@ -1,3 +1,7 @@
+//This file will determine crime sentence of drug crime. Drug crime has two types of offences: dictable and summary. 
+//The offence will be determined based on whether the criminal do the trafficking or possession, the amount of drugs they have,
+//and the types of drugs(the more serious drugs will result as high jail sentence)
+
 package legaladvisor;
 
 public class DrugCrime extends CriminalCase{

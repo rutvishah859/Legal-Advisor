@@ -1,3 +1,7 @@
+//This file is all about Lawyer. There will be 3 different types of Lawyer: Criminal, Human Rights and Civil.
+//All these lawyers have specialization, name, phone number. The users will be able to book appointment for the 
+//lawyer that they want. The appointment depends on the lawyer availiability. The users will choose the day that 
+//their lawyer available.
 package legaladvisor;
 import java.util.ArrayList;
 public class Lawyer {
