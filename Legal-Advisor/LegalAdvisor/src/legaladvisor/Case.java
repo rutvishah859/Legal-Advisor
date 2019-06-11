@@ -95,8 +95,8 @@ import java.util.*;
             return false;
         } 
     }
-    public void setIndexforSearchMechanism(int indexforSM) {
-        this.indexforSearchMechanism = indexforSM;
+    public void setIndexforSearchMechanism(int indexforSearchMechanism) {
+        this.indexforSearchMechanism = indexforSearchMechanism;
     }
     
     public int getISM() {

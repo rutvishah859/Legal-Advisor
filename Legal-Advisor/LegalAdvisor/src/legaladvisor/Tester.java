@@ -34,7 +34,7 @@ public class Tester {
         Lawyer l2=new Lawyer(availableDaysL2,specialization,"Josh Peck","416-123-4567");
         String availableDaysL3[]={"Thursday","Saturday"};
         Lawyer l3=new Lawyer(availableDaysL3,specialization,"Shawna Mendes","647-589-2123");
-        Account acc= new Account(p1.getF(),age);
+        Account acc= new Account(p1.getF());
         p1.setA1(acc);
         p1.getA1().setFile(filename);
         p1.getA1().setCaseChecker(f);
