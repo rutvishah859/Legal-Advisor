@@ -48,6 +48,9 @@ public class Family extends Civil {
     }
    public void setFamilyViolenceType(String keyword){
        String sentence;
+       //the Family Violence only sets for the marriage couple that do not have child/children
+       //This is an adult violence
+       if((this.marriage == true) && (this.child == false)){    
              if(keyword.equalsIgnoreCase(super.getFamKeyword()[0])){
                 if(super.SearchMechanism(keyword, super.getEmotionalAbuse(), 0)){
                 abuseType = abuseViolenceType[0];
@@ -60,7 +63,7 @@ public class Family extends Civil {
                 sentence = "This is a Family Violence case and you have suffered sexual abuse";
                 }
             }
-       
+       }
    }
 
     public void setMarriage(boolean marriage) {
@@ -70,15 +73,16 @@ public class Family extends Civil {
     public boolean getChild() {
         return child;
     }
-
+    //it will return true if the marriage couple has child, return false if they don't have child
     public void setChild(boolean child) {
         this.child = child;
     }
-    
+     
     public boolean getChildDecision(){
         return this.childDecision;
     }
-    
+    //if the child choose to decide whose parents they want to live with, it will be false
+    //if the child does not want to choose and let parents to decide, it will return true
     public void setChildDecision(boolean dec){
         this.childDecision = dec;
     }
