@@ -18,6 +18,9 @@ public class Family extends Civil {
         this.marriage = mar;
         this.child = child;
     }
+    //this method will set what type of custory the marriage couple will have if they have child/children
+    //it will search for the famkeyword and check if the words relate to full, joint, or split custody
+    //if the marriage couple do not have children, they might suffer from Family Violence
     public void setCustody(String keyword){
         String sentence;
         if(super.SearchMechanism(keyword, super.getFamKeyword(), 0)){  
@@ -46,6 +49,8 @@ public class Family extends Civil {
     public boolean getMarriage() {
         return marriage;
     }
+    //this method will determine what types of violence do the adult victim suffer
+    //it will compare and match the keyword if it's emotion, physical, or sexual abuse
    public void setFamilyViolenceType(String keyword){
        String sentence;
        //the Family Violence only sets for the marriage couple that do not have child/children
@@ -108,7 +113,7 @@ public class Family extends Civil {
     }
 
     String printInfo() {
-        return ""; //To change body of generated methods, choose Tools | Templates.
+        return ""; 
     }
    
     
