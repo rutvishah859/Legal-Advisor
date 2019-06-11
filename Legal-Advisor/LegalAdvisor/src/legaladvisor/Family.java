@@ -10,7 +10,6 @@ public class Family extends Civil {
     private String custodySentence;
     private boolean childDecision;
     private boolean parentDecision;
-    private boolean familyViolence;
     private String abuseType;
     //                                        0           1         2
     private String abuseViolenceType[] = {"emotional","physical","sexual"};
@@ -72,8 +71,7 @@ public class Family extends Civil {
                 abuseType = abuseViolenceType[2];
                 sentence = "This is a Family Violence case and you have suffered sexual abuse";
                 }else{
-                sentence = "You don't have any violence in family.";
-                this.familyViolence = false;
+                abuseType = "You don't have any violence in family.";
                 }
             }
        }
@@ -121,7 +119,7 @@ public class Family extends Civil {
     }
 
     String printInfo() {
-        return "Custody: " + this.custodySentence + "\nFamily Violence: " + this.familyViolence; 
+        return "Custody: " + this.custodySentence + "\nFamily Violence: " + this.abuseType; 
     }
    
     

@@ -30,7 +30,7 @@ public class Contract extends Civil {
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
     private boolean breachOfContract;
-    private String contractType[] = {"express", "valid","void"};
+    private String contractType[] = {"express", "valid","void", "illegal"};
     private String typeContract;
     private boolean hasContract;
     
@@ -51,14 +51,14 @@ public class Contract extends Civil {
         String contract;
         if(super.SearchMechanism(keyword, super.getContractWord(), 0)){
             if((this.capacity == false) || (this.lawfulPurpose == false)){  //if the person does not have ability to understand the terms of contract or it has unlawful purpose
-                typeContract = "This is a void contract means the contract is no longer valid.";  //then contract is void
+                typeContract = this.contractType[2];
             }else if(((this.partiesConsent == true) && (this.consideration == true) && (this.lawfulPurpose == true) && (this.capacity == true) && (this.offer == true)) ||
                     (keyword.equalsIgnoreCase(getContractWord()[3])) || keyword.equalsIgnoreCase(getContractWord()[10]) || keyword.equalsIgnoreCase(getContractWord()[17])){
             //if the parties agree and accept the offer and the contract purpose is lawful and has ability to understand the terms of contract
             //or the keyword equals to "car", "house", "purchase" then this is an expressed contracts
-                typeContract = "This is an expressed contract because both parties are understand the terms of contract with legal purpose";
+                typeContract = this.contractType[0];
             }else if(this.lawfulPurpose == false){  //if the contract purpose is unlawful
-                typeContract = "This is illegal contract because it violates the Criminal Code of Canada ";
+                typeContract = this.contractType[3];
             }
         }
     }
@@ -74,7 +74,7 @@ public class Contract extends Civil {
                     super.setRemedies("If one party is failling to perform, the judge will put this as compensatory damages to cover the loss of nonbreaching party.");
                     this.remedy = this.remedies[0];
                 }else{
-                    super.setRemedies("If one party is failing to perform, the judge will one of these remedies:\n"
+                    this.remedy= ("If one party is failing to perform, the judge will decide one of these remedies:\n"
                             + "1. The court may order the party to fulfill the terms of a contract\n"
                             + "2. One party is not to fulfill the terms of a contract\n"
                             + "3. the court may order the contract to be cancelled");
@@ -142,7 +142,7 @@ public class Contract extends Civil {
     }
     
     public String printInfo(){
-        return "";
+        return "Type of Contract: " + this.typeContract + "\nRemedy: " + this.remedy;
     }
     
     
