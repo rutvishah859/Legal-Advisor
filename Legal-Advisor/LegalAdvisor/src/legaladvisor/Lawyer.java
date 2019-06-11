@@ -12,6 +12,7 @@ public class Lawyer {
         name=n;
         phoneNum=pn;
     }
+    //this method will determine the lawyer availability
     public boolean appointCase(ArrayList <String> userAvailability){
         boolean haslawyer=false;
         for(int i=0; i<availability.length;i++){
