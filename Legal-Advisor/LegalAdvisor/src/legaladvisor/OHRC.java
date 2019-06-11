@@ -79,15 +79,17 @@ public class OHRC extends HumanRights{
                                                             //group,union,hospital,restaurant,movie theater
                 this.area="Membership in vocational associations and trade unions";
             }
-            else if(this.getISM()>=12&&this.getISM()<18){
+            else if(this.getISM()>=12&&this.getISM()<15){   //if the array index is between 12(includes) and 17
+                                                            //school,service,place,contract
                 this.area="Goods, services, facilities";
             }
-            else if(this.getISM()==18){
+            else if(this.getISM()==15){     //if the array index equals to 18 (Contract)
                 this.area="Contracts";
             }
         }
         
     }
+    //this method will set remedies based on the area 
     public void setRemedies(){
         if(this.getArea().equalsIgnoreCase("occupancy of accomodation")){
             super.setRemedies("The respondent will have to stop the discrimination and offer a letter of apologies. Monetary compensation will also be provided.");
