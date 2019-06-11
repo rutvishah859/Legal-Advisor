@@ -1,6 +1,8 @@
 package legaladvisor;
 
 public class Contract extends Civil {
+    //For the contract law, in order to make a contract, it must have purpose, the agreement/consent between two parties
+    //,the ability to understand the terms of contract, and whether the contract has a lawful purpose. 
     
     private String purpose; //contract must have purpose
     private boolean partiesConsent; //parties must agree the terms of contract
@@ -41,7 +43,10 @@ public class Contract extends Civil {
         this.offer = offe;
         this.consideration = consi;
     }
-    
+    //this method will set what types of contract will it be. There are three types of contract: void, expressed and illegal
+    //void is dealing with whether the parties have ability to understand the terms of contract of the purpose of this contract is lawful
+    //expressed contract is when the parties have meet all the requirements such as lawful purpose, good capacity, the offer is made
+    //illegal contract is involved with anything that is illegal (drugs, killing)
     public void setContract(String keyword){    //type of contract
         String contract;
         if(super.SearchMechanism(keyword, super.getContractWord(), 0)){
@@ -57,6 +62,8 @@ public class Contract extends Civil {
             }
         }
     }
+    //Remedy can only have if one of the parties break the rules in terms of contract. This method will determine which remedy 
+    //the party will receive
     public void setRemedies(String keyword){
         if(this.failingToPerform == true){  //if one of the parties is failed to perform the terms of agreement in contract
             this.breachOfContract = true;
@@ -75,11 +82,13 @@ public class Contract extends Civil {
             
         }
     }
-    
+    //failingToPerform method will determine if one of the parties break the rules or not
     public void setFailingToPerform(String keyword){
         if(keyword.equalsIgnoreCase(getContractWord()[1]) || keyword.equalsIgnoreCase(getContractWord()[8])){
             //if keyword equals to "break" or "failing"
             this.failingToPerform = true;   //then the party is failed to perform the agreement terms
+        }else{
+            this.failingToPerform = false;
         }
     }
     
@@ -98,7 +107,7 @@ public class Contract extends Civil {
     public void setPartiesConsent(boolean partiesConsent) {
         this.partiesConsent = partiesConsent;
     }
-    
+    //this method is important because if the person is disability and underage, the contract will not be made
     public void setCapacity(boolean dis, int age){
         if((dis == true) || (age < 19)){    //if the person is disability or under 19 years old
            this.capacity =false;            //the person does not have capacity to perform the contract
@@ -110,7 +119,7 @@ public class Contract extends Civil {
     public boolean getCapacity(){
         return this.capacity;
     }
-    
+    //the contract is made or become illegal contract depends on whether the purpose is legal to the Criminal Code of Canada
     public void setLawfulPurpose(String keyword){
         if(super.SearchMechanism(keyword, super.getUnlawfulPurpose(), 0)){     //if keyword equals to any words that related to gambling or other
                                                                     //unlawful purpose
