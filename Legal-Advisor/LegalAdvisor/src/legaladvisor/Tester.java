@@ -36,10 +36,12 @@ public class Tester {
     Lawyer l3=new Lawyer(availableDaysL3,specialization,"Shawna Mendes","647-589-2123");
     Account acc= new Account(p1.getF());
     System.out.println (acc.getCase());
-    /*p1.setA1(acc);
+    p1.setA1(acc);
     p1.getA1().setFile(filename);
     p1.getA1().setCaseChecker(f, age);
-    String needsLawyer;
+    caseChecker c= new caseChecker ("", "", f, age); 
+    System.out.println(c.getType());
+    /*String needsLawyer;
     String dayAvailable="";
     while(!filename.equalsIgnoreCase("no more complaints")){
       p1.getA1().setCase();
