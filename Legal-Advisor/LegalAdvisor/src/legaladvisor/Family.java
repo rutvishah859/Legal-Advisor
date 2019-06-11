@@ -98,7 +98,7 @@ public class Family extends Civil {
             this.parentDecision = true;
         }
     }
-    
+    //this numChild will decide which custody the judge will choose
     public void setNumChild (int num){
       this.numChild = num;
     }
