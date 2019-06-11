@@ -98,17 +98,10 @@ public class Family extends Civil {
             this.parentDecision = true;
         }
     }
-    
-    public void setNumChild (int num){
-      this.numChild = num;
-    }
-    
-    public int getNumChild (){
-      return this.numChild; 
-    }
 
+    @Override
     String printInfo() {
-        return ""; //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
     
