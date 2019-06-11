@@ -15,6 +15,10 @@ public class DrugCrime extends CriminalCase{
         this.trafficking=traf;
         this.possession=pos;
     }
+    //this method decide the crime sentence differently if the criminal does the drug trafficking or drug possession. 
+    //The crime sentence will be more serious for schedule I and in trafficking category
+    //The crime sentence depends on whether the drug is in schedule I, II, or II, trafficking or drug possession, 
+    //and the quantity that they trafficking or possess
     public void setCrimeTypeAndSentence(String keyword){
         String sentence;
       
@@ -77,6 +81,7 @@ public class DrugCrime extends CriminalCase{
             this.trafficking = false;//else false
         }
     }
+    //This method will decide which drugs are in schedule I, II, or III. It will read if the keyword the users enter match one of the drugs 
     public void setScheduleType(String keyword){ //if keyword equals to one of these drugs (cocaine, heroine, methamphetamine)
         if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) 
                     || keyword.equalsIgnoreCase(super.getDrugType()[8])){    
