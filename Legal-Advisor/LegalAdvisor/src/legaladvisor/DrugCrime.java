@@ -20,9 +20,9 @@ public class DrugCrime extends CriminalCase{
       
         if(super.SearchMechanism(keyword, super.getDrugType(), 0) && this.getTrafficking()){
             this.typeOfOffense = "Possession with the intent of trafficking which is indictable";
-            if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) || keyword.equalsIgnoreCase(super.getDrugType()[0])
-            || keyword.equalsIgnoreCase(super.getDrugType()[8])){   //cocaine,heroine,amphetamines 
-                this.setScheduleType(keyword);
+            if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) 
+            || keyword.equalsIgnoreCase(super.getDrugType()[8])){   //cocaine,heroine,methamphetamine 
+                this.setScheduleType(keyword);//set which of these drugs in what schedule level (Level I is the most serious)
                 
                 if(this.quantity > 30){ //if the amount is greater than 30grams
                     sentence = "The max jail sentence is life imprisonment.";
@@ -31,7 +31,7 @@ public class DrugCrime extends CriminalCase{
                 }else{  //if the amount is less than 3 grams
                     sentence = "The max jail sentence is between 6 months to 2 years";
                 }
-            }else if(keyword.equalsIgnoreCase(super.getDrugType()[5])){ //and LSD
+            }else if(keyword.equalsIgnoreCase(super.getDrugType()[6])){ //and LSD
                 this.setScheduleType(keyword);
                 sentence = "The maximum jail sentence is 10 years";
             }else if(keyword.equalsIgnoreCase(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[7])){ //hashish and marijuana
@@ -41,10 +41,10 @@ public class DrugCrime extends CriminalCase{
                 }else if(this.quantity < 3){
                     sentence = "The maximum jail sentence is 5 years";
                 }
-            }else if(keyword.equalsIgnoreCase(super.getDrugType()[2])){
+            }else if(keyword.equalsIgnoreCase(super.getDrugType()[3])){ //if keyword equals to "hallucionogens"
                 sentence = "The maximum jail sentence is 18 months.";
             }
-        }else{
+        }else{ //else if this is not drug trafficking but drug possession
             if(this.quantity > 30){
                 this.typeOfOffense = "Possession and indictable";
                 if(this.scheType.equalsIgnoreCase("schedule I")){
@@ -54,7 +54,7 @@ public class DrugCrime extends CriminalCase{
                 }else{
                     sentence = "The max jail sentence is 3 years";
                 }
-            }else{
+            }else{//else if the equantity is less than 30grams
                 this.typeOfOffense="Possession and summary";
                 if(keyword.equalsIgnoreCase(super.getDrugType()[1]) || keyword.equals(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[0])|| keyword.equalsIgnoreCase(super.getDrugType()[2]) 
                || keyword.equalsIgnoreCase(super.getDrugType()[5]) || (keyword.equalsIgnoreCase(super.getDrugType()[6])) ){
@@ -62,9 +62,6 @@ public class DrugCrime extends CriminalCase{
                             + "For the second offense, the maximum fine is $2,000 and jail sentence is up to one year.";
                 }
             }
-        //the possession of Amphetamine/LSD will have maximum sentence of 3 years
-        //the possession of cocain or heroine will have maximum sentence of 7 years on an indictable persecution
-        //Possession of marijuana and hashish will have maximum sentence of 5 years on an indictable persecution
         }   
     }
     public boolean getPossession(){
@@ -73,22 +70,25 @@ public class DrugCrime extends CriminalCase{
     public boolean getTrafficking(){
         return trafficking;
     }
-    public void setTrafficking(String keyword, int n){
-        if(super.SearchMechanism(keyword, super.getTraffickingTerm(), 0)){
-           this.trafficking = true;
+    public void setTrafficking(String keyword){ //set whether the drug is trafficking or not
+        if(super.SearchMechanism(keyword, super.getTraffickingTerm(), 0)){  //if keyword equals to one of Trafficking terms
+           this.trafficking = true; //drug trafficking is true
         }else{
-            this.trafficking = false;
+            this.trafficking = false;//else false
         }
     }
-    public void setScheduleType(String keyword){
-        if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) || keyword.equalsIgnoreCase(super.getDrugType()[0])
-                    || keyword.equalsIgnoreCase(super.getDrugType()[8])){   //cocaine,heroine,amphetamines 
-            this.scheType = "schedule I";
-        }else if(keyword.equalsIgnoreCase(super.getDrugType()[5]) ||keyword.equalsIgnoreCase(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[7])){
-            this.scheType = "schedule II";
-        }        
+    public void setScheduleType(String keyword){ //if keyword equals to one of these drugs (cocaine, heroine, methamphetamine)
+        if(keyword.equalsIgnoreCase(super.getDrugType()[2]) || keyword.equals(super.getDrugType()[5]) 
+                    || keyword.equalsIgnoreCase(super.getDrugType()[8])){    
+            this.scheType = "Schedule I. These types of drugs have high abuse potential, no medical use and severe safety concern.";    
+        }//if keyword equals to "hashish" and "marijuana"
+        else if(keyword.equalsIgnoreCase(super.getDrugType()[4]) || keyword.equalsIgnoreCase(super.getDrugType()[7])){
+            this.scheType = "Schedule II. These types of drugs have high abuse potential, with use potentially to severe pyschological or physical dependence.";
+        }else if(keyword.equalsIgnoreCase(super.getDrugType()[0])){//if keyword equals to "amphetamine"
+            this.scheType = "schedule III. These types of drugs have less abuse potential. They have currently accepted medical use in treatment.";
+        }       
     }
-    public double getQuantity(double qty){
+    public double getQuantity(double qty){  //get the amount of drug in grams that the criminal has
         return quantity;
     }
     public String getTypeOfDrug(){

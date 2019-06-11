@@ -8,7 +8,7 @@ public class CrimeAgainstPerson extends CriminalCase{
     private String typeOfOffence;
     private String mensRea; //the intention or knowledge of wrong doing that make people commit a crime or cause a crime to be committed  
     private ArrayList <String> crimeType;
-    private boolean weapon;
+    private boolean weapon; 
 
     public CrimeAgainstPerson( String rem, String jur , String crim, String sen, String tOO){
             super(rem, jur, crim, sen);
@@ -27,38 +27,39 @@ public class CrimeAgainstPerson extends CriminalCase{
                 this.setTypeOfOffence("indictable"); //the offence is indictable because this is a serious crime  
                 this.crimeType.add(super.getCrimeTypes2()[0]);  //this crime will be First Degree Murder
                 super.setSentence("The maximum sentence is life in jail");
-            }//if the criminal has one or two of these (motive intent, knowledge) to commit the crime
+            }//if the mens rea equals to one or two of these (motive intent, knowledge)
             else if(mensRea.equalsIgnoreCase("motive")||mensRea.equalsIgnoreCase("intent")||mensRea.equalsIgnoreCase("knowledge")){
                 this.setTypeOfOffence("indictable");    //the offence is indictable
                 this.crimeType.add (super.getCrimeTypes2()[1]);//this crime will be Second Degree Murder
                 super.setSentence("The maximum sentence is life in jail with possibility for parole after 10 years");
-            }//if 
+            }//if the mens rea equals to "criminal negligence" or "reckless" or "willful blindness"
             else if(mensRea.equalsIgnoreCase("criminal negligence")||mensRea.equalsIgnoreCase("recklessness")||mensRea.equalsIgnoreCase("willful blindness")){
-                this.setTypeOfOffence("indictable");
-                this.crimeType.add (super.getCrimeTypes2()[2]);
+                this.setTypeOfOffence("indictable");    //the offence is indictable
+                this.crimeType.add (super.getCrimeTypes2()[2]); //this crime will be Manslaughter
                 super.setSentence("The minimum sentence is 4-7 years in jail");
             }
             else{
                 crimeType.add("Not murder");
             }
         }
+        //if keyword equals to one of the words in assaultkeywords array
         if(super.SearchMechanism(keyword,super.getAssaultkeywords(),0)){
-            this.setTypeOfOffence("indictable");
-            if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[5])){
-                this.crimeType.add (super.getCrimeTypes2()[6]);
+            this.setTypeOfOffence("indictable");    //this is a serious crime
+            if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[5])){  //if keyword equals to "insulted"  
+                this.crimeType.add (super.getCrimeTypes2()[6]); //this crime will be Verbal Assault
                 super.setSentence("The maximum sentence is 10 years in jail");
                 
             }
-            else if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[8])){
-                this.crimeType.add (super.getCrimeTypes2()[5]);
+            else if(keyword.equalsIgnoreCase(super.getAssaultkeywords()[8])){//else if keyword equals to "raped"
+                this.crimeType.add (super.getCrimeTypes2()[5]); //this crime will be Sexual Assault
                 super.setSentence("The maximum sentence is life in jail");
             }
-            else if(isWeapon()==true){
-                this.crimeType.add (super.getCrimeTypes2()[4]);
+            else if(isWeapon()==true){  //else if the criminal has weapon
+                this.crimeType.add (super.getCrimeTypes2()[4]); // this crime will be Aggravated Assault
                 super.setSentence("The maximum sentence is 14 years in jail");
             }
             else{
-                this.crimeType.add (super.getCrimeTypes2()[3]);
+                this.crimeType.add (super.getCrimeTypes2()[3]); //else this crime will be Physical Assault
                 super.setSentence("The maximum sentence is 10 years in jail");
             }
         }
