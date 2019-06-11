@@ -16,7 +16,7 @@ public abstract class CriminalCase extends Case {
     public String getCrime() {
         return crime;
     }
-    public void setCrime(String crime) {
+    public void setCrime(String crime) {    
         this.crime = crime;
     }
     public String getSentence() {

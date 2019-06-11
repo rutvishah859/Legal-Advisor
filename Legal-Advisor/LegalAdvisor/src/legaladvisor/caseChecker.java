@@ -163,7 +163,7 @@ public class caseChecker extends Case{
                 DrugCrime trafficking = new DrugCrime ("Trial", jurisdiction, "", "", false, false, "");
                 trafficking.setCrime("Drug Crime");
                 for(int i=0;i<wordBank.length;i++){
-                trafficking.setTrafficking(wordBank[i], 0);
+                trafficking.setTrafficking(wordBank[i]);
                 }
                 System.out.println("Please enter the quanity of drugs in grams:");
                 quantity=input.nextDouble();
@@ -228,7 +228,12 @@ public class caseChecker extends Case{
                   con1.setLawfulPurpose(wordBank[i]);
                 }
                 for(int i=0;i<wordBank.length;i++){
-                  con1.setDisability(wordBank[i]);
+                      if(w.equalsIgnoreCase("disability")){
+                        con1.setDisability(true);
+                      }else{
+                        con1.setDisability(false);
+                      }
+//                    
                 }
                 con1.setCapacity(con1.getDisability(), agePerson);
                 for(int i=0;i<wordBank.length;i++){
