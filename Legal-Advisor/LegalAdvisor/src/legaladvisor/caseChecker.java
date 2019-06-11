@@ -45,7 +45,7 @@ public class caseChecker extends Case{
         this.setWordBank(caseFile.readFile().split("\\s"));
         String jurisdiction="";
         String word = ""; 
-        //Case c1= new Case();
+        Case c1;
         for(String w : this.getWordBank()){ 
             word = w; 
             if(super.SearchMechanism(w, super.getJusrisdictions(), 0)){

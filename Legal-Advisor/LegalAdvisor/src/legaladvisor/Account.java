@@ -14,7 +14,7 @@ public class Account {
     public Account(File fileName){
         f=fileName;
     }
-    public void setCaseChecker(File f, age) throws IOException{
+    public void setCaseChecker(File f, int age) throws IOException{
         c=new caseChecker("","",f, age);
     }
     public void setCase(){
