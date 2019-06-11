@@ -228,11 +228,7 @@ public class caseChecker extends Case{
           con1.setLawfulPurpose(wordBank[i]);
         }
         for(int i=0;i<wordBank.length;i++){
-          if(w.equalsIgnoreCase("disability")){
-            con1.setDisability(true);
-          }else{
-            con1.setDisability(false);
-          }
+          con1.setDisability(wordBank[i]);
 //                    
         }
         con1.setCapacity(con1.getDisability(), agePerson);

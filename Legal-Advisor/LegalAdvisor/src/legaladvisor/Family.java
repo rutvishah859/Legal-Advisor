@@ -108,10 +108,10 @@ public class Family extends Civil {
     public void setNumChild(int n){
         numChild=n;
     }
-    @Override
-    public String printInfo() {
-        return "Type of case: "+super.getType()+" Type of civil case: "+ super.getTypeCase() +"Abuse Type: "+this.abuseType+ "Sentence: "+this.sentence;
-    }
+//    @Override
+//    public String printInfo() {
+//        return "Type of case: "+super.getType()+" Type of civil case: "+ super.getTypeCase() +"Abuse Type: "+this.abuseType+ "Sentence: "+this.sentence;
+//    }
    
     
 }

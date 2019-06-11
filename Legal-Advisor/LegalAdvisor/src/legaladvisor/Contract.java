@@ -144,18 +144,20 @@ public class Contract extends Civil {
     }
     public void setDisability(String keyword){
         if(keyword.equalsIgnoreCase("disabled")){
-           this.disability=true;
+            this.disability = true;
         }
         else{
-            this.disability=false;
+            this.disability = false;
         }
     }
-    public boolean getDisability(){
-        return this.disability;
-    }
+   public boolean getDisability(){
+       return this.disability;
+   }
     public String printInfo(){
         return "Purpose of contract: "+ this.getPurpose()+" Remedies: ";
     }
+
+   
     
     
 }
