@@ -37,7 +37,7 @@ public class Tester {
         Account acc= new Account(p1.getF());
         p1.setA1(acc);
         p1.getA1().setFile(filename);
-        p1.getA1().setCaseChecker(f);
+        p1.getA1().setCaseChecker(f, age);
         String needsLawyer;
         String dayAvailable="";
         while(!filename.equalsIgnoreCase("no more complaints")){
