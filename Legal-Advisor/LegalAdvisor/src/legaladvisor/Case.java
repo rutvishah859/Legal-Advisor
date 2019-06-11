@@ -6,7 +6,7 @@ The class contains all of the key words for all the classes, and sub classes of 
 package legaladvisor; 
 import java.util.*; 
 
-    public abstract class Case {
+    public /*abstract*/ class Case {
 
     private String remedies;
     private ArrayList <String> type = new ArrayList <String> ();
@@ -87,7 +87,7 @@ import java.util.*;
         return this.jurisdiction;
     }
     //printInfo is an abstract method which is set by the child/grandchild classes which prints all the info about the case plus the sentance
-    abstract String printInfo();   
+    //abstract String printInfo();   
     public boolean SearchMechanism(String keyword, String a[],int n){
         if(a[n].equalsIgnoreCase(keyword)){
             this.setIndexforSearchMechanism(n);

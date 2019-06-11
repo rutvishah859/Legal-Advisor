@@ -45,7 +45,7 @@ public class caseChecker extends Case{
     this.setWordBank(caseFile.readFile().split("\\s"));
     String jurisdiction="";
     String word = ""; 
-    Case c1 = null;
+    Case c1 = new Case ("", "");
     for(String w : this.getWordBank()){ 
       word = w; 
       if(super.SearchMechanism(w, super.getJusrisdictions(), 0)){
@@ -263,11 +263,17 @@ public class caseChecker extends Case{
     this.wordBank = wordBank;
   }
   
-  public void setCaseType(String CaseType) {
-    this.CaseType = CaseType;
+  public void setCaseType(String ct) {
+    this.CaseType = ct;
   }
   
-  public String printInfo (){
-    return ""; 
+  public String printInfo () throws IOException{
+    File f= new File ("C:\\Users\\Mitesh\\Documents\\GitHub\\Legal-Advisor\\Legal-Advisor\\LegalAdvisor\\src\\legaladvisor\\caseFile.txt");
+    BufferedReader br = new BufferedReader(new FileReader(f));
+    String line = null;
+    while ((line = br.readLine()) != null) {
+      line = " " + line;
+    }
+    return line; 
   }
 }
