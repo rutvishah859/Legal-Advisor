@@ -1,8 +1,9 @@
 package legaladvisor;
 
-public abstract class Civil extends Case{
+public class Civil extends Case{
 
     String typeCase;
+    String sentence;
     public Civil(String rem, String jur, String tC) {
         super(rem, jur);
        this.typeCase= tC;
@@ -13,10 +14,12 @@ public abstract class Civil extends Case{
     public void setTypeCase(String tC){
         this.typeCase= tC;
     }
-    abstract String printInfo();
+    public String printInfo(){
+        return super.printInfo() + "Type of civil case: "+this.typeCase;
+    }
+    public void setSentence(String s){
+        sentence=s;
     
-
-    
-    
+    }
     
 }
