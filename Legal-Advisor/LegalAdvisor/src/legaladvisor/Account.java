@@ -16,8 +16,6 @@ public class Account {
     }
     public void setCaseChecker(File file, int age) throws IOException{
         c=new caseChecker("","",file, age);
-        System.out.println (c.printInfo());
-        System.out.println (c.getType());
     }
     public void setCase(){
         cases.add(c.findKeyWords(c));
