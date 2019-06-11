@@ -11,11 +11,11 @@ public class caseChecker extends Case{
   private String CaseType; 
   private int agePerson;
   private String [] wordBank; //a bank of key words found in the text file
-  private File caseFile; 
+  private File casef; 
   Scanner input= new Scanner(System.in); 
   public caseChecker(String rem, String jur, File complaint, int age) throws IOException {
     super(rem, jur);
-    caseFile = complaint; 
+    casef = complaint; 
     agePerson=age;
   }
   
@@ -23,7 +23,7 @@ public class caseChecker extends Case{
     String st = null; 
     String s = ""; 
     try { 
-      BufferedReader br =  new BufferedReader (new FileReader (this.caseFile));
+      BufferedReader br =  new BufferedReader (new FileReader (this.casef));
       try {
         while ((st = br.readLine()) != null){
           s += st + " ";

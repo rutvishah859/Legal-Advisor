@@ -14,13 +14,11 @@ public class Account {
     public Account(File fileName){
         f=fileName;
     }
-    public void setCaseChecker(File f, int age) throws IOException{
-        c=new caseChecker("","",f, age);
+    public void setCaseChecker(File file, int age) throws IOException{
+        c=new caseChecker("","",file, age);
     }
     public void setCase(){
-        Case c1;
-        c1=c.findKeyWords(c);
-        cases.add(c1);
+        cases.add(c.findKeyWords(c));
     }
     public ArrayList <Case> getCase(){
         return cases;

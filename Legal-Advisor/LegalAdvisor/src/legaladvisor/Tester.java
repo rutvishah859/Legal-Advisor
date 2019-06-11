@@ -35,7 +35,8 @@ public class Tester {
     String availableDaysL3[]={"Thursday","Saturday"};
     Lawyer l3=new Lawyer(availableDaysL3,specialization,"Shawna Mendes","647-589-2123");
     Account acc= new Account(p1.getF());
-    p1.setA1(acc);
+    System.out.println (acc.getCase());
+    /*p1.setA1(acc);
     p1.getA1().setFile(filename);
     p1.getA1().setCaseChecker(f, age);
     String needsLawyer;
@@ -60,6 +61,6 @@ public class Tester {
       }
       filename=input.nextLine();
       p1.getA1().setFile(filename);
-    }           
+    }*/           
   }
 }
