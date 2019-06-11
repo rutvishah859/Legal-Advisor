@@ -7,9 +7,10 @@ public class Family extends Civil {
     private int numChild;
     //                                0        1        2
     private String custodyType[] = {"full", "joint", "split"};
+    private String custodySentence;
     private boolean childDecision;
     private boolean parentDecision;
-    
+    private boolean familyViolence;
     private String abuseType;
     //                                        0           1         2
     private String abuseViolenceType[] = {"emotional","physical","sexual"};
@@ -17,6 +18,7 @@ public class Family extends Civil {
         super(rem, jur, tC);
         this.marriage = mar;
         this.child = child;
+        
     }
     //this method will set what type of custory the marriage couple will have if they have child/children
     //it will search for the famkeyword and check if the words relate to full, joint, or split custody
@@ -26,14 +28,17 @@ public class Family extends Civil {
         if(super.SearchMechanism(keyword, super.getFamKeyword(), 0)){  
             if((this.marriage == true) && (this.child == true)){
                 if((keyword.equalsIgnoreCase(super.getFamKeyword()[10]) || keyword.equalsIgnoreCase(super.getFamKeyword()[5]))){
+                    custodySentence = this.custodyType[0]; 
                     sentence = "If both parents disagree to live together, this will be full custody means only one parent has the right to make all decision about the child";  
                 }else if(keyword.equalsIgnoreCase(super.getFamKeyword()[0]) || keyword.equalsIgnoreCase(super.getFamKeyword()[6])){
                      sentence = "This is a joint custody means both parents have to share equal responsibility for child's wellfare."
                     +  "The major decisions will be decided by both parents.";
                 }else if(this.numChild > 2){
                     if(this.childDecision == true){
+                        custodySentence = this.custodyType[1];
                         sentence = "The child decision might affect whether this will be a split custody. The judge might take into consideration.";
                     }else{
+                        custodySentence = this.custodyType[2];
                         sentence = "This is a split custody";
                     }
                 }
@@ -66,6 +71,9 @@ public class Family extends Civil {
                 }else if(super.SearchMechanism(keyword, super.getSexualAbuse(), 0)){
                 abuseType = abuseViolenceType[2];
                 sentence = "This is a Family Violence case and you have suffered sexual abuse";
+                }else{
+                sentence = "You don't have any violence in family.";
+                this.familyViolence = false;
                 }
             }
        }
@@ -113,7 +121,7 @@ public class Family extends Civil {
     }
 
     String printInfo() {
-        return ""; 
+        return "Custody: " + this.custodySentence + "\nFamily Violence: " + this.familyViolence; 
     }
    
     
