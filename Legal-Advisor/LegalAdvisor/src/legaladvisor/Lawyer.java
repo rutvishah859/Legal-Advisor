@@ -52,7 +52,9 @@ public class Lawyer {
     public String getDayofAppointment() {
         return dayofAppointment;
     }
+    public void printInfo(){
+        System.out.println("Lawyer's name:" + this.name+" Phone number:"+ this.phoneNum+ "Day of appointment:"+ this.getDayofAppointment());
+    }
     
     
 }
-

@@ -28,6 +28,12 @@ public class Account {
     public void setAvailability(String day){
         availableDays.add(day);
     }
+    public void setFile(String name){
+       f=new File(name); 
+    }
+    public Lawyer getLawyer(){
+        return l1;
+    }
     public ArrayList <String> getAvailability(){
         return availableDays;
     }
@@ -60,4 +66,3 @@ public class Account {
         }
     }
     }
-
