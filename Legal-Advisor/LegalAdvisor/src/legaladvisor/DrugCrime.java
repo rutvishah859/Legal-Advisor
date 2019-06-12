@@ -74,6 +74,13 @@ public class DrugCrime extends CriminalCase{
     public boolean getTrafficking(){
         return trafficking;
     }
+    public void setDrugType(String keyword){
+        for(int i=0;i<super.getDrugType().length;i++){
+            if(keyword.equalsIgnoreCase(super.getDrugType()[i])){
+                this.typeOfDrug=super.getDrugType()[i];
+            }
+        }
+    }
     public void setTrafficking(String keyword, int n){
         if(super.SearchMechanism(keyword, super.getTraffickingTerm(), 0)){
            this.trafficking = true;
@@ -114,5 +121,7 @@ public class DrugCrime extends CriminalCase{
     public String printInfo() {
         return "Type of Offence: " + this.getTypeOfOffense()+ "\nType of Drug: " + this.getTypeOfDrug()+"\nDrug Schedule:"+this.scheType +"\nCrime Type: "+ this.crimeType+super.printInfo(); 
     }
+    
+    
 }
     
