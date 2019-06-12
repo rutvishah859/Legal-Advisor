@@ -10,7 +10,12 @@ public class Family extends Civil {
     private String custodyType[] = {"full", "joint", "split"};
     private boolean childDecision;
     private boolean parentDecision;
-    
+    //                                     0         1            2           3      4           5
+    private String emotionalAbuse [] = {"hurting","insults","intimadation", "fun","threats", "yelling"};
+    //                                  0             1         2             3
+    private String sexualAbuse[] = {"harrassment","touching","unsafe","without consent"};
+    //                                   0          1          2         3         4          5          6          7         8         9           10   
+    private String physicalAbuse[] = {"burning", "choking", "cutting","hitting","locking","pinching","punching","pushing","slapping","throwing","objects"};
     private String abuseType;
     //                                        0           1         2
     private String abuseViolenceType[] = {"emotional","physical","sexual"};
@@ -19,7 +24,6 @@ public class Family extends Civil {
         this.marriage = mar;
         this.child = child;
     }
-    //this method will decide what types of custody will be if the couple is married and they have child/children
     public void setCustody(String keyword){
         if(super.SearchMechanism(keyword, super.getFamKeyword(), 0)){  
             if((this.marriage == true) && (this.child == true)){
@@ -47,18 +51,16 @@ public class Family extends Civil {
     public boolean getMarriage() {
         return marriage;
     }
-    //this method will find what types of violence the victim suffer
-    //these violence are only for adult 
-    public void setFamilyViolenceType(String keyword){
+   public void setFamilyViolenceType(String keyword){
        String sentence;
              if(keyword.equalsIgnoreCase(super.getFamKeyword()[0])){
-                if(super.SearchMechanism(keyword, super.getEmotionalAbuse(), 0)){
+                if(super.SearchMechanism(keyword, emotionalAbuse, 0)){
                 abuseType = abuseViolenceType[0];
                 this.sentence = "This is a Family Violence case and you have suffered emotional abuse";
-                }else if(super.SearchMechanism(keyword, super.getPhysicalAbuse(), 0)){
+                }else if(super.SearchMechanism(keyword, physicalAbuse, 0)){
                 abuseType = abuseViolenceType[1];   
                 this.sentence = "This is a Family Violence case and you have suffered physical abuse";
-                }else if(super.SearchMechanism(keyword, super.getSexualAbuse(), 0)){
+                }else if(super.SearchMechanism(keyword, sexualAbuse, 0)){
                 abuseType = abuseViolenceType[2];
                 this.sentence = "This is a Family Violence case and you have suffered sexual abuse";
                 }
@@ -106,9 +108,9 @@ public class Family extends Civil {
     public void setNumChild(int n){
         numChild=n;
     }
-   
+    @Override
     public String printInfo() {
-        return "Type of case: "+super.getType()+" Type of civil case: "+ super.getTypeCase() +"Abuse Type: "+this.abuseType+ "Sentence: "+this.sentence;
+        return "Type of case: "+super.getType()+"\nType of civil case: "+ super.getTypeCase() +"\nAbuse Type: "+this.abuseType+ "\nSentence: "+this.sentence+super.printInfo();
     }
    
     
