@@ -9,10 +9,10 @@ private String complaintFilePath;
 private String phoneNum;
 private File f;
 private Account a1;
-    public Person(String n, String c, String pn){
+    public Person(String n,String c, String pn){
     name=n;
     complaintFilePath=c;
-    f=new File(c);
+    f=new File(complaintFilePath);
     phoneNum=pn;
     }
     public String getName() {
