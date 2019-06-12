@@ -50,7 +50,7 @@ public class Tester {
         System.out.println(p1.getA1().getCase().size());
         //p1.getA1().sortCases(p1.getA1().getCase());
         for(int i=0;i<p1.getA1().getCase().size();i++){
-            System.out.println(p1.getA1().getCase().get(i)).getType();
+            System.out.println(p1.getA1().getCase().get(i).getType());
         }
         System.out.println("Do you need a lawyer?");
         needsLawyer=input.next();
