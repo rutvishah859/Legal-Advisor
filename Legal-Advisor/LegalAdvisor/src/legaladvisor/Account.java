@@ -5,20 +5,27 @@ package legaladvisor;
 import java.io.*;
 import java.util.ArrayList;
 public class Account {
-    private ArrayList <Case> cases;
-    private ArrayList <String> availableDays;
+    private ArrayList <Case> cases=new ArrayList();
+    private ArrayList <String> availableDays=new ArrayList();
     private Lawyer l1;
     private File f;
     private caseChecker c;
     private String dayOfAppointment;
-    public Account(File fileName){
+    private int agePerson;
+    public Account(File fileName, int age){
         f=fileName;
+        agePerson=age;
     }
-    public void setCaseChecker(File file, int age) throws IOException{
-        c=new caseChecker("","",file, age);
+    public void setCaseChecker(File f) throws IOException{
+        c=new caseChecker("","",f,agePerson);
+    }
+    public caseChecker getCaseChecker(){
+        return c;
     }
     public void setCase(){
-        cases.add(c.findKeyWords(c));
+        Case ca1=new Case("","");
+        ca1=c.findKeyWords(c);
+        cases.add(ca1);
     }
     public ArrayList <Case> getCase(){
         return cases;
@@ -49,6 +56,7 @@ public class Account {
         }
     }
     public void sortCases(ArrayList <Case> cases){
+        if(cases.size()>1){
         for(int i=0;i<cases.size();i++){
             Case firstAlphabetLetter=cases.get(i);   
             int index=i;
@@ -62,5 +70,9 @@ public class Account {
             cases.set(i, firstAlphabetLetter);
             cases.set(index,originalValue);
         }
+        }
+        else{
+            System.out.println("Cases are in order.");
+        }
     }
-}
+    }
