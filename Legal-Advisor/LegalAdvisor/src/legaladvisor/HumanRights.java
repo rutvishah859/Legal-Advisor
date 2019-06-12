@@ -17,4 +17,8 @@ public abstract class HumanRights extends Case {
     public void setCharterOHRC(String SCO) {
         this.CharterOHRC = SCO;
     }
+    @Override
+    public String printInfo(){
+        return  "Jurisdiction:"+ super.getJurisdiction()+"\nRemedies:" + super.getRemedies()+ "\nType of Human Rights Case:"+ this.getCharterOHRC();
+    }
 }
