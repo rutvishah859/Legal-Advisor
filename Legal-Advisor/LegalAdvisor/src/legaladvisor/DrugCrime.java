@@ -114,4 +114,5 @@ public class DrugCrime extends CriminalCase{
     public String printInfo() {
         return "Type of Offence: " + this.getTypeOfOffense()+ "\nType of Drug: " + this.getTypeOfDrug()+"\nDrug Schedule:"+this.scheType +"\nCrime Type: "+ this.crimeType+super.printInfo(); 
     }
+}
     
