@@ -179,11 +179,14 @@ public class caseChecker extends Case{
                 DrugCrime trafficking = new DrugCrime ("Trial", jurisdiction, "", "", true, true, "");
                 trafficking.setCrime("Drug Crime");
                 for(int i=0;i<wordBank.length;i++){
-                trafficking.setTrafficking(wordBank[i], 0);
+                trafficking.setTrafficking(wordBank[i]);
                 }
                 System.out.println("Please enter the quanity of drugs in grams:");
                 quantity=input.nextDouble();
                 trafficking.setQuantity(quantity);
+                for(int i=0;i<wordBank.length;i++){
+                trafficking.setTrafficking(wordBank[i]);
+                }
                 for(int i=0;i<wordBank.length;i++){
                 trafficking.setCrimeTypeAndSentence(wordBank[i]);
                 }
