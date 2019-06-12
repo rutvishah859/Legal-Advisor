@@ -58,7 +58,10 @@ public class caseChecker extends Case{
             }
             if (super.SearchMechanism(w, super.getFraud(), 0)){
                 super.setType ("Criminal Case");
-                MoneyCrimes fraud= new MoneyCrimes ("Trial",jurisdiction,"", "", 0.0, true);
+                double amount=0;
+                System.out.println("Please enter the amount of money stolen:");
+                amount=input.nextDouble();
+                MoneyCrimes fraud= new MoneyCrimes ("Trial",jurisdiction,"", "", amount, true);
                 for(int i=0;i<wordBank.length;i++){
                 fraud.setCrimeAndSentence(wordBank[i]);
                 }
@@ -68,7 +71,10 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getElectronicCrime(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes electronicCrime = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false);
+                double amount=0;
+                System.out.println("Please enter the amount of money stolen:");
+                amount=input.nextDouble();
+                MoneyCrimes electronicCrime = new MoneyCrimes ("Trial",jurisdiction, "", "", amount, false);
                 for(int i=0;i<wordBank.length;i++){
                 electronicCrime.setCrimeAndSentence(wordBank[i]);
                 }
@@ -78,7 +84,10 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getMoneyLaundering(), 0)){
                 super.setType("Criminal Case");
-                MoneyCrimes moneyLaundering = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false);
+                double amount=0;
+                System.out.println("Please enter the amount of money laundered:");
+                amount=input.nextDouble();
+                MoneyCrimes moneyLaundering = new MoneyCrimes ("Trial",jurisdiction, "", "", amount, false);
                 for(int i=0;i<wordBank.length;i++){
                 moneyLaundering.setCrimeAndSentence(wordBank[i]);
                 }
@@ -88,7 +97,10 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getTheft(), 0)){
                 super.setType("Criminal Case");
-                MoneyCrimes theft = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false); 
+                double amount=0;
+                System.out.println("Please enter the amount of money stolen:");
+                amount=input.nextDouble();
+                MoneyCrimes theft = new MoneyCrimes ("Trial",jurisdiction, "", "", amount, false); 
                 for(int i=0;i<wordBank.length;i++){
                 theft.setCrimeAndSentence(wordBank[i]);
                 }
@@ -98,7 +110,10 @@ public class caseChecker extends Case{
             }
             else if (super.SearchMechanism(w, super.getRobbery(), 0)){
                 super.setType ("Criminal Case"); 
-                MoneyCrimes robbery = new MoneyCrimes ("Trial",jurisdiction, "", "", 0.0, false); 
+                double amount=0;
+                System.out.println("Please enter the amount of money stolen:");
+                amount=input.nextDouble();
+                MoneyCrimes robbery = new MoneyCrimes ("Trial",jurisdiction, "", "", amount, false); 
                 for(int i=0;i<wordBank.length;i++){
                 robbery.setCrimeAndSentence(wordBank[i]);
                 }
