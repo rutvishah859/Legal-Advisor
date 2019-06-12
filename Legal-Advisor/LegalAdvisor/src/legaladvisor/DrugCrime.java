@@ -81,7 +81,7 @@ public class DrugCrime extends CriminalCase{
             }
         }
     }
-    public void setTrafficking(String keyword, int n){
+    public void setTrafficking(String keyword){
         if(super.SearchMechanism(keyword, super.getTraffickingTerm(), 0)){
            this.trafficking = true;
         }else{
