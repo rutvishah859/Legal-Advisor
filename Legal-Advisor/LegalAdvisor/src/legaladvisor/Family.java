@@ -24,6 +24,7 @@ public class Family extends Civil {
         this.marriage = mar;
         this.child = child;
     }
+    //this method will decide what types of custody will be if the couple is married and they have child/children
     public void setCustody(String keyword){
         if(super.SearchMechanism(keyword, super.getFamKeyword(), 0)){  
             if((this.marriage == true) && (this.child == true)){
@@ -51,6 +52,8 @@ public class Family extends Civil {
     public boolean getMarriage() {
         return marriage;
     }
+     //this method will find what types of violence the victim suffer
+    //these violence are only for adult 
    public void setFamilyViolenceType(String keyword){
        String sentence;
              if(keyword.equalsIgnoreCase(super.getFamKeyword()[0])){
