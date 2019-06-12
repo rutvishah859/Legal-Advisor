@@ -45,12 +45,7 @@ public class Tester {
         System.out.println("Please enter the next file name:");
         filename=input.next();
         p1.getA1().setFile(filename);
-        }while(!filename.equalsIgnoreCase("no more complaints"));
-        System.out.println(p1.getA1().getCase().size());
-        //p1.getA1().sortCases(p1.getA1().getCase());
-        for(int i=0;i<p1.getA1().getCase().size();i++){
-            System.out.println(p1.getA1().getCase().get(i).printInfo());
-        }
+        }while(!filename.equalsIgnoreCase("none"));
         p1.getA1().sortCases(p1.getA1().getCase());
         System.out.println("Do you need a lawyer?");
         needsLawyer=input.next();
@@ -73,6 +68,10 @@ public class Tester {
             System.out.println("Thank you for using Legal Advisor");
         }
         else{
+            System.out.println("Your Account:");
+            System.out.println("Name:"+p1.getName());
+            System.out.println("Phone Number:"+p1.getPhoneNum());
+            System.out.println("Case:"+p1.getA1().getCase().get(0).printInfo());
             System.out.println("Thank you for using Legal Advisor.");
         }
     }
