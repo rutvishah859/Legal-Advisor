@@ -8,16 +8,15 @@ public class Civil extends Case{
         super(rem, jur);
        this.typeCase= tC;
     }
-    //There are two types of Civil case: Family and Contract
     public String getTypeCase(){
         return typeCase;
     }
     public void setTypeCase(String tC){
         this.typeCase= tC;
     }
-//    public String printInfo(){
-//        return super.printInfo() + "Type of civil case: "+this.typeCase;
-//    }
+    public String printInfo(){
+        return  "\nType of civil case: "+this.typeCase+super.printInfo();
+    }
     public void setSentence(String s){
         sentence=s;
     
