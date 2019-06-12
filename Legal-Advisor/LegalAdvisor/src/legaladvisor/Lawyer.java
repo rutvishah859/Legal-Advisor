@@ -1,7 +1,3 @@
-//This file is all about Lawyer. There will be 3 different types of Lawyer: Criminal, Human Rights and Civil.
-//All these lawyers have specialization, name, phone number. The users will be able to book appointment for the 
-//lawyer that they want. The appointment depends on the lawyer availiability. The users will choose the day that 
-//their lawyer available.
 package legaladvisor;
 import java.util.ArrayList;
 public class Lawyer {
@@ -16,7 +12,6 @@ public class Lawyer {
         name=n;
         phoneNum=pn;
     }
-    //this method will determine the lawyer availability
     public boolean appointCase(ArrayList <String> userAvailability){
         boolean haslawyer=false;
         for(int i=0; i<availability.length;i++){
@@ -58,7 +53,7 @@ public class Lawyer {
         return dayofAppointment;
     }
     public void printInfo(){
-        System.out.println("Lawyer's name:" + this.name+" Phone number:"+ this.phoneNum+ "Day of appointment:"+ this.getDayofAppointment());
+        System.out.println("Lawyer's name:" + this.name+"\nPhone number:"+ this.phoneNum+ "\nDay of appointment:"+ this.getDayofAppointment());
     }
     
     
