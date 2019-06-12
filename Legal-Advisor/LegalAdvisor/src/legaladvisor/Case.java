@@ -31,7 +31,7 @@ import java.util.*;
     //Charter keywords        0           1        2           3         4       5         6             7          8       9           10         11      12      13    14            15    16     17      18      19       20          21       22     23     24       25     26        27        28        29      30          31         32      33         34       35          36       37     38      38      39      40         41     42         43            44         45                 46           47                                                                   
     private String issues[]={"muslim","jewish","christian","buddhist","hindu","speech","expression","associate","group","non-violent","protest","vote","election","5","parliament","meeting","1","once","travel","Canada","within","throughout","into","out","safety","life","privacy","search","seizure","arrest","detention","arrest","reasons","lawyer","attorney","release","offence","trial","time","guilty","bail","sentence","cruel","unusual","punishment","witness","self-incriminated","interpreter","unequal"};
     //DrugCrime keywords 
-    private String[] traffickingTerm = {"administer", "deliver", "give", "obtain","sell", "send", "transfer", "transport"};
+    private String[] traffickingTerm = {"administered", "delivered", "gave", "obtained","sold", "sent", "transfered", "transported"};
     private String [] drugType= {"amphetamines","cannabis","cocaine", "hallucionogens", "hashish","heroine","LSD", "marijuana", "methamphetamine","opiums","steroids"};
     ///Jurisdiction keywords
     private String jurisdictions[]={"Ontario","Canada"};

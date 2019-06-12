@@ -176,7 +176,7 @@ public class caseChecker extends Case{
             if (super.SearchMechanism(w, super.getTraffickingTerm(), 0)){
                 double quantity;
                 super.setType("Criminal Case");
-                DrugCrime trafficking = new DrugCrime ("Trial", jurisdiction, "", "", false, false, "");
+                DrugCrime trafficking = new DrugCrime ("Trial", jurisdiction, "", "", true, true, "");
                 trafficking.setCrime("Drug Crime");
                 for(int i=0;i<wordBank.length;i++){
                 trafficking.setTrafficking(wordBank[i], 0);
@@ -187,6 +187,12 @@ public class caseChecker extends Case{
                 for(int i=0;i<wordBank.length;i++){
                 trafficking.setCrimeTypeAndSentence(wordBank[i]);
                 }
+                for(int i=0;i<wordBank.length;i++){
+                trafficking.setScheduleType(wordBank[i]);
+                }
+                for(int i=0;i<wordBank.length;i++){
+                trafficking.setDrugType(wordBank[i]);
+                }
                 c1=trafficking;
                 break;
             }
@@ -194,13 +200,19 @@ public class caseChecker extends Case{
             else if (super.SearchMechanism(w, super.getDrugType(), 0)){
                 double quantity;
                 super.setType ("Criminal Case"); 
-                DrugCrime possession = new DrugCrime ("Trial", jurisdiction, "", "", false, false, "");
+                DrugCrime possession = new DrugCrime ("Trial", jurisdiction, "", "",true, false, "");
                 possession.setCrime("Drug Crime");
                 System.out.println("Please enter the quanity of drugs in grams:");
                 quantity=input.nextDouble();
                 possession.setQuantity(quantity);
                 for(int i=0;i<wordBank.length;i++){
                 possession.setCrimeTypeAndSentence(wordBank[i]);
+                }
+                for(int i=0;i<wordBank.length;i++){
+                possession.setScheduleType(wordBank[i]);
+                }
+                for(int i=0;i<wordBank.length;i++){
+                possession.setDrugType(wordBank[i]);
                 }
                 c1= possession;
                 break;

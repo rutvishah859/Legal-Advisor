@@ -1,7 +1,7 @@
 package legaladvisor;
 import java.io.*;
 import java.util.Scanner;
-public class Tester {
+public class LegalAdvisor {
     public static void main(String []args) throws IOException{
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to your personal Legal Advisor!");
@@ -9,10 +9,10 @@ public class Tester {
         System.out.println("Please format your text file complaint likewise:");
         System.out.println("------------------------------------------------");
         System.out.println("1. Include the grievance you experienced.");
-        System.out.println("2. Your jurisdiction may ONLY be Canada or Ontario.");
+        System.out.println("2. Please include your jurisdiction but it may ONLY be Canada or Ontario.");
         System.out.println("3. Write your complaint out in a SINGLE line.");
         System.out.println("4. Please include only one complaint per file.");
-        System.out.println("5. If you have no more complaints please enter: No more complaints.");
+        System.out.println("5. If you have no more complaints please enter: none.");
         String filename;
         String name;
         String phoneNumber;
@@ -20,8 +20,8 @@ public class Tester {
         System.out.println("Please enter your name:");
         name=input.nextLine();
         System.out.println("Please enter your phone number:");
-      phoneNumber=input.nextLine();
-        System.out.println("Please enter a file name with your complaint. Please include the double slashes.");
+        phoneNumber=input.nextLine();
+        System.out.println("Please enter a file location with your complaint. Please include the double slashes.");
         filename=input.nextLine();
         System.out.println("Please enter your age:");
         age=input.nextInt();
@@ -38,13 +38,12 @@ public class Tester {
         p1.setA1(acc);
         p1.getA1().setFile(filename);
         p1.getA1().setCaseChecker(f);
-        p1.getA1().setCase();
         String needsLawyer;
         String dayAvailable="";
         do{
         p1.getA1().setCase();
         System.out.println("Please enter the next file name:");
-        filename=input.nextLine();
+        filename=input.next();
         p1.getA1().setFile(filename);
         }while(!filename.equalsIgnoreCase("no more complaints"));
         System.out.println(p1.getA1().getCase().size());
@@ -52,19 +51,24 @@ public class Tester {
         for(int i=0;i<p1.getA1().getCase().size();i++){
             System.out.println(p1.getA1().getCase().get(i).printInfo());
         }
+        p1.getA1().sortCases(p1.getA1().getCase());
         System.out.println("Do you need a lawyer?");
         needsLawyer=input.next();
         if(needsLawyer.equalsIgnoreCase("yes")){
-           System.out.println("Please enter the days you are available, one at a time. Once you entered them all, enter: no more days.");
-           dayAvailable=input.nextLine();
-            while(!dayAvailable.equalsIgnoreCase("no more days")){
+           System.out.println("Please enter the days you are available, one at a time. Once you entered them all, enter: none.");
+           dayAvailable=input.next();
+            while(!dayAvailable.equalsIgnoreCase("none")){
             p1.getA1().getAvailability().add(dayAvailable);
             System.out.println("Please enter the days you are available");
-            dayAvailable=input.nextLine();
+            dayAvailable=input.next();
             }
             p1.getA1().setLawyer(l1);
             p1.getA1().setLawyer(l2);
             p1.getA1().setLawyer(l3);
+            System.out.println("Your Account:");
+            System.out.println("Name:"+p1.getName());
+            System.out.println("Phone Number:"+p1.getPhoneNum());
+            System.out.println("Case:"+p1.getA1().getCase().get(0).printInfo());
             p1.getA1().getLawyer().printInfo();
             System.out.println("Thank you for using Legal Advisor");
         }
