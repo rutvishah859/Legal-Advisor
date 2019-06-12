@@ -26,6 +26,6 @@ public abstract class CriminalCase extends Case {
         this.sentence = sentence;
     }
     public String printInfo(){
-        return "\nCrime: "+ this.crime+"\nPotential Sentence: "+ this.sentence;
+        return "\nCrime: "+ this.crime+"\nPotential Sentence: "+ this.sentence+super.printInfo();
     }
 }
