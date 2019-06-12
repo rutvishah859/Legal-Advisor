@@ -17,13 +17,13 @@ public class Contract extends Civil {
     private boolean disability; // anyone with disability or impaired judgment can't make a valid contract
     private int participantAge; // anyone who under 18 or 19 years old does not have the capacity to enter into valid contract
     private boolean brokenContract; // if the parties break the contract
-    //                                  0       1      2     3        4          5             6         7         8        9        10       11       12        13        14      15       16      17
-    
+  
+    private String contract;
     private boolean offer;  //offer is made or not. An offer contains all of the important and revelant terms of contract
     private boolean consideration;   //if the parties agree the offer, both parties will exchange valuable things between them.
 
     private boolean lawfulPurpose;
- 
+  
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
     private boolean breachOfContract;
@@ -55,6 +55,9 @@ public class Contract extends Civil {
                 typeContract = "This is illegal contract because it violates the Criminal Code of Canada ";
             }
         }
+    }
+    public String getContract(){
+        return contract;
     }
     public void setRemedies(String keyword){
         if(this.failingToPerform == true){  //if one of the parties is failed to perform the terms of agreement in contract
@@ -142,19 +145,21 @@ public class Contract extends Civil {
         return this.lawfulPurpose;
     }
     public void setDisability(String keyword){
-        if(keyword.equalsIgnoreCase("disabled")){
-           this.disability=true;
+        if(keyword.equalsIgnoreCase("disabled") || keyword.equalsIgnoreCase("disable")){
+            this.disability = true;
         }
         else{
-            this.disability=false;
+            this.disability = false;
         }
     }
-    public boolean getDisability(){
-        return this.disability;
-    }
-    public String printInfo(){
+   public boolean getDisability(){
+       return this.disability;
+   }
+     public String printInfo(){
         return super.printInfo()+", Purpose of contract: "+ this.getPurpose()+", Remedies: ";
     }
+
+   
     
     
 }
