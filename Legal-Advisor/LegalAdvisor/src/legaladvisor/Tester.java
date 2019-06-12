@@ -1,7 +1,7 @@
 package legaladvisor;
 import java.io.*;
 import java.util.Scanner;
-public class LegalAdvisor {
+public class Tester {
     public static void main(String []args) throws IOException{
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to your personal Legal Advisor!");
