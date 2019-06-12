@@ -8,6 +8,7 @@ public class Civil extends Case{
         super(rem, jur);
        this.typeCase= tC;
     }
+    //There are two types of Civil case: Family and Contract
     public String getTypeCase(){
         return typeCase;
     }
