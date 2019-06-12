@@ -6,7 +6,7 @@ The class contains all of the key words for all the classes, and sub classes of 
 package legaladvisor; 
 import java.util.*; 
 
-    public class Case {
+    public /*abstract*/ class Case {
 
     private String remedies;
     private ArrayList <String> type = new ArrayList <String> ();
@@ -40,7 +40,7 @@ import java.util.*;
     //Contract keywords                   0     1      2     3       4             5           6         7           8       9        10       11       12       13        14        15      16       17          18             
     private String contractWord []= {"agree","break","buy","car","compensate","condition","contract","disagree","failing","goods", "house","illness","make", "mental","negotiate","offer", "pay","purchase","request"};
     private String unlawfulPurpose[] = {"betting", "drugs", "firearm","gambling", "gaming", "kill","prostitution", "prositute"}; //the contract must have lawful objective or purpose
-    
+
     public Case(String rem, String jur){
         this.remedies = rem;
         this.jurisdiction = jur;
@@ -79,7 +79,7 @@ import java.util.*;
         return this.jurisdiction;
     }
     //printInfo is an abstract method which is set by the child/grandchild classes which prints all the info about the case plus the sentance
-    public String printInfo(){
+public String printInfo(){
      return  "Jurisdiction: "+ this.jurisdiction +"\nRemedies: "+ this.remedies;   
     }   
     public boolean SearchMechanism(String keyword, String a[],int n){
@@ -187,4 +187,6 @@ import java.util.*;
     public void setUnlawfulPurpose(String[] unlawfulPurpose) {
         this.unlawfulPurpose = unlawfulPurpose;
     }
+
 }
+
