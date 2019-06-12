@@ -23,8 +23,7 @@ public class Contract extends Civil {
     private boolean consideration;   //if the parties agree the offer, both parties will exchange valuable things between them.
 
     private boolean lawfulPurpose;
-    //                                            0                 1                        2                      3
-  //  private String dischargingContract [] = {"performance", "mutual agreement" , "frustration of contract", "breach of contract"};
+ 
     //breach of contract is failing to perform an obligation owed to another party
     //if breach occurs, it allows the party to cancel or end the contract
     private boolean breachOfContract;
